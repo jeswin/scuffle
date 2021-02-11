@@ -1,7 +1,7 @@
-import Notes from "./notes/Home";
-import Bookmarks from "./bookmarks/Home";
-import Tasks from "./tasks/Home";
-import Tags from "./tags/Home";
+import Notes from "./notes";
+import Bookmarks from "./bookmarks";
+import Tasks from "./tasks";
+import Tags from "./tags";
 
 import { Router, matchUrl, updateRoute, matchExactUrl } from "forgo-router";
 
