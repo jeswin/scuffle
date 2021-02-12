@@ -1,7 +1,10 @@
-export default function TasksHome() {
+import { matchExactUrl } from "forgo-router";
+import TasksHome from "./components/Home";
+
+export default function TasksIndex() {
   return {
     render() {
-      return <div>Tasks module</div>;
+      return matchExactUrl("/tasks", () => <TasksHome />);
     },
   };
 }

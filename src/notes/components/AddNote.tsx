@@ -1,5 +1,5 @@
 import { ForgoRef, CSSProperties, rerender } from "forgo";
-import { ForgoRenderArgs } from "forgo/jsx-runtime";
+import { ForgoRenderArgs } from "forgo";
 import Button from "../../components/Button";
 import * as commonStyles from "../../styles";
 

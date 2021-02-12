@@ -1,4 +1,4 @@
-import { CSSProperties, ForgoRenderArgs, rerender } from "forgo";
+import { CSSProperties, ForgoNode, ForgoRenderArgs, rerender } from "forgo";
 import * as styles from "../styles";
 
 function getColor(color: string, hovering: boolean) {
@@ -14,8 +14,9 @@ function getColor(color: string, hovering: boolean) {
 export type ButtonProps = {
   className?: string;
   color: "primary" | "standard";
-  style: CSSProperties;
-  onclick?: ((this: GlobalEventHandlers, ev: MouseEvent) => any) | null;
+  style?: CSSProperties;
+  onclick?: (this: GlobalEventHandlers, ev: MouseEvent) => any;
+  children: ForgoNode | ForgoNode[];
 };
 
 export default function Button(props: ButtonProps) {
@@ -32,10 +33,10 @@ export default function Button(props: ButtonProps) {
       return (
         <button
           className={className ? `${className} ` : "" + color}
-          onmouseenter={() => setHovering(true)}
-          onmouseleave={() => setHovering(false)}
-          onfocus={() => setHovering(true)}
-          onblur={() => setHovering(false)}
+          onmouseenter={(e) => setHovering(true)}
+          onmouseleave={(e) => setHovering(false)}
+          onfocus={(e) => setHovering(true)}
+          onblur={(e) => setHovering(false)}
           {...otherProps}
           style={{
             padding: "0.5em 1em",

@@ -4,7 +4,7 @@ import { loadRecentTags } from "../actions";
 import SettingsIcon from "./SettingsIcon";
 import TagCloud from "./TagCloud";
 import state from "../state";
-import { bindToStateProps } from "forgo-state/dist";
+import { bindToStateProps } from "forgo-state";
 
 const styles: {
   [name: string]: CSSProperties;
@@ -67,25 +67,25 @@ export default function MainDrawer() {
               </section>
             </header>
             <ul style={{ paddingLeft: "1em" }}>
-              <li onClick={() => navigateTo("/tasks")} style={styles.li}>
+              <li onclick={() => navigateTo("/tasks")} style={styles.li}>
                 <i className="material-icons" style={{ ...styles.icon }}>
                   add_task
                 </i>
                 <span style={{ ...styles.listItemName }}>Tasks</span>
               </li>
-              <li onClick={() => navigateTo("/notes")} style={styles.li}>
+              <li onclick={() => navigateTo("/notes")} style={styles.li}>
                 <i className="material-icons" style={{ ...styles.icon }}>
                   notes
                 </i>
                 <span style={{ ...styles.listItemName }}>Notes</span>
               </li>
-              <li onClick={() => navigateTo("/bookmarks")} style={styles.li}>
+              <li onclick={() => navigateTo("/bookmarks")} style={styles.li}>
                 <i className="material-icons" style={{ ...styles.icon }}>
                   bookmark
                 </i>
                 <span style={{ ...styles.listItemName }}>Bookmarks</span>
               </li>
-              <li style={styles.li} onClick={() => navigateTo("/file")}>
+              <li style={styles.li} onclick={() => navigateTo("/file")}>
                 <i className="material-icons" style={{ ...styles.icon }}>
                   folder
                 </i>

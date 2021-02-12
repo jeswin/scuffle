@@ -1,4 +1,4 @@
-import { bindToStateProps } from "forgo-state/dist";
+import { bindToStateProps } from "forgo-state";
 import { loadNotes } from "../actions";
 import NotesListItem from "./NotesListItem";
 import state from "../state";
