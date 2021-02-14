@@ -50,16 +50,15 @@ export default function TopBar(props: TopBarProps) {
                   <div className="ml-10 flex items-baseline space-x-4">
                     {items.map(([id, text, icon]) =>
                       id === selected ? (
-                        <div className="bg-green-600 text-white -ml-4 px-3 pt-1 pb-2 rounded-md font-medium">
+                        <div className="bg-gray-300 text-black -ml-4 px-3 pt-1 pb-2 rounded-md font-medium">
                           <Link
                             className="inline-block align-middle text-sm"
                             href={`/${id === "home" ? "" : id}`}
                           >
-                            {" "}
                             <i className="inline-block align-middle pr-1.5 material-icons text-sm">
                               {icon}
                             </i>
-                            {text}
+                            <span className="inline-block">{text}</span>
                           </Link>
                         </div>
                       ) : (
@@ -71,7 +70,7 @@ export default function TopBar(props: TopBarProps) {
                             <i className="inline-block align-middle pr-1.5 material-icons text-sm">
                               {icon}
                             </i>
-                            {text}
+                            <span className="inline-block">{text}</span>
                           </Link>
                         </div>
                       )
