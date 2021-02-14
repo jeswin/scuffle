@@ -1,13 +1,15 @@
 import { CSSProperties, ForgoNode, ForgoRenderArgs, rerender } from "forgo";
-import * as styles from "../styles";
 
 function getColor(color: string, hovering: boolean) {
-  const palette = color === "primary" ? styles.primary : styles.standard;
+  const palette =
+    color === "primary"
+      ? { bg: "black", fg: "white" }
+      : { bg: "black", fg: "white" };
   return {
     background: palette.bg,
     color: palette.fg,
     border: `1px solid ${palette.bg}`,
-    boxShadow: hovering ? `${palette.shadowColor} 0 0 1px 1px` : undefined,
+    boxShadow: hovering ? `gray 0 0 1px 1px` : undefined,
   };
 }
 

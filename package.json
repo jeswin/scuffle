@@ -4,7 +4,7 @@
   "dependencies": {
     "@types/jsonwebtoken": "^8.5.0",
     "forgo": "^0.0.64",
-    "forgo-router": "^0.0.59",
+    "forgo-router": "^0.0.61",
     "forgo-state": "^0.0.37",
     "jsonwebtoken": "^8.5.1"
   },

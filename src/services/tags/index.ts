@@ -1,5 +1,5 @@
-import { Bookmark, Note, TagInfo, Task } from "../../types";
-import * as tasksService from "../tasks";
+import { Bookmark, Note, TagInfo, Todo } from "../../types";
+import * as todosService from "../todos";
 import * as bookmarksService from "../bookmarks";
 import * as notesService from "../notes";
 import { tags } from "./dummyTags";
@@ -13,11 +13,11 @@ export async function getItemsByTags(
 ): Promise<{
   bookmarks: Bookmark[];
   notes: Note[];
-  tasks: Task[];
+  tasks: Todo[];
 }> {
   return {
     bookmarks: await bookmarksService.getItemsByTags(tags),
     notes: await notesService.getItemsByTags(tags),
-    tasks: await tasksService.getItemsByTags(tags),
+    tasks: await todosService.getItemsByTags(tags),
   };
 }

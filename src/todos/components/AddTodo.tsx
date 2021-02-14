@@ -1,4 +1,4 @@
-import { addTask } from "../actions";
+import { addTodo } from "../actions";
 import Button from "../../components/Button";
 import { FormEvent, StylesDictionary } from "../../types/ui";
 import {
@@ -9,7 +9,7 @@ import {
 } from "forgo";
 import { JSX } from "forgo/jsx-runtime";
 
-export type AddTaskProps = {
+export type AddTodoProps = {
   collapsed: boolean;
 };
 
@@ -62,7 +62,7 @@ const styles: StylesDictionary = {
   },
 };
 
-export default function AddTask(props: AddTaskProps) {
+export default function AddTodo(props: AddTodoProps) {
   let collapsed = props.collapsed;
   let taskText = "";
   let points = 0;
@@ -70,14 +70,14 @@ export default function AddTask(props: AddTaskProps) {
   let taskTextElement: ForgoRef<HTMLTextAreaElement> = {};
 
   return {
-    render(props: AddTaskProps, args: ForgoRenderArgs) {
+    render(props: AddTodoProps, args: ForgoRenderArgs) {
       /*
     If the user enters multiple lines, the first line becomes the title.
     And the rest becomes the description.
     TODO: Add support for tags in title and description.
     Perhaps give more prominence to title tags?
   */
-      function onAddTaskClick() {
+      function onAddTodoClick() {
         const taskTextParts = taskText.split("\n").filter((x) => x);
         if (taskTextParts.length) {
           const title = taskTextParts[0];
@@ -86,7 +86,7 @@ export default function AddTask(props: AddTaskProps) {
               ? taskTextParts.slice(1).join("\n")
               : undefined;
 
-          addTask(title, description);
+          addTodo(title, description);
         }
         taskText = "";
         rerender(args.element);
@@ -97,7 +97,7 @@ export default function AddTask(props: AddTaskProps) {
         rerender(args.element);
       }
 
-      function onOpenTasksBox() {
+      function onOpenTodoBox() {
         collapsed = false;
         rerender(args.element);
       }
@@ -111,8 +111,8 @@ export default function AddTask(props: AddTaskProps) {
       return (
         <>
           {collapsed ? (
-            <Button color="primary" onclick={onOpenTasksBox}>
-              + Add Task
+            <Button color="primary" onclick={onOpenTodoBox}>
+              + Add Todo
             </Button>
           ) : (
             <div style={{ marginBottom: "1em" }}>
@@ -201,9 +201,9 @@ export default function AddTask(props: AddTaskProps) {
                     <Button
                       color="primary"
                       style={{ marginRight: "6px" }}
-                      onclick={onAddTaskClick}
+                      onclick={onAddTodoClick}
                     >
-                      Add this task
+                      Add this todo
                     </Button>
                     <Button color="standard" onclick={collapseControl}>
                       Cancel
@@ -217,7 +217,7 @@ export default function AddTask(props: AddTaskProps) {
       );
     },
 
-    afterRender(props: AddTaskProps, args: ForgoAfterRenderArgs) {
+    afterRender(props: AddTodoProps, args: ForgoAfterRenderArgs) {
       if (!focusedOnce && !collapsed && taskTextElement.value) {
         focusedOnce = true;
         taskTextElement.value.focus();

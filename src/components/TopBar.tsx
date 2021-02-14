@@ -1,4 +1,5 @@
 import { ForgoRenderArgs, rerender } from "forgo";
+import { match, Link } from "forgo-router";
 
 export type TopBarProps = {
   selected: "home" | "notes" | "todos" | "bookmarks" | "discover";
@@ -23,6 +24,18 @@ export default function TopBar(props: TopBarProps) {
         rerender(args.element);
       }
 
+      const selected = match("/")
+        ? "home"
+        : match("/notes/")
+        ? "notes"
+        : match("/todos/")
+        ? "todos"
+        : match("/bookmarks")
+        ? "bookmarks"
+        : match("/discover/")
+        ? "discover"
+        : "";
+
       return (
         <nav className="bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,29 +51,30 @@ export default function TopBar(props: TopBarProps) {
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {items.map(([id, text, icon]) =>
-                      id === props.selected ? (
+                      id === selected ? (
                         <div className="bg-green-600 text-white -ml-4 px-3 pt-1 pb-2 rounded-md font-medium">
-                          <i className="inline-block align-middle pr-1.5 material-icons text-sm">
-                            {icon}
-                          </i>
-                          <a
+                          <Link
                             className="inline-block align-middle text-sm"
-                            href="#"
+                            href={`/${id === "home" ? "" : id}`}
                           >
+                            {" "}
+                            <i className="inline-block align-middle pr-1.5 material-icons text-sm">
+                              {icon}
+                            </i>
                             {text}
-                          </a>
+                          </Link>
                         </div>
                       ) : (
                         <div className="text-gray-700 -ml-4 px-3 py-2 rounded-md font-medium">
-                          <i className="inline-block align-middle pr-1.5 material-icons text-sm">
-                            {icon}
-                          </i>
-                          <a
-                            href="#"
+                          <Link
                             className="inline-block align-middle text-sm"
+                            href={`/${id === "home" ? "" : id}`}
                           >
+                            <i className="inline-block align-middle pr-1.5 material-icons text-sm">
+                              {icon}
+                            </i>
                             {text}
-                          </a>
+                          </Link>
                         </div>
                       )
                     )}

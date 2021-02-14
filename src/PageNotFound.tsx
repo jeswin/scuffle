@@ -1,3 +1,7 @@
 export default function PageNotFound() {
-  return <div>Missing</div>;
+  return {
+    render() {
+      return <div>Missing</div>;
+    },
+  };
 }

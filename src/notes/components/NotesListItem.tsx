@@ -1,5 +1,4 @@
 import { Note } from "../../types";
-import * as styles from "../../styles";
 import { CSSProperties } from "forgo";
 
 const listStyle: CSSProperties = {
@@ -13,7 +12,7 @@ const listStyle: CSSProperties = {
   maxHeight: "24em",
   paddingBottom: "1em",
   overflow: "hidden",
-  boxShadow: styles.standard.shadow,
+  boxShadow: "gray",
 };
 
 const titleStyle: CSSProperties = {

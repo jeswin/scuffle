@@ -1,13 +1,12 @@
-import { Task } from "../../types";
+import { Todo } from "../../types";
 import { colorForString } from "../../modules/colors";
-import * as commonStyles from "../../styles";
 import { StylesDictionary } from "../../types/ui";
 import { Link } from "forgo-router";
 import { ForgoAfterRenderArgs, ForgoRenderArgs, rerender } from "forgo";
 
-export type TasksListItemProps = {
-  task: Task;
-  onCompleteTask: (task: Task) => void;
+export type TodoListItemProps = {
+  todo: Todo;
+  onCompleteTodo: (todo: Todo) => void;
 };
 
 const styles: StylesDictionary = {
@@ -30,16 +29,16 @@ const styles: StylesDictionary = {
   tagsWrapper: { float: "left" },
 };
 
-export default function TasksListItem({
-  task,
-  onCompleteTask: completeTask,
-}: TasksListItemProps) {
+export default function TodoListItem({
+  todo: todo,
+  onCompleteTodo: completeTodo,
+}: TodoListItemProps) {
   let secondsLeft: number | undefined;
   let isChecked = false;
   let timerState: { timeout?: number } = {};
 
   return {
-    render(props: TasksListItemProps, args: ForgoRenderArgs) {
+    render(props: TodoListItemProps, args: ForgoRenderArgs) {
       function cancelTimeout() {
         if (timerState.timeout) {
           secondsLeft = undefined;
@@ -64,7 +63,7 @@ export default function TasksListItem({
       }
 
       return (
-        <li key={task.id} style={{ ...styles.li }}>
+        <li key={todo.id} style={{ ...styles.li }}>
           <div style={{ ...styles.checkboxWrapper }}>
             <input
               type="checkbox"
@@ -79,7 +78,7 @@ export default function TasksListItem({
                 ...styles.text,
               }}
             >
-              {task.title}
+              {todo.title}
             </span>
           ) : (
             <span style={{ ...styles.waiting }}>
@@ -87,9 +86,9 @@ export default function TasksListItem({
             </span>
           )}
           {!isChecked ? (
-            task.tags ? (
+            todo.tags ? (
               <div style={{ ...styles.tagsWrapper }}>
-                {task.tags.map((tag) => {
+                {todo.tags.map((tag) => {
                   const [bg, fg] = colorForString(tag);
                   return (
                     <Link
@@ -97,7 +96,6 @@ export default function TasksListItem({
                       href={`/tags/${tag}`}
                       className="link"
                       style={{
-                        ...commonStyles.Link,
                         backgroundColor: bg,
                         color: fg,
                       }}
@@ -127,10 +125,10 @@ export default function TasksListItem({
         </li>
       );
     },
-    afterRender(props: TasksListItemProps, args: ForgoAfterRenderArgs) {
+    afterRender(props: TodoListItemProps, args: ForgoAfterRenderArgs) {
       if (secondsLeft !== undefined) {
         if (secondsLeft === 0) {
-          completeTask(task);
+          completeTodo(todo);
         } else {
           timerState.timeout = window.setTimeout(() => {
             secondsLeft =

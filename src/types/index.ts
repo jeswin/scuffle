@@ -23,7 +23,7 @@ export type TagInfo = {
   count: number;
 };
 
-export type Task = {
+export type Todo = {
   id: string;
   title: string;
   description?: string;
@@ -70,7 +70,7 @@ export type FileInfo = {
 } & ScuffleEntityBase;
 
 export type ScuffleEntity =
-  | Task
+  | Todo
   | Note
   | Bookmark
   | Gallery

@@ -1,7 +1,6 @@
 import { ForgoRef, CSSProperties, rerender } from "forgo";
 import { ForgoRenderArgs } from "forgo";
 import Button from "../../components/Button";
-import * as commonStyles from "../../styles";
 
 export type AddNoteProps = {
   style?: CSSProperties;
@@ -11,8 +10,8 @@ export type AddNoteProps = {
 const containerStyle: CSSProperties = {
   minWidth: "16em",
   maxWidth: "40em",
-  border: `1px solid ${commonStyles.standard.border}`,
-  borderRadius: commonStyles.borderRadius,
+  border: `1px solid gray`,
+  borderRadius: "4px",
 };
 
 const textareaStyle: CSSProperties = {
