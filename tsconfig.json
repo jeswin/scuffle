@@ -13,6 +13,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "forgo"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/index.tsx"],
   "exclude": ["dist/**/*"]
 }

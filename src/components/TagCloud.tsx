@@ -1,7 +1,6 @@
 import { TagInfo } from "../types";
 import { colorForString } from "../modules/colors";
 import { Link } from "forgo-router";
-import * as styles from "../styles";
 
 export type TagCloudProps = {
   tags: TagInfo[];

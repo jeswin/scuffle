@@ -1,7 +1,12 @@
 import { addTask } from "../actions";
 import Button from "../../components/Button";
 import { FormEvent, StylesDictionary } from "../../types/ui";
-import { ForgoRef, rerender, ForgoAfterRenderArgs, ForgoRenderArgs  } from "forgo";
+import {
+  ForgoRef,
+  rerender,
+  ForgoAfterRenderArgs,
+  ForgoRenderArgs,
+} from "forgo";
 import { JSX } from "forgo/jsx-runtime";
 
 export type AddTaskProps = {
@@ -62,7 +67,7 @@ export default function AddTask(props: AddTaskProps) {
   let taskText = "";
   let points = 0;
   let focusedOnce = false;
-  let taskTextElement: ForgoRef<HTMLTextAreaElement>;
+  let taskTextElement: ForgoRef<HTMLTextAreaElement> = {};
 
   return {
     render(props: AddTaskProps, args: ForgoRenderArgs) {
@@ -99,7 +104,7 @@ export default function AddTask(props: AddTaskProps) {
 
       function collapseControl() {
         taskText = "";
-        collapsed = false;
+        collapsed = true;
         rerender(args.element);
       }
 
