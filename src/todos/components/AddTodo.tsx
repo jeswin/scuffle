@@ -1,6 +1,4 @@
 import { addTodo } from "../actions";
-import Button from "../../components/Button";
-import { FormEvent, StylesDictionary } from "../../types/ui";
 import {
   ForgoRef,
   rerender,
@@ -11,55 +9,6 @@ import { JSX } from "forgo/jsx-runtime";
 
 export type AddTodoProps = {
   collapsed: boolean;
-};
-
-const styles: StylesDictionary = {
-  wrappperBorder: {
-    padding: "1em 2em",
-    border: "1px solid lightgray",
-    maxWidth: "500px",
-    borderRadius: "4px",
-  },
-  formRow: {
-    borderBottom: "1px solid lightgray",
-    padding: "0.5em",
-    display: "flex",
-  },
-  textarea: {
-    marginLeft: "1em",
-    outline: "none",
-    border: "none",
-    resize: "none",
-  },
-  textInput: {
-    marginLeft: "1em",
-    outline: "none",
-    border: "none",
-  },
-  selectInput: {
-    marginLeft: "1em",
-  },
-  rangeInput: {
-    outline: "none",
-    marginLeft: "1em",
-  },
-  buttonsRow: {
-    marginTop: "6px",
-  },
-  label: {
-    textAlign: "right",
-    display: "inline-block",
-    width: "64px",
-    fontSize: "14px",
-    marginRight: "1em",
-  },
-  formSubtext: {
-    color: "gray",
-    fontSize: "12px",
-    marginLeft: "14px",
-    padding: "0px",
-    marginBottom: "0px",
-  },
 };
 
 export default function AddTodo(props: AddTodoProps) {
@@ -111,76 +60,39 @@ export default function AddTodo(props: AddTodoProps) {
       return (
         <>
           {collapsed ? (
-            <Button color="primary" onclick={onOpenTodoBox}>
+            <button
+              className="rounded-full bg-green-600 text-white py-2 px-4 text-sm"
+              onclick={onOpenTodoBox}
+            >
               + Add Todo
-            </Button>
+            </button>
           ) : (
-            <div style={{ marginBottom: "1em" }}>
-              <div style={{ marginBottom: "12px" }}>
-                <div
-                  style={{
-                    ...styles.wrappperBorder,
-                  }}
-                >
+            <div>
+              <div>
+                <div>
                   <ul>
-                    <li style={{ ...styles.formRow, display: "flex" }}>
+                    <li>
                       <input type="checkbox" disabled={true} />
                       <textarea
                         ref={taskTextElement}
-                        style={{
-                          ...styles.textarea,
-                          flexGrow: 100,
-                        }}
                         onchange={(e) => (taskText = e.currentTarget.value)}
                         placeholder="Type a description..."
                         value={taskText}
                       ></textarea>
                     </li>
-                    <li style={{ ...styles.formRow }}>
-                      <label
-                        style={{
-                          ...styles.label,
-                        }}
-                      >
-                        Tags
-                      </label>
-                      <input
-                        style={{
-                          ...styles.textInput,
-                        }}
-                        placeholder="start typing tags..."
-                        type="text"
-                      />
+                    <li>
+                      <label>Tags</label>
+                      <input placeholder="start typing tags..." type="text" />
                     </li>
-                    <li style={{ ...styles.formRow }}>
-                      <label
-                        style={{
-                          ...styles.label,
-                        }}
-                      >
-                        Due on
-                      </label>
-                      <input
-                        style={{
-                          ...styles.textInput,
-                        }}
-                        placeholder="select a date..."
-                        type="text"
-                      />
+                    <li>
+                      <label>Due on</label>
+                      <input placeholder="select a date..." type="text" />
                     </li>
-                    <li style={{ ...styles.formRow, borderBottom: "none" }}>
-                      <label
-                        style={{
-                          ...styles.label,
-                          paddingTop: "6px",
-                        }}
-                      >
-                        Points?
-                      </label>
+                    <li>
+                      <label>Points?</label>
                       <div>
-                        <div style={{ paddingTop: "4px" }}>
+                        <div>
                           <input
-                            style={{ ...styles.rangeInput }}
                             type="range"
                             min="0"
                             max="25"
@@ -189,7 +101,7 @@ export default function AddTodo(props: AddTodoProps) {
                             onchange={onPointsChange}
                           />
                         </div>
-                        <p style={{ ...styles.formSubtext }}>
+                        <p>
                           {points === 0
                             ? "Optional. How many points do you get for finishing this?"
                             : `${points} points for finishing this`}
@@ -197,17 +109,13 @@ export default function AddTodo(props: AddTodoProps) {
                       </div>
                     </li>
                   </ul>
-                  <div style={{ ...styles.buttonsRow }}>
-                    <Button
-                      color="primary"
-                      style={{ marginRight: "6px" }}
-                      onclick={onAddTodoClick}
-                    >
+                  <div>
+                    {/* <Button color="primary" onclick={onAddTodoClick}>
                       Add this todo
                     </Button>
                     <Button color="standard" onclick={collapseControl}>
                       Cancel
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </div>

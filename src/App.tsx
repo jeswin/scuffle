@@ -38,12 +38,14 @@ export default function App() {
       return (
         <Router>
           <div>
-            <TopBar selected="home" />
-            {matchExactUrl("/", () => <Home />) ||
-              matchUrl("/todos", () => <Todos />) ||
-              matchUrl("/notes", () => <Notes />) ||
-              matchUrl("/bookmarks", () => <Bookmarks />) ||
-              matchUrl("/tags", () => <Tags />) || <PageNotFound />}
+            <TopBar />
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {matchExactUrl("/", () => <Home />) ||
+                matchUrl("/todos", () => <Todos />) ||
+                matchUrl("/notes", () => <Notes />) ||
+                matchUrl("/bookmarks", () => <Bookmarks />) ||
+                matchUrl("/tags", () => <Tags />) || <PageNotFound />}
+            </div>
           </div>
         </Router>
       );

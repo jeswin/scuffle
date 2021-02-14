@@ -7,10 +7,13 @@ export default function TodosHome() {
     render() {
       return (
         <div>
-          <p style={{ fontSize: "0.8em", fontWeight: "bolder" }}>
-            Active | <Link href="tasks/completed">Completed</Link>
+          <p className="mt-4 text-sm">
+            <span className="font-bold">Active</span> |{" "}
+            <Link href="tasks/completed" className="text-blue-600 underline">
+              Completed
+            </Link>
           </p>
-          <div style={{ margin: "0.4em 0 1em -0.2em" }}>
+          <div className="mt-4">
             <AddTodo collapsed={true} />
           </div>
           <div>

@@ -30,5 +30,8 @@ module.exports = {
       path.resolve(__dirname, "./public"),
       path.resolve(__dirname, "./dist"),
     ],
+    historyApiFallback: {
+      index: 'index.html'
+    }
   },
 };

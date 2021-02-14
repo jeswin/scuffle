@@ -1,6 +1,5 @@
 import { ForgoRef, CSSProperties, rerender } from "forgo";
 import { ForgoRenderArgs } from "forgo";
-import Button from "../../components/Button";
 
 export type AddNoteProps = {
   style?: CSSProperties;
@@ -113,7 +112,7 @@ export default function AddNote(props: AddNoteProps) {
           </div>
           {!collapsed ? (
             <>
-              <div>
+              {/* <div>
                 <Button
                   onclick={onEditorClose}
                   style={{ marginLeft: "-4px" }}
@@ -130,7 +129,7 @@ export default function AddNote(props: AddNoteProps) {
                 >
                   Save
                 </Button>
-              </div>
+              </div> */}
             </>
           ) : undefined}
         </div>

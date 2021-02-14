@@ -1,9 +1,7 @@
 import { ForgoRenderArgs, rerender } from "forgo";
 import { match, Link } from "forgo-router";
 
-export type TopBarProps = {
-  selected: "home" | "notes" | "todos" | "bookmarks" | "discover";
-};
+export type TopBarProps = {};
 
 const items = [
   ["home", "Home", "home"],
