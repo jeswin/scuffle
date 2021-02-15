@@ -45,80 +45,82 @@ export default function TodoListItem({
       return (
         <li key={todo.id} className="align-middle pt-2 pb-2 flex text-sm">
           <Checkbox onChange={onCheckboxClick} checked={isChecked} />
-          {!isChecked ? (
-            <span className="inline-block pt-1">{todo.title}</span>
-          ) : (
-            <span className="inline-block w-12 h-2">
-              <svg
-                version="1.1"
-                id="L4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 20 100 100"
-                enable-background="new 0 0 0 0"
-              >
-                <circle fill="gray" stroke="none" cx="6" cy="50" r="6">
-                  <animate
-                    attributeName="opacity"
-                    dur="1s"
-                    values="0;1;0"
-                    repeatCount="indefinite"
-                    begin="0.1"
-                  />
-                </circle>
-                <circle fill="gray" stroke="none" cx="26" cy="50" r="6">
-                  <animate
-                    attributeName="opacity"
-                    dur="1s"
-                    values="0;1;0"
-                    repeatCount="indefinite"
-                    begin="0.2"
-                  />
-                </circle>
-                <circle fill="gray" stroke="none" cx="46" cy="50" r="6">
-                  <animate
-                    attributeName="opacity"
-                    dur="1s"
-                    values="0;1;0"
-                    repeatCount="indefinite"
-                    begin="0.3"
-                  />
-                </circle>
-              </svg>
-            </span>
-          )}
-          {!isChecked ? (
-            todo.tags ? (
-              <div>
-                {todo.tags.map((tag) => {
-                  const [bg, fg] = colorForString(tag);
-                  return (
-                    <Link
-                      key={tag}
-                      href={`/tags/${tag}`}
-                      className="inline-block link rounded-md font-thin mt-0.5 px-3 py-1 ml-1 mr-1 text-xs"
-                      style={{
-                        backgroundColor: bg,
-                        color: fg,
-                      }}
-                    >
-                      #{tag}
-                    </Link>
-                  );
-                })}
-              </div>
+          <span className="inline-block">
+            {!isChecked ? (
+              <span className="inline-block pt-1 mr-2">{todo.title}</span>
             ) : (
-              <></>
-            )
-          ) : (
-            <span className="inline-block pt-1">
-              <span className="text-gray-500 -ml-4">
-                completing in {secondsLeft}s...
-              </span>{" "}
-              <a href="#" onclick={onCancelClick}>
-                cancel
-              </a>
-            </span>
-          )}
+              <span className="inline-block w-12 h-2">
+                <svg
+                  version="1.1"
+                  id="L4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 20 100 100"
+                  enable-background="new 0 0 0 0"
+                >
+                  <circle fill="gray" stroke="none" cx="6" cy="50" r="6">
+                    <animate
+                      attributeName="opacity"
+                      dur="1s"
+                      values="0;1;0"
+                      repeatCount="indefinite"
+                      begin="0.1"
+                    />
+                  </circle>
+                  <circle fill="gray" stroke="none" cx="26" cy="50" r="6">
+                    <animate
+                      attributeName="opacity"
+                      dur="1s"
+                      values="0;1;0"
+                      repeatCount="indefinite"
+                      begin="0.2"
+                    />
+                  </circle>
+                  <circle fill="gray" stroke="none" cx="46" cy="50" r="6">
+                    <animate
+                      attributeName="opacity"
+                      dur="1s"
+                      values="0;1;0"
+                      repeatCount="indefinite"
+                      begin="0.3"
+                    />
+                  </circle>
+                </svg>
+              </span>
+            )}
+            {!isChecked ? (
+              todo.tags ? (
+                <span className="inline-block mt-2">
+                  {todo.tags.map((tag) => {
+                    const [bg, fg] = colorForString(tag);
+                    return (
+                      <Link
+                        key={tag}
+                        href={`/tags/${tag}`}
+                        className="link rounded-md font-thin mt-0.5 px-3 py-1 mr-1 text-xs"
+                        style={{
+                          backgroundColor: bg,
+                          color: fg,
+                        }}
+                      >
+                        #{tag}
+                      </Link>
+                    );
+                  })}
+                </span>
+              ) : (
+                <></>
+              )
+            ) : (
+              <span className="inline-block pt-1">
+                <span className="text-gray-500 -ml-4">
+                  completing in {secondsLeft}s...
+                </span>{" "}
+                <a href="#" onclick={onCancelClick}>
+                  cancel
+                </a>
+              </span>
+            )}
+          </span>
         </li>
       );
     },
