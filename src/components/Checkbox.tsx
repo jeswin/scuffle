@@ -4,23 +4,28 @@ export type CheckboxProps = {
   text?: string;
   checked?: boolean;
   className?: string;
+  onChange?: (checked: boolean) => void;
 };
 
 export default function Checkbox(props: CheckboxProps) {
-  let checked = props.checked ?? false;
   return {
     render(props: CheckboxProps, args: ForgoRenderArgs) {
       function onClick() {
-        checked = !checked;
         rerender(args.element);
+        if (props.onChange) {
+          props.onChange(!props.checked);
+        }
       }
 
       return (
         <div className={`inline-block ${props.className ?? ""}`}>
           <label className="flex justify-start items-start">
-            <div className="bg-white border-2 rounded-lg border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500" onclick={onClick}>
+            <div
+              className="bg-white border-2 rounded-lg border-gray-400 w-7 h-7 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"
+              onclick={onClick}
+            >
               <input type="checkbox" className="opacity-0 absolute" />
-              {checked ? (
+              {props.checked ? (
                 <svg
                   className="fill-current hidden w-4 h-4 text-green-500 pointer-events-none"
                   viewBox="-2 -2 24 24"

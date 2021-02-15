@@ -3,30 +3,11 @@ import { colorForString } from "../../modules/colors";
 import { StylesDictionary } from "../../types/ui";
 import { Link } from "forgo-router";
 import { ForgoAfterRenderArgs, ForgoRenderArgs, rerender } from "forgo";
+import Checkbox from "../../components/Checkbox";
 
 export type TodoListItemProps = {
   todo: Todo;
   onCompleteTodo: (todo: Todo) => void;
-};
-
-const styles: StylesDictionary = {
-  li: { padding: "0.5em", width: "100%", height: "1.5em" },
-  checkboxWrapper: { float: "left", marginTop: "-2px" },
-  checkbox: { marginRight: "0.8em", display: "block", float: "left" },
-  text: {
-    fontSize: "0.9em",
-    marginRight: "0.5em",
-    display: "block",
-    float: "left",
-  },
-  waiting: { marginTop: "-4px", display: "block", float: "left" },
-  completingText: {
-    marginLeft: "1em",
-    display: "block",
-    float: "left",
-    fontSize: "0.8em",
-  },
-  tagsWrapper: { float: "left" },
 };
 
 export default function TodoListItem({
@@ -49,8 +30,7 @@ export default function TodoListItem({
       }
 
       function onCheckboxClick() {
-        const newCheckedState = !isChecked;
-        isChecked = newCheckedState;
+        isChecked = !isChecked;
         cancelTimeout();
         rerender(args.element);
       }
@@ -63,38 +43,59 @@ export default function TodoListItem({
       }
 
       return (
-        <li key={todo.id} style={{ ...styles.li }}>
-          <div style={{ ...styles.checkboxWrapper }}>
-            <input
-              type="checkbox"
-              onchange={onCheckboxClick}
-              style={{ ...styles.checkbox }}
-              checked={isChecked}
-            />
-          </div>
+        <li key={todo.id} className="align-middle pt-2 pb-2 flex text-sm">
+          <Checkbox onChange={onCheckboxClick} checked={isChecked} />
           {!isChecked ? (
-            <span
-              style={{
-                ...styles.text,
-              }}
-            >
-              {todo.title}
-            </span>
+            <span className="inline-block pt-1">{todo.title}</span>
           ) : (
-            <span style={{ ...styles.waiting }}>
-              <img src="/img/loading-row.gif" alt="loading" />
+            <span className="inline-block w-12 h-2">
+              <svg
+                version="1.1"
+                id="L4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 20 100 100"
+                enable-background="new 0 0 0 0"
+              >
+                <circle fill="gray" stroke="none" cx="6" cy="50" r="6">
+                  <animate
+                    attributeName="opacity"
+                    dur="1s"
+                    values="0;1;0"
+                    repeatCount="indefinite"
+                    begin="0.1"
+                  />
+                </circle>
+                <circle fill="gray" stroke="none" cx="26" cy="50" r="6">
+                  <animate
+                    attributeName="opacity"
+                    dur="1s"
+                    values="0;1;0"
+                    repeatCount="indefinite"
+                    begin="0.2"
+                  />
+                </circle>
+                <circle fill="gray" stroke="none" cx="46" cy="50" r="6">
+                  <animate
+                    attributeName="opacity"
+                    dur="1s"
+                    values="0;1;0"
+                    repeatCount="indefinite"
+                    begin="0.3"
+                  />
+                </circle>
+              </svg>
             </span>
           )}
           {!isChecked ? (
             todo.tags ? (
-              <div style={{ ...styles.tagsWrapper }}>
+              <div>
                 {todo.tags.map((tag) => {
                   const [bg, fg] = colorForString(tag);
                   return (
                     <Link
                       key={tag}
                       href={`/tags/${tag}`}
-                      className="link"
+                      className="inline-block link rounded-md font-thin mt-0.5 px-3 py-1 ml-1 mr-1 text-xs"
                       style={{
                         backgroundColor: bg,
                         color: fg,
@@ -109,12 +110,8 @@ export default function TodoListItem({
               <></>
             )
           ) : (
-            <span
-              style={{
-                ...styles.completingText,
-              }}
-            >
-              <span style={{ color: "gray" }}>
+            <span className="inline-block pt-1">
+              <span className="text-gray-400 -ml-4">
                 completing in {secondsLeft}s...
               </span>{" "}
               <a href="#" onclick={onCancelClick}>
@@ -133,14 +130,15 @@ export default function TodoListItem({
           timerState.timeout = window.setTimeout(() => {
             secondsLeft =
               secondsLeft !== undefined ? secondsLeft - 1 : undefined;
+            rerender(args.element);
           }, 1000);
         }
       } else {
         if (isChecked) {
           secondsLeft = 5;
+          rerender(args.element);
         }
       }
-      rerender(args.element);
     },
   };
 }

@@ -1,6 +1,7 @@
 import TodoList from "./TodoList";
-import { navigateTo, Link } from "forgo-router";
+import { Link } from "forgo-router";
 import AddTodo from "./AddTodo";
+import { loadTodos } from "../actions";
 
 export default function TodosHome() {
   return {

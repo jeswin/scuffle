@@ -39,7 +39,7 @@ export default function App() {
       return (
         <Router>
           <div>
-            <TopBanner text="You are not syncing with personal storage yet." />
+            {/* <TopBanner text="You are not syncing with personal storage yet." /> */}
             <TopBar />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {matchExactUrl("/", () => <Home />) ||

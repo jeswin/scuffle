@@ -13,7 +13,7 @@ export default function TopBanner(props: TopBannerProps) {
               <div className="w-0 flex-1 flex items-center">
                 <span className="flex p-2 rounded-lg bg-red-800">
                   <svg
-                    className="h-6 w-6 text-white"
+                    class="h-6 w-6 text-white"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -43,14 +43,14 @@ export default function TopBanner(props: TopBannerProps) {
                   Setup storage
                 </a>
               </div>
-              <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
+              <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
                 <button
                   type="button"
-                  className="-mr-1 flex p-2 rounded-md hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
+                  class="-mr-1 flex p-2 rounded-md hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
                 >
-                  <span className="sr-only">Dismiss</span>
+                  <span class="sr-only">Dismiss</span>
                   <svg
-                    className="h-6 w-6 text-white"
+                    class="h-6 w-6 text-white"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
