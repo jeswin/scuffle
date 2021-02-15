@@ -5,6 +5,7 @@ import {
   ForgoAfterRenderArgs,
   ForgoRenderArgs,
 } from "forgo";
+import Checkbox from "../../components/Checkbox";
 import { JSX } from "forgo/jsx-runtime";
 
 export type AddTodoProps = {
@@ -12,9 +13,9 @@ export type AddTodoProps = {
 };
 
 export default function AddTodo(props: AddTodoProps) {
+  let points = 3;
   let collapsed = props.collapsed;
   let taskText = "";
-  let points = 0;
   let focusedOnce = false;
   let taskTextElement: ForgoRef<HTMLTextAreaElement> = {};
 
@@ -57,66 +58,93 @@ export default function AddTodo(props: AddTodoProps) {
         rerender(args.element);
       }
 
+      function updateView(fn: () => void) {
+        fn();
+        rerender(args.element);
+      }
+
       return (
         <>
           {collapsed ? (
             <button
-              className="rounded-full bg-green-600 text-white py-2 px-4 text-sm"
+              className="rounded-full bg-green-600 text-white py-2 px-4 text-sm focus:outline-none"
               onclick={onOpenTodoBox}
             >
               + Add Todo
             </button>
           ) : (
             <div>
-              <div>
-                <div>
-                  <ul>
-                    <li>
-                      <input type="checkbox" disabled={true} />
-                      <textarea
-                        ref={taskTextElement}
-                        onchange={(e) => (taskText = e.currentTarget.value)}
-                        placeholder="Type a description..."
-                        value={taskText}
-                      ></textarea>
-                    </li>
-                    <li>
-                      <label>Tags</label>
-                      <input placeholder="start typing tags..." type="text" />
-                    </li>
-                    <li>
-                      <label>Due on</label>
-                      <input placeholder="select a date..." type="text" />
-                    </li>
-                    <li>
-                      <label>Points?</label>
-                      <div>
-                        <div>
-                          <input
-                            type="range"
-                            min="0"
-                            max="25"
-                            defaultValue="0"
-                            id="points"
-                            onchange={onPointsChange}
-                          />
+              <div className="md:grid md:grid-cols-3 md:gap-6">
+                <div className="mt-5 md:mt-0 md:col-span-2">
+                  <form action="#" method="POST">
+                    <div className="shadow sm:rounded-lg sm:overflow-hidden">
+                      <div className="bg-white pl-3 pr-3">
+                        <div className="px-4 py-3 bg-white space-y-3 sm:p-6">
+                          <div className="border-b p-2">
+                            <Checkbox className="align-top" />
+                            <textarea
+                              ref={taskTextElement}
+                              placeholder="Type a description..."
+                              className="focus:outline-none"
+                              rows={1}
+                            ></textarea>
+                          </div>
+                          <div className="flex space-x-4 border-b p-2">
+                            <div style={{ width: "50px" }}>Tags</div>
+                            <div>
+                              <input
+                                type="text"
+                                className="focus:outline-none"
+                                placeholder="starting typing tags..."
+                              />
+                            </div>
+                          </div>
+                          <div className="flex space-x-4 border-b p-2">
+                            <div style={{ width: "50px" }}>Due?</div>
+                            <div>
+                              <input
+                                type="text"
+                                className="focus:outline-none"
+                                placeholder="add a date maybe"
+                              />
+                            </div>
+                          </div>
+                          <div className="flex space-x-4 p-2">
+                            <div style={{ width: "50px" }}>Points</div>
+                            <div>
+                              <input
+                                type="range"
+                                min="1"
+                                max="11"
+                                value={points}
+                                onchange={(e) =>
+                                  updateView(() => {
+                                    points = parseInt(e.currentTarget.value);
+                                  })
+                                }
+                              />
+                              <span className="pl-3 text-sm text-gray-600 inline-block align-top">
+                                {points} points
+                              </span>
+                              <p className="text-sm text-gray-400">
+                                Optional. How many points do you get for
+                                finishing this?
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                        <p>
-                          {points === 0
-                            ? "Optional. How many points do you get for finishing this?"
-                            : `${points} points for finishing this`}
-                        </p>
                       </div>
-                    </li>
-                  </ul>
-                  <div>
-                    {/* <Button color="primary" onclick={onAddTodoClick}>
-                      Add this todo
-                    </Button>
-                    <Button color="standard" onclick={collapseControl}>
-                      Cancel
-                    </Button> */}
-                  </div>
+
+                      <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">
+                        <button
+                          type="submit"
+                          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-full text-white bg-green-600 hover:bg-green-700 focus:outline-none"
+                        >
+                          Add this Todo
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>

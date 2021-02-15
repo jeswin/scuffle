@@ -1,6 +1,7 @@
 import { Router, matchUrl, updateRoute, matchExactUrl } from "forgo-router";
 
 import TopBar from "./components/TopBar";
+import TopBanner from "./components/TopBanner";
 import Home from "./home";
 import Notes from "./notes";
 import Bookmarks from "./bookmarks";
@@ -38,6 +39,7 @@ export default function App() {
       return (
         <Router>
           <div>
+            <TopBanner text="You are not syncing with personal storage yet." />
             <TopBar />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {matchExactUrl("/", () => <Home />) ||

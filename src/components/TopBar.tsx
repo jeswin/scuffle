@@ -181,7 +181,7 @@ export default function TopBar(props: TopBarProps) {
                   })
                 }
               >
-                <button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                <button className="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white">
                   <span className="sr-only">Open main menu</span>
 
                   <svg
@@ -230,33 +230,33 @@ export default function TopBar(props: TopBarProps) {
 
               <a
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Notes
               </a>
 
               <a
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Todos
               </a>
 
               <a
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Bookmarks
               </a>
 
               <a
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Discover
               </a>
             </div>
-            <div className="pt-4 pb-3 border-t border-gray-700">
+            <div className="pt-4 pb-3 border-t border-b border-gray-300">
               <div className="flex items-center px-5">
                 <div className="flex-shrink-0">
                   <img
@@ -266,14 +266,14 @@ export default function TopBar(props: TopBarProps) {
                   />
                 </div>
                 <div className="ml-3">
-                  <div className="text-base font-medium leading-none text-white">
+                  <div className="text-base font-medium leading-none text-gray-500">
                     Tom Cook
                   </div>
-                  <div className="text-sm font-medium leading-none text-gray-400">
+                  <div className="text-sm font-medium leading-none text-gray-500">
                     tom@example.com
                   </div>
                 </div>
-                <button className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                <button className="ml-auto bg-gray-300 flex-shrink-0 p-1 rounded-full text-gray-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white">
                   <span className="sr-only">View notifications</span>
                   <svg
                     class="h-6 w-6"
@@ -295,21 +295,21 @@ export default function TopBar(props: TopBarProps) {
               <div className="mt-3 px-2 space-y-1">
                 <a
                   href="#"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-white hover:bg-gray-700"
                 >
                   Your Profile
                 </a>
 
                 <a
                   href="#"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-white hover:bg-gray-700"
                 >
                   Settings
                 </a>
 
                 <a
                   href="#"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-white hover:bg-gray-700"
                 >
                   Sign out
                 </a>
