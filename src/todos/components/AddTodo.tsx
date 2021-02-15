@@ -138,9 +138,15 @@ export default function AddTodo(props: AddTodoProps) {
                       <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">
                         <button
                           type="submit"
-                          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-full text-white bg-green-600 hover:bg-green-700 focus:outline-none"
+                          className="inline-flex justify-center mr-2 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-full text-white bg-green-600 hover:bg-green-700 focus:outline-none"
                         >
                           Add this Todo
+                        </button>
+                        <button
+                          type="submit"
+                          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-full text-black bg-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none"
+                        >
+                          Cancel
                         </button>
                       </div>
                     </div>

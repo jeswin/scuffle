@@ -111,7 +111,7 @@ export default function TodoListItem({
             )
           ) : (
             <span className="inline-block pt-1">
-              <span className="text-gray-400 -ml-4">
+              <span className="text-gray-500 -ml-4">
                 completing in {secondsLeft}s...
               </span>{" "}
               <a href="#" onclick={onCancelClick}>

@@ -15,7 +15,7 @@ export default function TodoList() {
 
       return (
         <div>
-          <h3 className="mt-3 font-bold">Today</h3>
+          <h3 className="mt-6 font-bold">Today</h3>
           <ul>
             {state.tasks?.map((todo) => (
               <TodoListItem
