@@ -47,14 +47,14 @@ export default function TodoListItem({
           <Checkbox onChange={onCheckboxClick} checked={isChecked} />
           <span className="inline-block">
             {!isChecked ? (
-              <span className="inline-block pt-1 mr-2">{todo.title}</span>
+              <span className="inline-block pt-1 mr-2 mb-2">{todo.title}</span>
             ) : (
               <span className="inline-block w-12 h-2">
                 <svg
                   version="1.1"
                   id="L4"
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 20 100 100"
+                  viewBox="0 40 100 100"
                   enable-background="new 0 0 0 0"
                 >
                   <circle fill="gray" stroke="none" cx="6" cy="50" r="6">
@@ -89,7 +89,7 @@ export default function TodoListItem({
             )}
             {!isChecked ? (
               todo.tags ? (
-                <span className="inline-block mt-2">
+                <span className="inline-block">
                   {todo.tags.map((tag) => {
                     const [bg, fg] = colorForString(tag);
                     return (

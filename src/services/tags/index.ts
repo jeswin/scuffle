@@ -13,11 +13,11 @@ export async function getItemsByTags(
 ): Promise<{
   bookmarks: Bookmark[];
   notes: Note[];
-  tasks: Todo[];
+  todos: Todo[];
 }> {
   return {
     bookmarks: await bookmarksService.getItemsByTags(tags),
     notes: await notesService.getItemsByTags(tags),
-    tasks: await todosService.getItemsByTags(tags),
+    todos: await todosService.getItemsByTags(tags),
   };
 }

@@ -10,7 +10,7 @@ export default function TodosHome() {
         <div>
           <p className="mt-4 text-sm">
             <span className="font-bold">Active</span> |{" "}
-            <Link href="tasks/completed" className="text-blue-600 underline">
+            <Link href="tasks/completed" className="border-b-2 border-blue-500 pb-0.5 text-blue-500">
               Completed
             </Link>
           </p>
