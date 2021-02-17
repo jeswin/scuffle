@@ -53,7 +53,7 @@ export default function AddNote(props: AddNoteProps) {
               />
               <br />
               <textarea
-                className="focus:outline-none w-full resize-none"
+                className="focus:outline-none w-full"
                 key="note_contents"
                 ref={noteTextareaRef}
                 rows={collapsed ? 1 : 6}

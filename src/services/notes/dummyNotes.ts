@@ -45,4 +45,26 @@ export const notes: Note[] = [
       "Jimmy Kimmel, hosting the show in the mostly empty arena, invoked “our old pal television” in his introduction, pushing the theme that the medium has provided an essential relief this year from the emotional toll of pandemic, protest and disunion. The world may be terrible, he said, but television has never been better. That may be true, but the Emmys show continued its trend of feeling out of tune with the way most of us watch TV. Once a year, it gives us that old feeling of being trapped inside a very small box.",
     createdAt: Date.now() - 200000000,
   },
+  {
+    id: "n7",
+    title: "Judas and the Black Messiah",
+    text:
+      "Nearly great — movie about the charismatic Fred Hampton and the way the Black Panther Party was targeted by the United States government. Yet neither the standout performances from Daniel Kaluuya and Lakeith Stanfield nor the sensitive and insightful direction by Shaka King are the most remarkable aspects of the film: Not since Spike Lee’s 1992 biopic “Malcolm X” has there been a mainstream American film this thoroughly Black and radical.",
+    createdAt: Date.now() - 210000000,
+  },
+  {
+    id: "n8",
+    title: "Black History Month",
+    text:
+      "Black History Month was a mystery to me as a kid. I could never understand why we were taught some Black history but not nearly enough, not even close. We would learn about Frederick Douglass but not Nat Turner. Booker T. Washington but not W.E.B. Du Bois. Our teachers made a point of telling us about the Rev. Dr. Martin Luther King Jr. but completely neglected Malcolm X. With this approach, they tacitly communicated that only the Black historical figures who included white people doing the work of Black liberation were the ones worthy of remembrance. This was especially true when it came to Black radicals. The Panthers, who were important to my community when I was growing up, and the Black power movement were never part of the narrative at school. The same can be said of Hollywood.",
+    createdAt: Date.now() - 210000000,
+  },
+
+  {
+    id: "n9",
+    title: "Native American Stand-Ups",
+    text:
+      "Nesteroff digs into an episode in which Rogers faced a backlash for using a racial slur about Black people on the radio in 1934. This led to denunciations in newspapers, protests and boycotts — with Rogers stubbornly doubling down a year before dying in a plane crash. “That story was scrubbed from history books,” Nesteroff told me in a video interview.",
+    createdAt: Date.now() - 220000000,
+  },
 ];
