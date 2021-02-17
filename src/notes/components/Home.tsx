@@ -6,7 +6,7 @@ export default function NotesHome() {
     render() {
       return (
         <>
-          <AddNote collapsed={true} style={{ marginBottom: "1em" }} />
+          <AddNote collapsed={true} />
           <NotesList />
         </>
       );

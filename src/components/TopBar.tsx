@@ -141,7 +141,7 @@ export default function TopBar(props: TopBarProps) {
                     <div
                       className={`${
                         showSettingsPopup ? "block" : "hidden"
-                      } origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5`}
+                      } origin-top-right absolute right-0 mt-2 w-48 rounded-md py-1 bg-white ring-1 ring-black ring-opacity-5`}
                       role="menu"
                       aria-orientation="vertical"
                       aria-labelledby="user-menu"

@@ -8,7 +8,7 @@ export async function loadNotes(): Promise<void> {
   state.notes = notes;
 }
 
-export async function addNotes(title: string, text: string): Promise<void> {
+export async function addNote(title: string, text: string): Promise<void> {
   const note = {
     id: randomId(),
     title,

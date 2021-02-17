@@ -9,13 +9,7 @@ export default function NotesList() {
   const component = {
     render() {
       return (
-        <ul
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "flex-start",
-          }}
-        >
+        <ul className="flex flex-wrap items-start -ml-8">
           {state.notes?.map((note) => (
             <NotesListItem key={note.id} {...note} />
           ))}
