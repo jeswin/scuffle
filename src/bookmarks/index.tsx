@@ -1,7 +1,10 @@
-export default function BookmarksHome() {
+import { matchExactUrl } from "forgo-router";
+import BookmarksHome from "./components/Home";
+
+export default function BookmarksIndex() {
   return {
     render() {
-      return <div>Bookmarks module</div>;
+      return matchExactUrl("/bookmarks", () => <BookmarksHome />);
     },
   };
 }
