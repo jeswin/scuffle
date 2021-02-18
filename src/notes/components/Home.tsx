@@ -1,4 +1,4 @@
-import AddNote from "./EditNote";
+import EditNote from "./EditNote";
 import NotesList from "./NotesList";
 
 export default function NotesHome() {
@@ -6,7 +6,7 @@ export default function NotesHome() {
     render() {
       return (
         <>
-          <AddNote mode={"collapsed"} />
+          <EditNote mode={"collapsed"} />
           <NotesList />
         </>
       );

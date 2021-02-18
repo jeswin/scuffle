@@ -2,12 +2,12 @@ import { ForgoRef, CSSProperties, rerender, ForgoAfterRenderArgs } from "forgo";
 import { ForgoRenderArgs } from "forgo";
 import { addNote } from "../actions";
 
-export type AddNoteProps = {
+export type EditNoteProps = {
   style?: CSSProperties;
   mode: "collapsed" | "edit" | "expanded";
 };
 
-export default function AddNote(props: AddNoteProps) {
+export default function AddNote(props: EditNoteProps) {
   let firstTimeLoad = true;
   let mode = props.mode;
   let noteTextareaRef: ForgoRef<HTMLTextAreaElement> = {};
@@ -19,7 +19,7 @@ export default function AddNote(props: AddNoteProps) {
   let noteText = "";
 
   return {
-    render(props: AddNoteProps, args: ForgoRenderArgs) {
+    render(props: EditNoteProps, args: ForgoRenderArgs) {
       function onPlaceholderClick() {
         mode = "edit";
         rerender(args.element);
@@ -114,7 +114,7 @@ export default function AddNote(props: AddNoteProps) {
             <div>
               <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-40 overflow-hidden bg-gray-700 opacity-75 flex flex-col items-center justify-center"></div>
               <div className="fixed top-0 left-0 right-0 bottom-0 p-8 w-full h-screen z-50 overflow-hidden  opacity-100 flex flex-col items-center justify-center">
-                <div className="p-4 mt-6 mb-4 w-full bg-white rounded-md border border-gray-400 flex flex-col h-full">
+                <div className="p-8 mt-6 mb-4 w-full bg-white rounded-md border border-gray-400 flex flex-col h-full">
                   <input
                     className="focus:outline-none w-full font-bold text-lg mb-2"
                     key="note_title"
@@ -167,7 +167,7 @@ export default function AddNote(props: AddNoteProps) {
         </div>
       );
     },
-    afterRender(props: AddNoteProps, args: ForgoAfterRenderArgs) {
+    afterRender(props: EditNoteProps, args: ForgoAfterRenderArgs) {
       if (firstTimeLoad && noteTextareaRef.value) {
         firstTimeLoad = false;
         noteTextareaRef.value.focus();
