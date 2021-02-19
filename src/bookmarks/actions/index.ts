@@ -7,7 +7,7 @@ export async function loadBookmarks(): Promise<void> {
   state.bookmarks = bookmarks;
 }
 
-export async function addBookmarkAction(
+export async function addBookmark(
   url: string,
   title: string
 ): Promise<void> {

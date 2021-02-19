@@ -21,12 +21,6 @@ export default function AddTodo(props: AddTodoProps) {
 
   return {
     render(props: AddTodoProps, args: ForgoRenderArgs) {
-      /*
-    If the user enters multiple lines, the first line becomes the title.
-    And the rest becomes the description.
-    TODO: Add support for tags in title and description.
-    Perhaps give more prominence to title tags?
-  */
       function onAddTodoClick() {
         const taskTextParts = taskText.split("\n").filter((x) => x);
         if (taskTextParts.length) {
@@ -136,14 +130,10 @@ export default function AddTodo(props: AddTodoProps) {
                       </div>
 
                       <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">
-                        <button
-                          className="inline-flex justify-center mr-2 py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-green-600 hover:bg-green-700 focus:outline-none"
-                        >
+                        <button className="inline-flex justify-center mr-2 py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-green-600 hover:bg-green-700 focus:outline-none">
                           Add this Todo
                         </button>
-                        <button
-                          className="inline-flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-black bg-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none"
-                        >
+                        <button className="inline-flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-black bg-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none">
                           Cancel
                         </button>
                       </div>
