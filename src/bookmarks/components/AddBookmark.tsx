@@ -25,6 +25,7 @@ export default function AddBookmark(props: AddBookmarkProps) {
       function clickPlaceholder() {
         collapsed = false;
         rerender(args.element);
+        (bookmarkUrlElement.value as HTMLInputElement).focus();
       }
 
       return collapsed ? (
@@ -56,7 +57,6 @@ export default function AddBookmark(props: AddBookmarkProps) {
                       </div>
                       <div className="border-b p-2">
                         <input
-                          ref={bookmarkUrlElement}
                           placeholder="Optional description..."
                           className="focus:outline-none"
                         ></input>
