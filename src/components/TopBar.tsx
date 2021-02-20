@@ -1,14 +1,17 @@
 import { ForgoRenderArgs, rerender } from "forgo";
 import { match, Link } from "forgo-router";
+import makeIcons from "../icons";
 
 export type TopBarProps = {};
 
+const icons = makeIcons({ height: "16", width: "16", viewBox: "0 -2 24 24" });
+
 const items = [
-  ["home", "Home", "home"],
-  ["notes", "Notes", "notes"],
-  ["todos", "Todos", "add_task"],
-  ["bookmarks", "Bookmarks", "bookmark"],
-  ["discover", "Discover", "stars"],
+  ["home", "Home", icons.home],
+  ["notes", "Notes", icons.notes],
+  ["todos", "Todos", icons.add_task],
+  ["bookmarks", "Bookmarks", icons.bookmarks],
+  ["discover", "Discover", icons.stars],
 ];
 
 export default function TopBar(props: TopBarProps) {
@@ -50,27 +53,23 @@ export default function TopBar(props: TopBarProps) {
                   <div className="ml-10 flex items-baseline space-x-4">
                     {items.map(([id, text, icon]) =>
                       id === selected ? (
-                        <div className="bg-gray-300 text-black -ml-4 px-3 pt-1 pb-2 rounded-md font-medium">
+                        <div className="bg-gray-300 text-black -ml-4 px-3 py-2 rounded-md font-medium">
                           <Link
-                            className="inline-block align-middle text-sm"
+                            className="inline-block align-middle text-sm flex"
                             href={`/${id === "home" ? "" : id}`}
                           >
-                            <i className="inline-block align-middle pr-1.5 material-icons text-sm">
-                              {icon}
-                            </i>
-                            <span className="inline-block">{text}</span>
+                            {icon}
+                            <span className="inline-block pl-1">{text}</span>
                           </Link>
                         </div>
                       ) : (
                         <div className="text-gray-700 -ml-4 px-3 py-2 rounded-md font-medium">
                           <Link
-                            className="inline-block align-middle text-sm"
+                            className="inline-block align-middle text-sm flex"
                             href={`/${id === "home" ? "" : id}`}
                           >
-                            <i className="inline-block align-middle pr-1.5 material-icons text-sm">
-                              {icon}
-                            </i>
-                            <span className="inline-block">{text}</span>
+                            {icon}
+                            <span className="inline-block pl-1">{text}</span>
                           </Link>
                         </div>
                       )
