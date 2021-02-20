@@ -1,11 +1,18 @@
 import { ForgoRef, CSSProperties, rerender, ForgoAfterRenderArgs } from "forgo";
 import { ForgoRenderArgs } from "forgo";
 import { addNote } from "../actions";
+import makeIcons from "../../icons";
 
 export type EditNoteProps = {
   style?: CSSProperties;
   mode: "collapsed" | "edit" | "expanded";
 };
+
+const icons = makeIcons({
+  height: "20",
+  width: "20",
+  viewBox: "0 -2 24 24",
+});
 
 export default function AddNote(props: EditNoteProps) {
   let firstTimeLoad = true;
@@ -148,9 +155,9 @@ export default function AddNote(props: EditNoteProps) {
           ) : (
             <div
               onclick={onPlaceholderClick}
-              className="pt-3 pr-2 pb-2 pl-2 mt-6 mb-8 rounded-md border border-gray-400 max-w-3xl"
+              className="pt-3 pr-2 pb-3 pl-2 mt-6 mb-8 rounded-md border border-gray-400 max-w-3xl flex"
             >
-              <i className="material-icons">notes</i>
+              {icons.notes}
               <textarea
                 className="focus:outline-none ml-4 resize-none"
                 key="note_contents_placeholder"
