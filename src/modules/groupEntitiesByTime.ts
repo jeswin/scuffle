@@ -15,7 +15,8 @@ function timeDiff(from: number, now: number = Date.now()) {
 }
 
 export default function groupEntitiesByTime<T extends ScuffleEntityBase>(
-  items: T[]
+  items: T[],
+  reverseChronological = true
 ): Map<string, T[]> {
   const now = Date.now();
 
@@ -31,8 +32,8 @@ export default function groupEntitiesByTime<T extends ScuffleEntityBase>(
     }
   }
 
-  const sortedList = Array.from(result.entries()).sort(
-    (a, b) => a[1][0] - b[1][0]
+  const sortedList = Array.from(result.entries()).sort((a, b) =>
+    reverseChronological ? b[1][0] - a[1][0] : a[1][0] - b[1][0]
   );
 
   return sortedList.reduce((acc, [timeString, [timeNum, items]]) => {

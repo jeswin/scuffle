@@ -1,18 +1,12 @@
 import { ForgoRef, CSSProperties, rerender, ForgoAfterRenderArgs } from "forgo";
 import { ForgoRenderArgs } from "forgo";
 import { addNote } from "../actions";
-import makeIcons from "../../icons";
+import { iconsDefault as icons } from "../../icons";
 
 export type EditNoteProps = {
   style?: CSSProperties;
   mode: "collapsed" | "edit" | "expanded";
 };
-
-const icons = makeIcons({
-  height: "20",
-  width: "20",
-  viewBox: "0 -2 24 24",
-});
 
 export default function AddNote(props: EditNoteProps) {
   let firstTimeLoad = true;
@@ -68,7 +62,7 @@ export default function AddNote(props: EditNoteProps) {
       return (
         <div>
           {mode === "edit" ? (
-            <div className="p-4 mt-6 mb-4 rounded-md border border-gray-400">
+            <div className="p-4 mt-6 mb-8 rounded-md border border-gray-400">
               <input
                 className="focus:outline-none w-full font-bold text-lg mb-2"
                 key="note_title"

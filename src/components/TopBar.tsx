@@ -1,10 +1,8 @@
 import { ForgoRenderArgs, rerender } from "forgo";
 import { match, Link } from "forgo-router";
-import makeIcons from "../icons";
+import { iconsDefault as icons } from "../icons";
 
 export type TopBarProps = {};
-
-const icons = makeIcons({ height: "16", width: "16", viewBox: "0 -2 24 24" });
 
 const items = [
   ["home", "Home", icons.home],
