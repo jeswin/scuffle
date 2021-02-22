@@ -17,7 +17,7 @@ export default function TodoList() {
         <div>
           <h3 className="mt-6 font-bold">Today</h3>
           <ul>
-            {state.tasks?.map((todo) => (
+            {state.todos?.map((todo) => (
               <TodoListItem
                 key={todo.id}
                 todo={todo}

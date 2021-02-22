@@ -7,12 +7,10 @@ export async function loadBookmarks(): Promise<void> {
   state.bookmarks = bookmarks;
 }
 
-export async function addBookmark(
-  url: string,
-  title: string
-): Promise<void> {
+export async function addBookmark(url: string, title: string): Promise<void> {
   const bookmark = {
     id: randomId(),
+    type: "bookmark" as "bookmark",
     url,
     title,
     createdAt: Date.now(),
@@ -28,6 +26,7 @@ export async function updateBookmark(
 ): Promise<void> {
   const bookmark = {
     id,
+    type: "bookmark" as "bookmark",
     url,
     title,
     createdAt: Date.now(),

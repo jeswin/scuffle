@@ -11,6 +11,7 @@ export async function loadNotes(): Promise<void> {
 export async function addNote(title: string, text: string): Promise<void> {
   const note = {
     id: randomId(),
+    type: "note" as "note",
     title,
     text,
     createdAt: Date.now(),

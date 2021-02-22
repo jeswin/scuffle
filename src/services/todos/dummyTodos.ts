@@ -3,6 +3,7 @@ import { Todo } from "../../types";
 export const todos: Todo[] = [
   {
     id: "t1",
+    type: "todo",
     title: "Get the milk",
     description: "Walk to the nearby store, bargain and buy the milk.",
     tags: ["today", "routine"],
@@ -10,6 +11,7 @@ export const todos: Todo[] = [
   },
   {
     id: "t2",
+    type: "todo",
     title: "Exercise for 10 hours",
     description: "Auto added. Do this everyday.",
     tags: ["routine"],
@@ -17,6 +19,7 @@ export const todos: Todo[] = [
   },
   {
     id: "t3",
+    type: "todo",
     title: "Feed the lions",
     description: "Buy some meat. Feed the lions. Sleep next to them.",
     tags: ["zoo", "danger", "skunkworks"],
@@ -24,6 +27,7 @@ export const todos: Todo[] = [
   },
   {
     id: "t4",
+    type: "todo",
     title: "Lorem ipsum must sit somewhere",
     description: "Walk to the nearby store, bargain and buy the milk.",
     tags: ["today", "routine"],
@@ -31,6 +35,7 @@ export const todos: Todo[] = [
   },
   {
     id: "t5",
+    type: "todo",
     title: "Create gitsta markdown notes",
     description: "Auto added. Do this everyday.",
     tags: ["routine", "skunkworks"],
@@ -38,6 +43,7 @@ export const todos: Todo[] = [
   },
   {
     id: "t6",
+    type: "todo",
     title: "Discuss the Secure ScuttleButt API",
     description: "Buy some meat. Feed the lions. Sleep next to them.",
     tags: ["zoo", "danger", "skunkworks"],
@@ -45,6 +51,7 @@ export const todos: Todo[] = [
   },
   {
     id: "t7",
+    type: "todo",
     title: "Solid Discussion",
     description: "Walk to the nearby store, bargain and buy the milk.",
     tags: ["today", "routine"],
@@ -52,6 +59,7 @@ export const todos: Todo[] = [
   },
   {
     id: "t8",
+    type: "todo",
     title: "Blah blah go to the park",
     description: "Auto added. Do this everyday.",
     tags: ["routine", "skunkworks"],

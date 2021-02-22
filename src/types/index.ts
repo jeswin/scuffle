@@ -10,6 +10,7 @@ export type JwtData = {
 };
 
 export type ScuffleEntityBase = {
+  type: string;
   createdAt: number;
   tags?: string[];
 };
@@ -24,6 +25,7 @@ export type TagInfo = {
 };
 
 export type Todo = {
+  type: "todo",
   id: string;
   title: string;
   description?: string;
@@ -35,45 +37,17 @@ export type Todo = {
 } & ScuffleEntityBase;
 
 export type Note = {
+  type: "note",
   id: string;
   title: string;
   text: string;
 } & ScuffleEntityBase;
 
 export type Bookmark = {
+  type: "bookmark",
   id: string;
   url: string;
   title?: string;
 } & ScuffleEntityBase;
 
-export type Gallery = {
-  id: string;
-  name: string;
-} & ScuffleEntityBase;
-
-export type DirInfo = {
-  type: "dir";
-  name: string;
-  path: string;
-  createdAt: string;
-  updatedAt: string;
-  children: (DirInfo | FileInfo)[];
-} & ScuffleEntityBase;
-
-export type FileInfo = {
-  type: "file";
-  name: string;
-  path: string;
-  createdAt: string;
-  updatedAt: string;
-  size: number;
-} & ScuffleEntityBase;
-
-export type ScuffleEntity =
-  | Todo
-  | Note
-  | Bookmark
-  | Gallery
-  | DirInfo
-  | FileInfo;
-
+export type ScuffleEntity = Todo | Note | Bookmark;

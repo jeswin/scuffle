@@ -3,6 +3,7 @@ import { Bookmark } from "../../types";
 export const bookmarks: Bookmark[] = [
   {
     id: "b1",
+    type: "bookmark",
     createdAt: Date.now(),
     title:
       "Brain Drain: The Mere Presence of One’s Own Smartphone Reduces Available Cognitive Capacity",
@@ -11,6 +12,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b2",
+    type: "bookmark",
     createdAt: Date.now() - 2000000,
     title: "Why Christopher Nolan Actually Blew Up A Real Plane For Tenet",
     url:
@@ -19,6 +21,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b3",
+    type: "bookmark",
     createdAt: Date.now() - 2000000,
     title: "The age-old strategy of buying cheap shares is faltering",
     url:
@@ -27,6 +30,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b4",
+    type: "bookmark",
     createdAt: Date.now() - 10000000,
     title: "Giant Pacific Octopus",
     url:
@@ -35,6 +39,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b5",
+    type: "bookmark",
     createdAt: Date.now() - 50000000,
     title: "Iron, How Did They Make It? Part I, Mining",
     url:
@@ -43,6 +48,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b6",
+    type: "bookmark",
     createdAt: Date.now() - 50000000,
     title: "gitsta-org/gitsta-todo",
     url: "https://github.com/gitsta-org/gitsta-todo",
@@ -50,6 +56,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b7",
+    type: "bookmark",
     createdAt: Date.now(),
     title: "Exclusive: America's true unemployment rate",
     url:
@@ -58,6 +65,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b8",
+    type: "bookmark",
     createdAt: Date.now() - 2000000,
     title: "Early Work",
     url: "http://paulgraham.com/early.html",
@@ -65,6 +73,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b9",
+    type: "bookmark",
     createdAt: Date.now() - 2000000,
     title: "A Special Supplement: Reflections on Violence",
     url:
@@ -73,6 +82,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b10",
+    type: "bookmark",
     createdAt: Date.now() - 10000000,
     title: "The biggest thing I learned launching Zapier",
     url: "https://mikeknoop.com/biggest-thing-learned-launching-zapier/",
@@ -80,6 +90,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b11",
+    type: "bookmark",
     createdAt: Date.now() - 50000000,
     title:
       "Hey is a wildly opinionated new email service from the makers of BaseCamp",
@@ -89,6 +100,7 @@ export const bookmarks: Bookmark[] = [
   },
   {
     id: "b12",
+    type: "bookmark",
     createdAt: Date.now() - 50000000,
     title: "The Long Road To HTTP/3",
     url: "https://scorpil.com/post/the-long-road-to-http3/",

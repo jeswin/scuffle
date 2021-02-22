@@ -5,7 +5,7 @@ import state from "../state";
 
 export async function loadTodos(): Promise<void> {
   const tasks = await todosService.getAllTodos();
-  state.tasks = tasks;
+  state.todos = tasks;
 }
 
 export async function addTodo(
@@ -14,17 +14,18 @@ export async function addTodo(
 ): Promise<void> {
   const todo = {
     id: randomId(),
+    type: "todo" as "todo",
     title,
     description,
     createdAt: Date.now(),
   };
 
   await todosService.saveTodo(todo);
-  state.tasks = state.tasks.concat(todo);
+  state.todos = state.todos.concat(todo);
 }
 
 export async function completeTodo(todo: Todo): Promise<void> {
   await todosService.completeTodo(todo);
-  state.tasks = state.tasks.filter((x) => x.id !== todo.id);
+  state.todos = state.todos.filter((x) => x.id !== todo.id);
   state.completedTodos = state.completedTodos.concat(todo);
 }

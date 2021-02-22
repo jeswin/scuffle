@@ -1,15 +1,11 @@
-import { Bookmark, Note, Todo } from "../../types";
+import { Bookmark, Note, ScuffleEntity, Todo } from "../../types";
 import TodoListItem from "../../todos/components/TodoListItem";
 import { completeTodo } from "../actions";
 import { ForgoRenderArgs, rerender } from "forgo";
 
 export type ItemsByDateProps = {
   timeAgo: string;
-  items: {
-    todos: Todo[];
-    notes: Note[];
-    bookmarks: Bookmark[];
-  };
+  items: ScuffleEntity[];
 };
 
 export default function ItemsByDate(props: ItemsByDateProps) {
@@ -21,16 +17,18 @@ export default function ItemsByDate(props: ItemsByDateProps) {
       }
 
       return (
-        <div className="flex flex-wrap">
-          <div className="w-32 pt-2 text-xs font-bold">{props.timeAgo}</div>
+        <div>
+          <h2 className="py-2 font-bold">{props.timeAgo}</h2>
           <ul>
-            {props.items.todos.map((todo) => (
-              <TodoListItem
-                key={todo.id}
-                todo={todo}
-                onCompleteTodo={onCompleteTodo}
-              />
-            ))}
+            {(props.items.filter((x) => x.type === "todo") as Todo[]).map(
+              (todo: Todo) => (
+                <TodoListItem
+                  key={todo.id}
+                  todo={todo}
+                  onCompleteTodo={onCompleteTodo}
+                />
+              )
+            )}
           </ul>
         </div>
       );
