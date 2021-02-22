@@ -3,6 +3,8 @@ import TodoListItem from "./TodoListItem";
 import { Todo } from "../../types";
 import state from "../state";
 import { bindToStates } from "forgo-state";
+import groupEntitiesByTime from "../../modules/groupEntitiesByTime";
+import { iconsDefault as icons } from "../../icons";
 
 export default function TodoList() {
   actions.loadTodos();
@@ -13,11 +15,15 @@ export default function TodoList() {
         actions.completeTodo(todo);
       }
 
-      return (
-        <div>
-          <h3 className="mt-6 font-bold">Today</h3>
+      const todos = groupEntitiesByTime(state.todos);
+      return Array.from(todos.entries()).map(([timeString, items]) => (
+        <div className="mb-8">
+          <div className="flex pb-4 items-center">
+            {icons.access_time}
+            <h2 className="pl-2">{timeString}</h2>
+          </div>
           <ul>
-            {state.todos?.map((todo) => (
+            {items.map((todo) => (
               <TodoListItem
                 key={todo.id}
                 todo={todo}
@@ -26,7 +32,7 @@ export default function TodoList() {
             ))}
           </ul>
         </div>
-      );
+      ));
     },
   };
 

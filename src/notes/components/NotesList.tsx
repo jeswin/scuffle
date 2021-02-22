@@ -11,23 +11,19 @@ export default function NotesList() {
   const component = {
     render() {
       const notes = groupEntitiesByTime(state.notes);
-      return (
+      return Array.from(notes.entries()).map(([timeString, items]) => (
         <div>
-          {Array.from(notes.entries()).map(([timeString, items]) => (
-            <>
-              <div className="flex pb-4">
-                {icons.access_time}
-                <h2 className="pl-2">{timeString}</h2>
-              </div>
-              <ul className="flex flex-wrap items-start -ml-8">
-                {items.map((note) => (
-                  <NotesListItem key={note.id} {...note} />
-                ))}
-              </ul>
-            </>
-          ))}
+          <div className="flex pb-4 items-center">
+            {icons.access_time}
+            <h2 className="pl-2">{timeString}</h2>
+          </div>
+          <ul className="flex flex-wrap items-start -ml-8">
+            {items.map((note) => (
+              <NotesListItem key={note.id} {...note} />
+            ))}
+          </ul>
         </div>
-      );
+      ));
     },
   };
 

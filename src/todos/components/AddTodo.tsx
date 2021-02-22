@@ -61,7 +61,7 @@ export default function AddTodo(props: AddTodoProps) {
         <>
           {collapsed ? (
             <button
-              className="rounded-full bg-green-600 text-white py-2 px-4 text-sm focus:outline-none"
+              className="rounded-full bg-green-600 text-white py-2 px-4 mb-8 text-sm focus:outline-none"
               onclick={onOpenTodoBox}
             >
               + Add Todo
