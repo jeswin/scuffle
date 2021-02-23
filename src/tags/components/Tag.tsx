@@ -15,12 +15,6 @@ export default function TagView(props: TagViewProps) {
 
   const component = {
     render() {
-      const sortedItems = groupEntitiesByTime(
-        ([] as ScuffleEntity[])
-          .concat(state.bookmarks)
-          .concat(state.notes)
-          .concat(state.todos)
-      );
       return (
         <div>
           <div className="flex">
@@ -37,15 +31,7 @@ export default function TagView(props: TagViewProps) {
             </Link>
           </div>
 
-          <div className="mt-4 flex flex-col">
-            {Array.from(sortedItems.entries()).map(([timeAgo, items]) => (
-              <ItemsByDate
-                key={timeAgo.toString()}
-                timeAgo={timeAgo}
-                items={items}
-              />
-            ))}
-          </div>
+          <ItemsByDate items={state} />
         </div>
       );
     },

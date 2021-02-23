@@ -16,23 +16,27 @@ export default function TodoList() {
       }
 
       const todos = groupEntitiesByTime(state.todos);
-      return Array.from(todos.entries()).map(([timeString, items]) => (
-        <div className="mb-8">
-          <div className="flex pb-4 items-center">
-            {icons.access_time}
-            <h2 className="pl-2">{timeString}</h2>
-          </div>
-          <ul>
-            {items.map((todo) => (
-              <TodoListItem
-                key={todo.id}
-                todo={todo}
-                onCompleteTodo={onCompleteTodo}
-              />
-            ))}
-          </ul>
+      return (
+        <div>
+          {Array.from(todos.entries()).map(([timeString, items]) => (
+            <div className="mb-8">
+              <div className="flex pb-4 items-center">
+                {icons.access_time}
+                <h2 className="pl-2">{timeString}</h2>
+              </div>
+              <ul>
+                {items.map((todo) => (
+                  <TodoListItem
+                    key={todo.id}
+                    todo={todo}
+                    onCompleteTodo={onCompleteTodo}
+                  />
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-      ));
+      );
     },
   };
 
