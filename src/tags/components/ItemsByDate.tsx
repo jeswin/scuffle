@@ -4,6 +4,7 @@ import { completeTodo } from "../actions";
 import { ForgoRenderArgs, rerender } from "forgo";
 import groupEntitiesByTime from "../../modules/groupEntitiesByTime";
 import { iconsDefault as icons } from "../../icons";
+import BookmarksListItem from "../../bookmarks/components/BookmarksListItem";
 
 export type ItemsByDateProps = {
   items: {
@@ -31,7 +32,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
       return (
         <div className="mt-8">
           {Array.from(sortedItems.entries()).map(([timeString, items]) => (
-            <div>
+            <div className="mb-8">
               <div className="flex pb-4 items-center">
                 {icons.access_time}
                 <h2 className="pl-2">{timeString}</h2>
@@ -43,6 +44,14 @@ export default function ItemsByDate(props: ItemsByDateProps) {
                       key={todo.id}
                       todo={todo}
                       onCompleteTodo={onCompleteTodo}
+                    />
+                  )
+                )}
+                {(items.filter((x) => x.type === "bookmark") as Bookmark[]).map(
+                  (bookmark: Bookmark) => (
+                    <BookmarksListItem
+                      key={bookmark.id}
+                      bookmark={bookmark}
                     />
                   )
                 )}

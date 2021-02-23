@@ -29,7 +29,7 @@ export default function AddBookmark(props: AddBookmarkProps) {
       }
 
       return collapsed ? (
-        <div className="border-b p-2">
+        <div className="border-b p-2 mb-8">
           <input
             ref={placeholderBookmarkUrlElement}
             placeholder="Type a url..."
