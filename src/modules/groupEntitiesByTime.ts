@@ -8,8 +8,8 @@ function timeDiff(from: number, now: number = Date.now()) {
       minutes: "mins",
     },
     {
-      ms: 60 * 60 * 1000,
-      text: "in the past hour",
+      ms: 60 * 60 * 1000 * 24,
+      text: "today",
     }
   )(now, from);
 }

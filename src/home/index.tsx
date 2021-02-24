@@ -1,19 +1,21 @@
-import { Link } from "forgo-router";
 import ItemsByDate from "../components/ItemsByDate";
 import state from "../state";
-import { loadHomePageData } from "../actions";
-import { ForgoRenderArgs, rerender } from "forgo";
+import { completeTodo, loadHomePageData } from "../actions";
+import { ForgoRenderArgs } from "forgo";
+import { bindToStates } from "forgo-state";
 
 export default function HomeIndex() {
   loadHomePageData();
 
-  return {
+  const component = {
     render(props: unknown, args: ForgoRenderArgs) {
       return (
         <div>
-          <ItemsByDate items={state} />
+          <ItemsByDate completeTodo={completeTodo} items={state} />
         </div>
       );
     },
   };
+
+  return bindToStates([state], component);
 }

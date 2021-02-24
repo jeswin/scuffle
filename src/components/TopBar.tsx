@@ -9,6 +9,7 @@ const items = [
   ["notes", "Notes", icons.notes],
   ["todos", "Todos", icons.add_task],
   ["bookmarks", "Bookmarks", icons.bookmarks],
+  ["gallery", "Gallery", icons.photo_library],
   ["discover", "Discover", icons.stars],
 ];
 
@@ -51,7 +52,7 @@ export default function TopBar(props: TopBarProps) {
                   <div className="ml-10 flex items-baseline space-x-4">
                     {items.map(([id, text, icon]) =>
                       id === selected ? (
-                        <div className="bg-gray-300 text-black -ml-4 px-3 py-2 rounded-md font-medium">
+                        <div className="bg-gray-300 text-black -ml-4 px-3 py-2 rounded-md font-medium cursor-pointer">
                           <Link
                             className="inline-block align-middle items-center text-sm flex"
                             href={`/${id === "home" ? "" : id}`}
@@ -61,7 +62,7 @@ export default function TopBar(props: TopBarProps) {
                           </Link>
                         </div>
                       ) : (
-                        <div className="text-gray-700 -ml-4 px-3 py-2 rounded-md font-medium">
+                        <div className="text-gray-700 -ml-4 px-3 py-2 rounded-md font-medium cursor-pointer">
                           <Link
                             className="inline-block align-middle items-center text-sm flex"
                             href={`/${id === "home" ? "" : id}`}

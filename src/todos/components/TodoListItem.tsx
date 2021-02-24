@@ -17,6 +17,7 @@ export default function TodoListItem({
   let secondsLeft: number | undefined;
   let isChecked = false;
   let timerState: { timeout?: number } = {};
+  let completed = false;
 
   return {
     render(props: TodoListItemProps, args: ForgoRenderArgs) {
@@ -93,7 +94,10 @@ export default function TodoListItem({
     afterRender(props: TodoListItemProps, args: ForgoAfterRenderArgs) {
       if (secondsLeft !== undefined) {
         if (secondsLeft === 0) {
-          completeTodo(todo);
+          if (!completed) {
+            completed = true;
+            completeTodo(todo);
+          }
         } else {
           timerState.timeout = window.setTimeout(() => {
             secondsLeft =

@@ -1,6 +1,6 @@
 import { Link } from "forgo-router";
 import ItemsByDate from "../../components/ItemsByDate";
-import { loadTaggedItems } from "../actions";
+import { completeTodo, loadTaggedItems } from "../actions";
 import state from "../state";
 import { bindToStates } from "forgo-state";
 
@@ -29,7 +29,7 @@ export default function TagView(props: TagViewProps) {
             </Link>
           </div>
 
-          <ItemsByDate items={state} />
+          <ItemsByDate completeTodo={completeTodo} items={state} />
         </div>
       );
     },

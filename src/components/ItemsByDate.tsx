@@ -1,6 +1,5 @@
 import { Bookmark, Note, ScuffleEntity, Todo } from "../types";
 import TodoListItem from "../todos/components/TodoListItem";
-import { completeTodo } from "../todos/actions";
 import { ForgoRenderArgs, rerender } from "forgo";
 import groupEntitiesByTime from "../modules/groupEntitiesByTime";
 import { iconsDefault as icons } from "../icons";
@@ -8,6 +7,7 @@ import BookmarksListItem from "../bookmarks/components/BookmarksListItem";
 import NotesListItem from "../notes/components/NotesListItem";
 
 export type ItemsByDateProps = {
+  completeTodo: (todo: Todo) => void;
   items: {
     bookmarks: Bookmark[];
     notes: Note[];
@@ -19,7 +19,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
   return {
     render(props: ItemsByDateProps, args: ForgoRenderArgs) {
       function onCompleteTodo(todo: Todo) {
-        completeTodo(todo);
+        props.completeTodo(todo);
         rerender(args.element);
       }
 
