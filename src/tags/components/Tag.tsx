@@ -1,10 +1,8 @@
 import { Link } from "forgo-router";
-import { ScuffleEntity } from "../../types";
-import ItemsByDate from "./ItemsByDate";
+import ItemsByDate from "../../components/ItemsByDate";
 import { loadTaggedItems } from "../actions";
 import state from "../state";
 import { bindToStates } from "forgo-state";
-import groupEntitiesByTime from "../../modules/groupEntitiesByTime";
 
 export type TagViewProps = {
   tags: string[];

@@ -16,14 +16,14 @@ export default function BookmarksList() {
       return (
         <div>
           {Array.from(bookmarks.entries()).map(([timeString, items]) => (
-            <div className="mb-8">
-              <div className="flex pb-4 items-center">
+            <div className="mb-4">
+              <div className="flex pb-2 items-center">
                 {icons.access_time}
                 <h2 className="pl-2">{timeString}</h2>
               </div>
               <ul>
                 {items.map((bookmark) => (
-                  <BookmarksListItem key={bookmark.id} bookmark={bookmark} />
+                  <BookmarksListItem key={bookmark.id} bookmark={bookmark} summarize={false} />
                 ))}
               </ul>
             </div>

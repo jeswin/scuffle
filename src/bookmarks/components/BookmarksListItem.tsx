@@ -8,6 +8,7 @@ import { iconsDefault } from "../../icons";
 
 export type BookmarksListItemProps = {
   bookmark: Bookmark;
+  summarize: boolean;
 };
 
 export default function BookmarksListItem(props: BookmarksListItemProps) {
@@ -15,8 +16,8 @@ export default function BookmarksListItem(props: BookmarksListItemProps) {
     render(props: BookmarksListItemProps, args: ForgoRenderArgs) {
       return (
         <li className="flex py-2 items-center">
-          {iconsDefault.more_vert}
-          <a href={props.bookmark.url} className="ml-4 text-blue-700">
+          {props.summarize ? iconsDefault.bookmarks : iconsDefault.more_vert}
+          <a href={props.bookmark.url} className="ml-3 text-sm text-blue-700 hover:underline">
             {props.bookmark.title ?? props.bookmark.url}
           </a>
         </li>

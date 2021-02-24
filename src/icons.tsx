@@ -59,17 +59,12 @@ function icons(options: { height?: string; width?: string; viewBox?: string }) {
     bookmarks: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        enable-background="new 0 0 24 24"
         height={height}
         viewBox={viewBox}
         width={width}
       >
-        <g>
-          <path d="M0,0h24v24H0V0z" fill="none" />
-        </g>
-        <g>
-          <path d="M15,5H5C3.9,5,3,5.9,3,7v14.48c0,0.72,0.73,1.2,1.39,0.92L10,20l5.61,2.4c0.66,0.28,1.39-0.2,1.39-0.92V7 C17,5.9,16.1,5,15,5z M20,20L20,20c0.55,0,1-0.45,1-1V3c0-1.1-0.9-2-2-2H7C6.45,1,6,1.45,6,2v0c0,0.55,0.45,1,1,1h12v16 C19,19.55,19.45,20,20,20z" />
-        </g>
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M15 7v12.97l-4.21-1.81-.79-.34-.79.34L5 19.97V7h10m4-6H8.99C7.89 1 7 1.9 7 3h10c1.1 0 2 .9 2 2v13l2 1V3c0-1.1-.9-2-2-2zm-4 4H5c-1.1 0-2 .9-2 2v16l7-3 7 3V7c0-1.1-.9-2-2-2z" />
       </svg>
     ),
     stars: (

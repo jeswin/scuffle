@@ -1,10 +1,10 @@
-import { Bookmark, Note, ScuffleEntity, Todo } from "../../types";
-import TodoListItem from "../../todos/components/TodoListItem";
-import { completeTodo } from "../actions";
+import { Bookmark, Note, ScuffleEntity, Todo } from "../types";
+import TodoListItem from "../todos/components/TodoListItem";
+import { completeTodo } from "../todos/actions";
 import { ForgoRenderArgs, rerender } from "forgo";
-import groupEntitiesByTime from "../../modules/groupEntitiesByTime";
-import { iconsDefault as icons } from "../../icons";
-import BookmarksListItem from "../../bookmarks/components/BookmarksListItem";
+import groupEntitiesByTime from "../modules/groupEntitiesByTime";
+import { iconsDefault as icons } from "../icons";
+import BookmarksListItem from "../bookmarks/components/BookmarksListItem";
 
 export type ItemsByDateProps = {
   items: {
@@ -52,6 +52,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
                     <BookmarksListItem
                       key={bookmark.id}
                       bookmark={bookmark}
+                      summarize={true}
                     />
                   )
                 )}

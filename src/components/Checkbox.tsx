@@ -20,7 +20,7 @@ export default function Checkbox(props: CheckboxProps) {
         <div className={`inline-block ${props.className ?? ""}`}>
           <label className="flex justify-start items-start">
             <div
-              className="bg-white border-2 rounded-lg border-gray-400 w-7 h-7 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"
+              className="bg-white border-2 rounded-lg border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"
               onclick={onClick}
             >
               <input type="checkbox" className="opacity-0 absolute" />
