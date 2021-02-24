@@ -5,6 +5,7 @@ import { ForgoRenderArgs, rerender } from "forgo";
 import groupEntitiesByTime from "../modules/groupEntitiesByTime";
 import { iconsDefault as icons } from "../icons";
 import BookmarksListItem from "../bookmarks/components/BookmarksListItem";
+import NotesListItem from "../notes/components/NotesListItem";
 
 export type ItemsByDateProps = {
   items: {
@@ -35,7 +36,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
             <div className="mb-8">
               <div className="flex pb-4 items-center">
                 {icons.access_time}
-                <h2 className="pl-2">{timeString}</h2>
+                <h2 className="pl-2 font-bold text-sm">{timeString}</h2>
               </div>
               <ul>
                 {(items.filter((x) => x.type === "todo") as Todo[]).map(
@@ -54,6 +55,11 @@ export default function ItemsByDate(props: ItemsByDateProps) {
                       bookmark={bookmark}
                       summarize={true}
                     />
+                  )
+                )}
+                {(items.filter((x) => x.type === "note") as Note[]).map(
+                  (note: Note) => (
+                    <NotesListItem key={note.id} note={note} summarize={true} />
                   )
                 )}
               </ul>

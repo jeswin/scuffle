@@ -43,11 +43,11 @@ export default function TodoListItem({
       }
 
       return (
-        <li key={todo.id} className="align-middle pb-1 -ml-1 flex text-sm">
+        <li key={todo.id} className="align-middle my-2 -ml-1 flex text-sm">
           <Checkbox onChange={onCheckboxClick} checked={isChecked} />
           <span className="inline-block">
             {!isChecked ? (
-              <span className="inline-block pt-1 mr-2 mb-2">{todo.title}</span>
+              <span className="inline-block pt-0.5 mr-2">{todo.title}</span>
             ) : (
               <span className="inline-block w-12 h-2">
                 <ProcessingIcon />

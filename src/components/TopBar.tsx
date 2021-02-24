@@ -53,7 +53,7 @@ export default function TopBar(props: TopBarProps) {
                       id === selected ? (
                         <div className="bg-gray-300 text-black -ml-4 px-3 py-2 rounded-md font-medium">
                           <Link
-                            className="inline-block align-middle text-sm flex"
+                            className="inline-block align-middle items-center text-sm flex"
                             href={`/${id === "home" ? "" : id}`}
                           >
                             {icon}
@@ -63,7 +63,7 @@ export default function TopBar(props: TopBarProps) {
                       ) : (
                         <div className="text-gray-700 -ml-4 px-3 py-2 rounded-md font-medium">
                           <Link
-                            className="inline-block align-middle text-sm flex"
+                            className="inline-block align-middle items-center text-sm flex"
                             href={`/${id === "home" ? "" : id}`}
                           >
                             {icon}

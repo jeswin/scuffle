@@ -22,7 +22,7 @@ export default function TodoList() {
             <div className="mb-8">
               <div className="flex pb-4 items-center">
                 {icons.access_time}
-                <h2 className="pl-2">{timeString}</h2>
+                <h2 className="pl-2 font-bold text-sm">{timeString}</h2>
               </div>
               <ul>
                 {items.map((todo) => (

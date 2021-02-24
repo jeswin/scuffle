@@ -17,11 +17,11 @@ export default function NotesList() {
             <div>
               <div className="flex pb-4 items-center">
                 {icons.access_time}
-                <h2 className="pl-2">{timeString}</h2>
+                <h2 className="pl-2 font-bold text-sm">{timeString}</h2>
               </div>
               <ul className="flex flex-wrap items-start -ml-8">
                 {items.map((note) => (
-                  <NotesListItem key={note.id} {...note} />
+                  <NotesListItem key={note.id} note={note} summarize={false} />
                 ))}
               </ul>
             </div>

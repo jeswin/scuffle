@@ -15,9 +15,9 @@ export default function BookmarksListItem(props: BookmarksListItemProps) {
   return {
     render(props: BookmarksListItemProps, args: ForgoRenderArgs) {
       return (
-        <li className="flex py-2 items-center">
+        <li className="flex py-1 items-center">
           {props.summarize ? iconsDefault.bookmarks : iconsDefault.more_vert}
-          <a href={props.bookmark.url} className="ml-3 text-sm text-blue-700 hover:underline">
+          <a href={props.bookmark.url} className="ml-3 text-sm hover:underline">
             {props.bookmark.title ?? props.bookmark.url}
           </a>
         </li>
