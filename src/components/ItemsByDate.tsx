@@ -1,7 +1,7 @@
 import { Bookmark, Note, ScuffleEntity, Todo } from "../types";
 import TodoListItem from "../todos/components/TodoListItem";
 import { ForgoRenderArgs, rerender } from "forgo";
-import groupEntitiesByTime from "../modules/groupEntitiesByTime";
+import groupEntitiesByDate from "../modules/groupEntitiesByDate";
 import { iconsDefault as icons } from "../icons";
 import BookmarksListItem from "../bookmarks/components/BookmarksListItem";
 import NotesListItem from "../notes/components/NotesListItem";
@@ -23,12 +23,10 @@ export default function ItemsByDate(props: ItemsByDateProps) {
         rerender(args.element);
       }
 
-      const sortedItems = groupEntitiesByTime(
-        ([] as ScuffleEntity[])
-          .concat(props.items.bookmarks)
-          .concat(props.items.notes)
-          .concat(props.items.todos)
-      );
+      const sortedItems = groupEntitiesByDate<ScuffleEntity>([
+        [props.items.bookmarks, (x) => x.createdAt],
+        [props.items.notes, (x) => x.createdAt],
+      ]);
 
       return (
         <div className="mt-8">
@@ -39,15 +37,6 @@ export default function ItemsByDate(props: ItemsByDateProps) {
                 <h2 className="pl-2 font-bold text-sm">{timeString}</h2>
               </div>
               <ul>
-                {(items.filter((x) => x.type === "todo") as Todo[]).map(
-                  (todo: Todo) => (
-                    <TodoListItem
-                      key={todo.id}
-                      todo={todo}
-                      onCompleteTodo={onCompleteTodo}
-                    />
-                  )
-                )}
                 {(items.filter((x) => x.type === "bookmark") as Bookmark[]).map(
                   (bookmark: Bookmark) => (
                     <BookmarksListItem

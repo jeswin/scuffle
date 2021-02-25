@@ -32,7 +32,7 @@ export type Todo = {
   due?: {
     year: number;
     month: number;
-    day: number;
+    date: number;
   };
 } & ScuffleEntityBase;
 

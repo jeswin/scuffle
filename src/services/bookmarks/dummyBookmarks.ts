@@ -74,7 +74,7 @@ export const bookmarks: Bookmark[] = [
   {
     id: "b9",
     type: "bookmark",
-    createdAt: Date.now() - 2000000,
+    createdAt: Date.now() - 20000000,
     title: "A Special Supplement: Reflections on Violence",
     url:
       "https://www.nybooks.com/articles/1969/02/27/a-special-supplement-reflections-on-violence/",
@@ -83,7 +83,7 @@ export const bookmarks: Bookmark[] = [
   {
     id: "b10",
     type: "bookmark",
-    createdAt: Date.now() - 10000000,
+    createdAt: Date.now() - 100000000,
     title: "The biggest thing I learned launching Zapier",
     url: "https://mikeknoop.com/biggest-thing-learned-launching-zapier/",
     tags: ["links"],
@@ -91,7 +91,7 @@ export const bookmarks: Bookmark[] = [
   {
     id: "b11",
     type: "bookmark",
-    createdAt: Date.now() - 50000000,
+    createdAt: Date.now() - 500000000,
     title:
       "Hey is a wildly opinionated new email service from the makers of BaseCamp",
     url:
@@ -101,7 +101,7 @@ export const bookmarks: Bookmark[] = [
   {
     id: "b12",
     type: "bookmark",
-    createdAt: Date.now() - 50000000,
+    createdAt: Date.now() - 5000000000,
     title: "The Long Road To HTTP/3",
     url: "https://scorpil.com/post/the-long-road-to-http3/",
     tags: ["links"],

@@ -3,7 +3,7 @@ import TodoListItem from "./TodoListItem";
 import { Todo } from "../../types";
 import state from "../state";
 import { bindToStates } from "forgo-state";
-import groupEntitiesByTime from "../../modules/groupEntitiesByTime";
+import groupEntitiesByDate from "../../modules/groupEntitiesByDate";
 import { iconsDefault as icons } from "../../icons";
 
 export default function TodoList() {
@@ -15,7 +15,7 @@ export default function TodoList() {
         actions.completeTodo(todo);
       }
 
-      const todos = groupEntitiesByTime(state.todos);
+      const todos = groupEntitiesByDate([[state.todos, (x) => x.createdAt]]);
       return (
         <div>
           {Array.from(todos.entries()).map(([timeString, items]) => (

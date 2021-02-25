@@ -3,7 +3,7 @@ import BookmarksListItem from "./BookmarksListItem";
 import { Todo } from "../../types";
 import state from "../state";
 import { bindToStates } from "forgo-state";
-import groupEntitiesByTime from "../../modules/groupEntitiesByTime";
+import groupEntitiesByDate from "../../modules/groupEntitiesByDate";
 import { iconsDefault as icons } from "../../icons";
 
 export default function BookmarksList() {
@@ -11,7 +11,9 @@ export default function BookmarksList() {
 
   const component = {
     render() {
-      const bookmarks = groupEntitiesByTime(state.bookmarks);
+      const bookmarks = groupEntitiesByDate([
+        [state.bookmarks, (x) => x.createdAt],
+      ]);
 
       return (
         <div>
@@ -23,7 +25,11 @@ export default function BookmarksList() {
               </div>
               <ul>
                 {items.map((bookmark) => (
-                  <BookmarksListItem key={bookmark.id} bookmark={bookmark} summarize={false} />
+                  <BookmarksListItem
+                    key={bookmark.id}
+                    bookmark={bookmark}
+                    summarize={false}
+                  />
                 ))}
               </ul>
             </div>

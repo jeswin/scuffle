@@ -2,7 +2,7 @@ import { bindToStateProps } from "forgo-state";
 import { loadNotes } from "../actions";
 import NotesListItem from "./NotesListItem";
 import state from "../state";
-import groupEntitiesByTime from "../../modules/groupEntitiesByTime";
+import groupEntitiesByDate from "../../modules/groupEntitiesByDate";
 import { iconsDefault as icons } from "../../icons";
 
 export default function NotesList() {
@@ -10,7 +10,7 @@ export default function NotesList() {
 
   const component = {
     render() {
-      const notes = groupEntitiesByTime(state.notes);
+      const notes = groupEntitiesByDate([[state.notes, (x) => x.createdAt]]);
       return (
         <div>
           {Array.from(notes.entries()).map(([timeString, items]) => (
