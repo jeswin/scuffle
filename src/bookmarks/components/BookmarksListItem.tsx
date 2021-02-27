@@ -19,7 +19,7 @@ export default function BookmarksListItem(props: BookmarksListItemProps) {
           <div>
             <a
               href={props.bookmark.url}
-              className="mr-3 text-sm inline-block hover:underline"
+              className="mr-2 text-sm inline-block hover:underline"
             >
               {props.bookmark.title ?? props.bookmark.url}
             </a>
