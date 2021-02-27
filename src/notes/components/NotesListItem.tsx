@@ -19,7 +19,7 @@ export default function NotesListItem(props: NotesListItemProps) {
           <article className="text-sm">{props.note.text}</article>
         </li>
       ) : (
-        <li className="mt-2 mb-4 last:mb-0 max-w-md flex">
+        <li className="mt-2 mb-4 last:mb-0 max-w-xl flex">
           <div className="min-w-6 pt-0.5">{icons.notes}</div>
           <div className="text-sm">
             {`${props.note.title ? props.note.title + ": " : ""}${

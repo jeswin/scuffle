@@ -1,7 +1,7 @@
 export function getTodayStart() {
   const date = new Date();
   date.setHours(0, 0, 0, 0);
-  return date.getTime() + timezoneOffsetMS;
+  return date.getTime() - timezoneOffsetMS;
 }
 
 export const msInADay = 24 * 60 * 60 * 1000;

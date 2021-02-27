@@ -13,7 +13,7 @@ export default function groupEntitiesByDate<T>(
 
   const todayStart = getTodayStart();
   const tomorrowStart = todayStart + msInADay;
-  const upcomingStart = tomorrowStart + msInADay;
+  const upcomingStart = todayStart + 2 * msInADay;
   const yesterdayStart = todayStart - msInADay;
   const twoDaysBackStart = todayStart - 2 * msInADay;
   const threeDaysBackStart = todayStart - 3 * msInADay;

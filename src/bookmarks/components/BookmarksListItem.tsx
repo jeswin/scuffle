@@ -12,7 +12,7 @@ export default function BookmarksListItem(props: BookmarksListItemProps) {
   return {
     render(props: BookmarksListItemProps, args: ForgoRenderArgs) {
       return (
-        <li className="flex py-1">
+        <li className="flex mb-4">
           <div className="min-w-6 pt-1">
             {props.summarize ? iconsDefault.bookmarks : iconsDefault.more_vert}
           </div>

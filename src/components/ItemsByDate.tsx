@@ -35,10 +35,10 @@ export default function ItemsByDate(props: ItemsByDateProps) {
       return (
         <div className="mt-8">
           <h2 className="mb-4 font-serif font-bold">Things to do...</h2>
-          <div className="bg-yellow-100 px-6 pt-1 pb-2 mb-8 rounded-md">
+          <div className="pb-2 rounded-md">
             {Array.from(groupedTodos.entries()).map(([timeString, items]) => (
               <div className="mb-8 last:mb-6">
-                <div className="flex mt-4 mb-4 items-center">
+                <div className="flex mb-4 items-center">
                   {icons.access_time}
                   <h3 className="pl-2 text-sm font-bold">{timeString}</h3>
                 </div>
@@ -57,7 +57,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
           <h2 className="mb-4 font-serif font-bold">Bookmarks, Notes and Files</h2>
           {Array.from(groupedItems.entries()).map(([timeString, items]) => (
             <div className="mb-8">
-              <div className="flex mt-4 mb-4 items-center">
+              <div className="flex mb-4 items-center">
                 {icons.access_time}
                 <h3 className="pl-2 text-sm font-bold">{timeString}</h3>
               </div>

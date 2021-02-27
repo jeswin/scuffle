@@ -47,7 +47,9 @@ export default function TodoListItem({
           <Checkbox onChange={onCheckboxClick} checked={isChecked} />
           <div>
             {!isChecked ? (
-              <span className="inline-block pt-0.5 mr-2 text-sm">{todo.title}</span>
+              <span className="inline-block pt-0.5 mr-2 text-sm">
+                {todo.title}
+              </span>
             ) : (
               <span className="inline-block w-12 h-2">
                 <ProcessingIcon />
@@ -64,7 +66,7 @@ export default function TodoListItem({
                 <></>
               )
             ) : (
-              <span className="inline-block pt-1">
+              <span className="inline-block pt-1 text-sm">
                 <span className="text-gray-500 -ml-4">
                   completing in {secondsLeft}s...
                 </span>{" "}
