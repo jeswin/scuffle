@@ -1,9 +1,8 @@
 import { Todo } from "../../types";
-import { colorForString } from "../../modules/colors";
-import { Link } from "forgo-router";
 import { ForgoAfterRenderArgs, ForgoRenderArgs, rerender } from "forgo";
 import Checkbox from "../../components/Checkbox";
 import ProcessingIcon from "../../components/ProcessingIcon";
+import Tag from "../../components/Tag";
 
 export type TodoListItemProps = {
   todo: Todo;
@@ -44,11 +43,11 @@ export default function TodoListItem({
       }
 
       return (
-        <li key={todo.id} className="align-middle my-2 -ml-1 flex text-sm">
+        <li key={todo.id} className="my-2 -ml-1 mb-4 flex">
           <Checkbox onChange={onCheckboxClick} checked={isChecked} />
-          <span className="inline-block">
+          <div>
             {!isChecked ? (
-              <span className="inline-block pt-0.5 mr-2">{todo.title}</span>
+              <span className="inline-block pt-0.5 mr-2 text-sm">{todo.title}</span>
             ) : (
               <span className="inline-block w-12 h-2">
                 <ProcessingIcon />
@@ -57,22 +56,9 @@ export default function TodoListItem({
             {!isChecked ? (
               todo.tags ? (
                 <span className="inline-block">
-                  {todo.tags.map((tag) => {
-                    const [bg, fg] = colorForString(tag);
-                    return (
-                      <Link
-                        key={tag}
-                        href={`/tags/${tag}`}
-                        className="link rounded-md font-thin mt-0.5 px-3 py-1 mr-1 text-xs"
-                        style={{
-                          backgroundColor: bg,
-                          color: fg,
-                        }}
-                      >
-                        #{tag}
-                      </Link>
-                    );
-                  })}
+                  {todo.tags.map((tag) => (
+                    <Tag tag={tag} />
+                  ))}
                 </span>
               ) : (
                 <></>
@@ -87,7 +73,7 @@ export default function TodoListItem({
                 </a>
               </span>
             )}
-          </span>
+          </div>
         </li>
       );
     },

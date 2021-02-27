@@ -1,16 +1,5 @@
 import { toHashCode } from "../lib/stringToHash";
 
-// const colors = [
-//   "#b71c1c",
-//   "#4a148c",
-//   "#1a237e",
-//   "#01579b",
-//   "#004d40",
-//   "#33691e",
-//   "#e65100",
-//   "#3e2723"
-// ];
-
 const colors = [
   ["#d1c4e9", "#000063"],
   ["#f8bbd0", "#560027"],

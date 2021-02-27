@@ -23,18 +23,43 @@ export default function ItemsByDate(props: ItemsByDateProps) {
         rerender(args.element);
       }
 
-      const sortedItems = groupEntitiesByDate<ScuffleEntity>([
+      const groupedTodos = groupEntitiesByDate<Todo>([
+        [props.items.todos, (x) => x.createdAt],
+      ], { mergePast: true });
+
+      const groupedItems = groupEntitiesByDate<ScuffleEntity>([
         [props.items.bookmarks, (x) => x.createdAt],
         [props.items.notes, (x) => x.createdAt],
       ]);
 
       return (
         <div className="mt-8">
-          {Array.from(sortedItems.entries()).map(([timeString, items]) => (
+          <h2 className="mb-4 font-serif font-bold">Things to do...</h2>
+          <div className="bg-yellow-100 px-6 pt-1 pb-2 mb-8 rounded-md">
+            {Array.from(groupedTodos.entries()).map(([timeString, items]) => (
+              <div className="mb-8 last:mb-6">
+                <div className="flex mt-4 mb-4 items-center">
+                  {icons.access_time}
+                  <h3 className="pl-2 text-sm font-bold">{timeString}</h3>
+                </div>
+                <ul>
+                  {items.map((todo: Todo) => (
+                    <TodoListItem
+                      key={todo.id}
+                      todo={todo}
+                      onCompleteTodo={onCompleteTodo}
+                    />
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <h2 className="mb-4 font-serif font-bold">Bookmarks, Notes and Files</h2>
+          {Array.from(groupedItems.entries()).map(([timeString, items]) => (
             <div className="mb-8">
-              <div className="flex pb-4 items-center">
+              <div className="flex mt-4 mb-4 items-center">
                 {icons.access_time}
-                <h2 className="pl-2 font-bold text-sm">{timeString}</h2>
+                <h3 className="pl-2 text-sm font-bold">{timeString}</h3>
               </div>
               <ul>
                 {(items.filter((x) => x.type === "bookmark") as Bookmark[]).map(

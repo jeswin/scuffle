@@ -1,20 +1,28 @@
-import timeAgo from "../lib/timeAgo";
 import { getTodayStart, msInADay, getMonth } from "../lib/dateFunctions";
 
 export default function groupEntitiesByDate<T>(
   entitiesAndTimeSelectors: [T[], (x: T) => number][],
-  reverseChronological = true
+  opts?: { reverseChronological?: boolean; mergePast?: boolean }
 ): Map<string, T[]> {
+  const options = {
+    reverseChronological: opts?.reverseChronological ?? true,
+    mergePast: opts?.mergePast ?? false,
+  };
+
   const result = new Map<string, [number, T[]]>();
 
   const todayStart = getTodayStart();
+  const tomorrowStart = todayStart + msInADay;
+  const upcomingStart = tomorrowStart + msInADay;
   const yesterdayStart = todayStart - msInADay;
   const twoDaysBackStart = todayStart - 2 * msInADay;
   const threeDaysBackStart = todayStart - 3 * msInADay;
-  const fourDaysBackStart = todayStart - 4 * msInADay;
 
   const dateThreeDaysBack = new Date(threeDaysBackStart);
 
+  const tomorrowText = "Tomorrow";
+  const upcomingText = "Upcoming";
+  const overdueText = "Overdue";
   const todayText = "Today";
   const yesterdayText = "Yesterday";
   const twoDaysBackText = "2 days ago";
@@ -25,8 +33,14 @@ export default function groupEntitiesByDate<T>(
       const itemTime = timeSelector(item);
       const itemDate = new Date(itemTime);
       const dateString =
-        itemTime >= todayStart
+        itemTime >= upcomingStart
+          ? upcomingText
+          : itemTime >= tomorrowStart
+          ? tomorrowText
+          : itemTime >= todayStart
           ? todayText
+          : options.mergePast
+          ? overdueText
           : itemTime >= yesterdayStart
           ? yesterdayText
           : itemTime >= twoDaysBackStart
@@ -51,7 +65,7 @@ export default function groupEntitiesByDate<T>(
   // We are in another month if today and three-days-back have different months.
 
   const sortedList = Array.from(result.entries()).sort((a, b) =>
-    reverseChronological ? b[1][0] - a[1][0] : a[1][0] - b[1][0]
+    options.reverseChronological ? b[1][0] - a[1][0] : a[1][0] - b[1][0]
   );
 
   return sortedList.reduce((acc, [timeString, [timeNum, items]]) => {

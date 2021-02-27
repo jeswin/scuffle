@@ -14,6 +14,7 @@ module.exports = {
       orange: colors.orange,
       fuchsia: colors.fuchsia,
       purple: colors.purple,
+      yellow: colors.amber,
       current: "currentColor",
     },
     boxShadow: {
@@ -32,6 +33,14 @@ module.exports = {
       borderRadius: {
         "4xl": "2rem",
       },
+      minWidth: {
+        6: "1.5rem",
+      },
+    },
+  },
+  variants: {
+    extend: {
+      margin: ["last"],
     },
   },
 };
