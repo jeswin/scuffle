@@ -2,33 +2,38 @@ import { Bookmark } from "../../types";
 import { iconsDefault } from "../../icons";
 import Tag from "../../components/Tag";
 import { ForgoRenderArgs } from "forgo";
+import LinkContent from "./LinkContent";
+import VideoContent from "./VideoContent";
 
 export type BookmarksListItemProps = {
   bookmark: Bookmark;
   summarize: boolean;
 };
 
+function getHostname(urlString: string) {
+  const url = new URL(urlString);
+  return url.hostname;
+}
+
 export default function BookmarksListItem(props: BookmarksListItemProps) {
   return {
     render(props: BookmarksListItemProps, args: ForgoRenderArgs) {
+      const contentType =
+        (props.bookmark.content && props.bookmark.content.type) || "link";
+
       return (
-        <li className="flex mb-4">
-          <div className="min-w-6 pt-1">
-            {props.summarize ? iconsDefault.bookmarks : iconsDefault.more_vert}
-          </div>
-          <div>
-            <a
-              href={props.bookmark.url}
-              className="mr-2 text-sm inline-block hover:underline"
-            >
-              {props.bookmark.title ?? props.bookmark.url}
-            </a>
-            <span className="inline-block">
-              {props.bookmark.tags
-                ? props.bookmark.tags.map((x) => <Tag tag={x} />)
-                : undefined}
-            </span>
-          </div>
+        <li>
+          {contentType === "video" ? (
+            <VideoContent
+              bookmark={props.bookmark}
+              summarize={props.summarize}
+            />
+          ) : (
+            <LinkContent
+              bookmark={props.bookmark}
+              summarize={props.summarize}
+            />
+          )}
         </li>
       );
     },

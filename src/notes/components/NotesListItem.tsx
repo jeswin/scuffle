@@ -19,16 +19,18 @@ export default function NotesListItem(props: NotesListItemProps) {
           <article className="text-sm">{props.note.text}</article>
         </li>
       ) : (
-        <li className="mt-2 mb-4 last:mb-0 max-w-xl flex">
+        <li className="mb-4 last:mb-0 max-w-xl flex">
           <div className="min-w-6 pt-0.5">{icons.notes}</div>
           <div className="text-sm">
-            {`${props.note.title ? props.note.title + ": " : ""}${
-              props.note.text.trim().length > 200
-                ? `${props.note.text.trim().substr(0, 200).trim()}...`
-                : props.note.text.trim()
-            }`}
+            <div className="mb-1">
+              {`${props.note.title ? props.note.title + ": " : ""}${
+                props.note.text.trim().length > 200
+                  ? `${props.note.text.trim().substr(0, 200).trim()}...`
+                  : props.note.text.trim()
+              }`}
+            </div>
             {props.note.tags ? (
-              <div className="mt-1">
+              <div>
                 {props.note.tags.map((x) => (
                   <Tag tag={x} />
                 ))}

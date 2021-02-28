@@ -8,16 +8,38 @@ export const bookmarks: Bookmark[] = [
     title:
       "Brain Drain: The Mere Presence of One’s Own Smartphone Reduces Available Cognitive Capacity",
     url: "https://www.journals.uchicago.edu/doi/abs/10.1086/691462",
-    tags: ["interesting", "skunkworks"],
+    tags: ["interesting", "skunkworks", "unread"],
+    words: 12440,
+    sharing: {
+      saves: 33,
+    },
   },
   {
-    id: "b2",
+    id: "b1a",
     type: "bookmark",
     createdAt: Date.now() - 2000000,
     title: "Why Christopher Nolan Actually Blew Up A Real Plane For Tenet",
     url:
       "https://www.cinemablend.com/news/2546992/why-christopher-nolan-actually-blew-up-a-real-plane-for-tenet",
-    tags: ["movies"],
+    tags: ["movies", "unread"],
+    sharing: {
+      saves: 12,
+    },
+  },
+  {
+    id: "b2",
+    type: "bookmark",
+    createdAt: Date.now() - 2000000,
+    title: "Building a custom scissor lamp",
+    url: "https://www.youtube.com/watch?v=fUq7htzSmGY",
+    tags: ["funny", "unread"],
+    sharing: {
+      saves: 132,
+    },
+    content: {
+      type: "video",
+      provider: "youtube",
+    },
   },
   {
     id: "b3",
@@ -27,6 +49,22 @@ export const bookmarks: Bookmark[] = [
     url:
       "https://www.economist.com/graphic-detail/2020/09/19/the-age-old-strategy-of-buying-cheap-shares-is-faltering",
     tags: ["business", "skunkworks"],
+    words: 1304,
+  },
+  {
+    id: "b3a",
+    type: "bookmark",
+    createdAt: Date.now() - 2000000,
+    title: "I Paid Celebrities To Say THIS about Bass...",
+    url: "https://www.youtube.com/watch?v=GzhAgldy0WA",
+    tags: ["funny", "unread"],
+    sharing: {
+      saves: 223,
+    },
+    content: {
+      type: "video",
+      provider: "youtube",
+    },
   },
   {
     id: "b4",
@@ -45,6 +83,9 @@ export const bookmarks: Bookmark[] = [
     url:
       "https://acoup.blog/2020/09/18/collections-iron-how-did-they-make-it-part-i-mining/",
     tags: ["movies"],
+    sharing: {
+      saves: 8,
+    },
   },
   {
     id: "b6",
@@ -62,6 +103,10 @@ export const bookmarks: Bookmark[] = [
     url:
       "https://www.axios.com/americas-true-unemployment-rate-6e34decb-c274-4feb-a4af-ffac8cf5840d.html",
     tags: ["interesting", "links"],
+    words: 4430,
+    sharing: {
+      saves: 24,
+    },
   },
   {
     id: "b8",
@@ -69,7 +114,7 @@ export const bookmarks: Bookmark[] = [
     createdAt: Date.now() - 2000000,
     title: "Early Work",
     url: "http://paulgraham.com/early.html",
-    tags: ["links"],
+    tags: ["links", "unread"],
   },
   {
     id: "b9",
@@ -86,7 +131,7 @@ export const bookmarks: Bookmark[] = [
     createdAt: Date.now() - 100000000,
     title: "The biggest thing I learned launching Zapier",
     url: "https://mikeknoop.com/biggest-thing-learned-launching-zapier/",
-    tags: ["links"],
+    tags: ["links", "unread"],
   },
   {
     id: "b11",

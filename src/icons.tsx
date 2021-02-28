@@ -126,6 +126,17 @@ function icons(options: { height?: string; width?: string; viewBox?: string }) {
         <path d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4l2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z" />
       </svg>
     ),
+    ondemand_video: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height={height}
+        viewBox={viewBox}
+        width={width}
+      >
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12zm-5-6l-7 4V7z" />
+      </svg>
+    ),
   };
 }
 

@@ -23,9 +23,10 @@ export default function ItemsByDate(props: ItemsByDateProps) {
         rerender(args.element);
       }
 
-      const groupedTodos = groupEntitiesByDate<Todo>([
-        [props.items.todos, (x) => x.createdAt],
-      ], { mergePast: true });
+      const groupedTodos = groupEntitiesByDate<Todo>(
+        [[props.items.todos, (x) => x.createdAt]],
+        { mergePast: true }
+      );
 
       const groupedItems = groupEntitiesByDate<ScuffleEntity>([
         [props.items.bookmarks, (x) => x.createdAt],
@@ -33,8 +34,10 @@ export default function ItemsByDate(props: ItemsByDateProps) {
       ]);
 
       return (
-        <div className="mt-8">
-          <h2 className="mb-4 font-serif font-bold">Things to do...</h2>
+        <div>
+          <h2 className="mb-4 font-serif font-bold underline">
+            Get these done...
+          </h2>
           <div className="pb-2 rounded-md">
             {Array.from(groupedTodos.entries()).map(([timeString, items]) => (
               <div className="mb-8 last:mb-6">
@@ -54,7 +57,9 @@ export default function ItemsByDate(props: ItemsByDateProps) {
               </div>
             ))}
           </div>
-          <h2 className="mb-4 font-serif font-bold">Bookmarks, Notes and Files</h2>
+          <h2 className="mb-4 font-serif font-bold underline">
+            Bookmarks, Notes and Files
+          </h2>
           {Array.from(groupedItems.entries()).map(([timeString, items]) => (
             <div className="mb-8">
               <div className="flex mb-4 items-center">

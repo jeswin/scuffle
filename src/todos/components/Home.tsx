@@ -7,14 +7,14 @@ export default function TodosHome() {
   return {
     render() {
       return (
-        <div>
-          <p className="mt-4 text-sm">
+        <div className="py-4">
+          <p className="text-sm mb-4">
             <span className="font-bold">Active</span> |{" "}
             <Link href="tasks/completed" className="border-b-2 border-blue-500 pb-0.5 text-blue-500">
               Completed
             </Link>
           </p>
-          <div className="mt-4">
+          <div>
             <AddTodo collapsed={true} />
           </div>
           <div>

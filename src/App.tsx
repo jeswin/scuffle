@@ -41,7 +41,7 @@ export default function App() {
           <div>
             {/* <TopBanner text="You are not syncing with personal storage yet." /> */}
             <TopBar />
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 border border-gray-200 rounded-md shadow my-4">
               {matchExactUrl("/", () => <Home />) ||
                 matchUrl("/todos", () => <Todos />) ||
                 matchUrl("/notes", () => <Notes />) ||
