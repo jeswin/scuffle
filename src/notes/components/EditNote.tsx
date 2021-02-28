@@ -62,7 +62,7 @@ export default function AddNote(props: EditNoteProps) {
       return (
         <div>
           {mode === "edit" ? (
-            <div className="p-4 mt-6 mb-8 rounded-md border border-gray-400">
+            <div className="p-4 mb-8 rounded-md border border-gray-400">
               <input
                 className="focus:outline-none w-full font-bold text-lg mb-2"
                 key="note_title"
@@ -149,7 +149,7 @@ export default function AddNote(props: EditNoteProps) {
           ) : (
             <div
               onclick={onPlaceholderClick}
-              className="pt-3 pr-2 pb-3 pl-2 mt-6 mb-8 rounded-md border border-gray-400 max-w-3xl flex"
+              className="pt-3 pr-2 pb-3 pl-2 mb-8 rounded-md border border-gray-400 max-w-3xl flex"
             >
               {icons.notes}
               <textarea

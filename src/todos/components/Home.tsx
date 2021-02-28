@@ -7,7 +7,7 @@ export default function TodosHome() {
   return {
     render() {
       return (
-        <div className="py-4">
+        <div>
           <p className="text-sm mb-4">
             <span className="font-bold">Active</span> |{" "}
             <Link href="tasks/completed" className="border-b-2 border-blue-500 pb-0.5 text-blue-500">

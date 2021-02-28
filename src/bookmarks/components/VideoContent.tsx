@@ -36,6 +36,7 @@ export default function VideoContent(initialProps: VideoContentProps) {
             </p>
             <p>
               <img
+                className="rounded"
                 src={`https://img.youtube.com/vi/${getVideoId(
                   props.bookmark.url
                 )}/3.jpg`}
