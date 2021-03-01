@@ -9,14 +9,13 @@ export type TagProps = {
 export default function Tag(initialProps: TagProps) {
   return {
     render({ tag }: TagProps) {
-      const [bg, fg] = colorForString(tag);
+      const fg = colorForString(tag);
       return (
         <Link
           key={tag}
           href={`/tags/${tag}`}
-          className="link rounded-md mt-0.5 pl-3 pr-3 py-1 mr-1 text-xs"
+          className="link mr-1 text-xs hover:underline"
           style={{
-            backgroundColor: bg,
             color: fg,
           }}
         >

@@ -26,7 +26,7 @@ export default function LinkContent(initialProps: LinkContentProps) {
                 {props.bookmark.title ?? props.bookmark.url}
               </a>
             </p>
-            <p className="text-xs mb-2 inline-block text-gray-600">
+            <p className="text-xs inline-block text-gray-500">
               <span className="mr-2">{getHostname(props.bookmark.url)}</span>
               {props.bookmark.words ? (
                 <span className="mr-2">{props.bookmark.words} words</span>

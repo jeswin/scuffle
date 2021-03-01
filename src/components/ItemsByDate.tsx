@@ -35,7 +35,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
 
       return (
         <div>
-          <h2 className="mb-4 font-serif font-bold underline">
+          <h2 className="mb-4 text-sm font-serif font-bold underline">
             Get these done...
           </h2>
           <div className="pb-2 rounded-md">
@@ -57,7 +57,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
               </div>
             ))}
           </div>
-          <h2 className="mb-4 font-serif font-bold underline">
+          <h2 className="mb-4 text-sm font-serif font-bold underline">
             Bookmarks, Notes and Files
           </h2>
           {Array.from(groupedItems.entries()).map(([timeString, items]) => (

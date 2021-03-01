@@ -66,7 +66,7 @@ export default function TodoListItem({
                 <></>
               )
             ) : (
-              <span className="inline-block pt-1 text-sm">
+              <span className="inline-block text-sm">
                 <span className="text-gray-500 -ml-4">
                   completing in {secondsLeft}s...
                 </span>{" "}
