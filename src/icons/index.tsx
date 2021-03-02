@@ -104,6 +104,18 @@ export function makeIcons(options: {
         </g>
       </svg>
     ),
+    get_app: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height={height}
+        viewBox={viewBox}
+        width={width}
+        fill="currentColor"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+      </svg>
+    ),
     access_time: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -195,5 +207,5 @@ export function makeIcons(options: {
 export const iconsDefault = makeIcons({
   height: "16",
   width: "16",
-  viewBox: "0 0 24 24",
+  viewBox: "0 1 24 24",
 });

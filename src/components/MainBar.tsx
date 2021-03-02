@@ -11,7 +11,7 @@ const items = [
   ["bookmarks", "Bookmarks", icons.bookmarks],
   ["gallery", "Gallery", icons.photo_library],
   ["discover", "Discover", icons.stars],
-  ["settings", "Settings", icons.settings]
+  ["settings", "Settings", icons.settings],
 ];
 
 export default function TopBar(props: TopBarProps) {
@@ -94,7 +94,9 @@ export default function TopBar(props: TopBarProps) {
             </ul>
             <ul className="mt-4">
               <li className="text-gray-800 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium cursor-pointer">
-                Download App
+                <div className="flex">
+                  <span className="mt-0.5">{icons.get_app}</span><span className="pl-2">Download App</span>
+                </div>
                 <p className="text-xxs">
                   For Windows, Mac, Linux,
                   <br />

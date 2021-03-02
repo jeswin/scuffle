@@ -11,11 +11,11 @@ export type EditNoteProps = {
 export default function AddNote(props: EditNoteProps) {
   let firstTimeLoad = true;
   let mode = props.mode;
-  let noteTextareaRef: ForgoRef<HTMLTextAreaElement> = {};
+  let noteTextRef: ForgoRef<HTMLTextAreaElement> = {};
   let noteTitleRef: ForgoRef<HTMLInputElement> = {};
-  let expandedNoteTextareaRef: ForgoRef<HTMLTextAreaElement> = {};
+  let expandedNoteTextRef: ForgoRef<HTMLTextAreaElement> = {};
   let expandedNoteTitleRef: ForgoRef<HTMLInputElement> = {};
-  let placeholderNoteTextareaRef: ForgoRef<HTMLTextAreaElement> = {};
+  let placeholderNoteTextRef: ForgoRef<HTMLInputElement> = {};
   let noteTitle = "";
   let noteText = "";
 
@@ -28,7 +28,7 @@ export default function AddNote(props: EditNoteProps) {
 
       function showNoteEditor() {
         mode = "edit";
-        noteText = (placeholderNoteTextareaRef.value as HTMLTextAreaElement)
+        noteText = (placeholderNoteTextRef.value as HTMLInputElement)
           .value;
         rerender(args.element);
       }
@@ -38,11 +38,11 @@ export default function AddNote(props: EditNoteProps) {
           mode === "expanded"
             ? [
                 (expandedNoteTitleRef.value as HTMLInputElement).value,
-                (expandedNoteTextareaRef.value as HTMLTextAreaElement).value,
+                (expandedNoteTextRef.value as HTMLTextAreaElement).value,
               ]
             : [
                 (noteTitleRef.value as HTMLInputElement).value,
-                (noteTextareaRef.value as HTMLTextAreaElement).value,
+                (noteTextRef.value as HTMLTextAreaElement).value,
               ];
 
         addNote(noteTitle, noteText);
@@ -53,7 +53,7 @@ export default function AddNote(props: EditNoteProps) {
 
       function expandEditor(e: MouseEvent) {
         noteTitle = (noteTitleRef.value as HTMLInputElement).value;
-        noteText = (noteTextareaRef.value as HTMLTextAreaElement).value;
+        noteText = (noteTextRef.value as HTMLTextAreaElement).value;
         mode = "expanded";
         rerender(args.element);
         e.stopPropagation();
@@ -73,7 +73,7 @@ export default function AddNote(props: EditNoteProps) {
               <textarea
                 className="focus:outline-none w-full"
                 key="note_contents"
-                ref={noteTextareaRef}
+                ref={noteTextRef}
                 rows={6}
                 placeholder="Add a note..."
               >
@@ -126,7 +126,7 @@ export default function AddNote(props: EditNoteProps) {
                   <textarea
                     className="focus:outline-none resize-none w-full flex-grow"
                     key="note_contents"
-                    ref={expandedNoteTextareaRef}
+                    ref={expandedNoteTextRef}
                     rows={6}
                     placeholder="Add a note..."
                   >
@@ -151,27 +151,27 @@ export default function AddNote(props: EditNoteProps) {
               onclick={onPlaceholderClick}
               className="pt-3 pr-2 pb-3 pl-2 mb-8 rounded-md border border-gray-400 max-w-3xl flex"
             >
-              {icons.notes}
-              <textarea
+              <span className="pt-1">{icons.notes}</span>
+              <input
+                type="text"
                 className="focus:outline-none ml-4 resize-none"
                 key="note_contents_placeholder"
-                ref={placeholderNoteTextareaRef}
-                rows={1}
+                ref={placeholderNoteTextRef}
                 onfocus={() => showNoteEditor()}
                 onclick={() => showNoteEditor()}
                 oncontextmenu={() => showNoteEditor()}
                 onkeypress={() => showNoteEditor()}
                 placeholder="Add a note..."
-              ></textarea>
+              />
             </div>
           )}
         </div>
       );
     },
     afterRender(props: EditNoteProps, args: ForgoAfterRenderArgs) {
-      if (firstTimeLoad && noteTextareaRef.value) {
+      if (firstTimeLoad && noteTextRef.value) {
         firstTimeLoad = false;
-        noteTextareaRef.value.focus();
+        noteTextRef.value.focus();
       }
     },
   };
