@@ -1,4 +1,8 @@
-function icons(options: { height?: string; width?: string; viewBox?: string }) {
+export function makeIcons(options: {
+  height?: string;
+  width?: string;
+  viewBox?: string;
+}) {
   const height = options.height ?? "24";
   const width = options.width ?? "24";
   const viewBox = options.viewBox ?? "0 0 24 24";
@@ -69,6 +73,18 @@ function icons(options: { height?: string; width?: string; viewBox?: string }) {
       >
         <path d="M0 0h24v24H0V0z" fill="none" />
         <path d="M15 7v12.97l-4.21-1.81-.79-.34-.79.34L5 19.97V7h10m4-6H8.99C7.89 1 7 1.9 7 3h10c1.1 0 2 .9 2 2v13l2 1V3c0-1.1-.9-2-2-2zm-4 4H5c-1.1 0-2 .9-2 2v16l7-3 7 3V7c0-1.1-.9-2-2-2z" />
+      </svg>
+    ),
+    data_usage: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height={height}
+        viewBox={viewBox}
+        width={width}
+        fill="currentColor"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z" />
       </svg>
     ),
     stars: (
@@ -146,6 +162,18 @@ function icons(options: { height?: string; width?: string; viewBox?: string }) {
         <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12zm-5-6l-7 4V7z" />
       </svg>
     ),
+    search: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height={height}
+        viewBox={viewBox}
+        width={width}
+        fill="currentColor"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+      </svg>
+    ),
     settings: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +192,7 @@ function icons(options: { height?: string; width?: string; viewBox?: string }) {
   };
 }
 
-export const iconsDefault = icons({
+export const iconsDefault = makeIcons({
   height: "16",
   width: "16",
   viewBox: "0 0 24 24",

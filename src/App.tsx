@@ -1,6 +1,7 @@
 import { Router, matchUrl, updateRoute, matchExactUrl } from "forgo-router";
 
 import MainBar from "./components/MainBar";
+import SearchBar from "./components/SearchBar";
 import Home from "./home";
 import Notes from "./notes";
 import Bookmarks from "./bookmarks";
@@ -41,7 +42,8 @@ export default function App() {
             {/* <TopBanner text="You are not syncing with personal storage yet." /> */}
             <div className="max-w-7xl m-auto flex">
               <MainBar />
-              <div className="flex-grow max-w-7xl pt-6">
+              <div className="flex-grow max-w-7xl pt-4">
+                <SearchBar />
                 {matchExactUrl("/", () => <Home />) ||
                   matchUrl("/todos", () => <Todos />) ||
                   matchUrl("/notes", () => <Notes />) ||

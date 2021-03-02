@@ -43,7 +43,7 @@ export default function VideoContent(initialProps: VideoContentProps) {
                 alt={`Video ${props.bookmark.title}`}
               />
             </p>
-            <p className="text-xs mb-2 inline-block text-gray-600">
+            <p className="text-xs inline-block text-gray-600">
               <span className="mr-2">{getHostname(props.bookmark.url)}</span>
               {props.bookmark.words ? (
                 <span className="mr-2">{props.bookmark.words} words</span>

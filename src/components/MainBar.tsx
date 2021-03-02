@@ -11,7 +11,7 @@ const items = [
   ["bookmarks", "Bookmarks", icons.bookmarks],
   ["gallery", "Gallery", icons.photo_library],
   ["discover", "Discover", icons.stars],
-  ["settings", "Settings", icons.settings],
+  ["settings", "Settings", icons.settings]
 ];
 
 export default function TopBar(props: TopBarProps) {
@@ -41,7 +41,7 @@ export default function TopBar(props: TopBarProps) {
 
       return (
         <nav className="border-r border-gray-200 w-48 pl-4 min-h-full mr-12">
-          <div className="flex flex-col fixed">
+          <div className="flex flex-col fixed text-sm">
             <ul className="mt-4">
               <li className="mb-4">
                 <div className="flex">
@@ -70,27 +70,66 @@ export default function TopBar(props: TopBarProps) {
               </li>
               {items.map(([id, text, icon]) =>
                 id === selected ? (
-                  <li className="text-gray-800 -ml-4 px-12 py-2 rounded-md font-medium cursor-pointer">
+                  <li className="text-gray-800 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium cursor-pointer">
                     <Link
-                      className="inline-block align-middle items-center text-sm flex"
+                      className="inline-block align-middle items-center flex"
                       href={`/${id === "home" ? "" : id}`}
                     >
                       {icon}
-                      <span className="inline-block pl-1">{text}</span>
+                      <span className="inline-block pl-2">{text}</span>
                     </Link>
                   </li>
                 ) : (
-                  <li className="text-gray-700 -ml-4 px-12 py-2 rounded-md font-medium cursor-pointer">
+                  <li className="text-gray-700 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium cursor-pointer">
                     <Link
-                      className="inline-block align-middle items-center text-sm flex"
+                      className="inline-block align-middle items-center flex"
                       href={`/${id === "home" ? "" : id}`}
                     >
                       {icon}
-                      <span className="inline-block pl-1">{text}</span>
+                      <span className="inline-block pl-2">{text}</span>
                     </Link>
                   </li>
                 )
               )}
+            </ul>
+            <ul className="mt-4">
+              <li className="text-gray-800 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium cursor-pointer">
+                Download App
+                <p className="text-xxs">
+                  For Windows, Mac, Linux,
+                  <br />
+                  Android and iOS.
+                </p>
+              </li>
+              <li className="text-gray-800 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium cursor-pointer">
+                Browser Plugins
+                <div className="flex pt-1">
+                  <span className="mr-1">
+                    <img
+                      src="/img/chrome.svg"
+                      height="16"
+                      width="16"
+                      alt="chrome icon"
+                    />
+                  </span>
+                  <span className="mr-1">
+                    <img
+                      src="/img/firefox.svg"
+                      height="16"
+                      width="16"
+                      alt="firefox icon"
+                    />
+                  </span>
+                  <span className="mr-1">
+                    <img
+                      src="/img/safari.svg"
+                      height="16"
+                      width="16"
+                      alt="safari icon"
+                    />
+                  </span>
+                </div>
+              </li>
             </ul>
           </div>
         </nav>
