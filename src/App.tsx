@@ -42,7 +42,7 @@ export default function App() {
             {/* <TopBanner text="You are not syncing with personal storage yet." /> */}
             <div className="max-w-7xl m-auto flex">
               <MainBar />
-              <div className="flex-grow max-w-7xl pt-4">
+              <div className="flex-grow max-w-7xl pt-4 mr-4">
                 <SearchBar />
                 {matchExactUrl("/", () => <Home />) ||
                   matchUrl("/todos", () => <Todos />) ||

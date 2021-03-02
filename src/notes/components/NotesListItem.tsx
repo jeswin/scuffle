@@ -12,11 +12,18 @@ export default function NotesListItem(props: NotesListItemProps) {
   return {
     render() {
       return !props.summarize ? (
-        <li className="flex-grow w-64 max-w-2xl max-h-96 pt-4 pr-4 pb-12 pl-4 ml-8 mb-8 overflow-hidden border border-gray-200 rounded-md shadow-lg">
+        <li className="flex-grow w-64 max-w-2xl max-h-96 pt-4 pr-4 pb-4 pl-4 ml-8 mb-8 overflow-hidden border border-gray-200 rounded-md shadow-lg">
           {props.note.title ? (
             <h3 className="font-bold mb-2">{props.note.title}</h3>
           ) : undefined}
           <article className="text-sm">{props.note.text}</article>
+          {props.note.tags ? (
+            <div className="pt-4">
+              {props.note.tags.map((x) => (
+                <Tag tag={x} />
+              ))}
+            </div>
+          ) : undefined}
         </li>
       ) : (
         <li className="mb-4 last:mb-0 max-w-xl flex">

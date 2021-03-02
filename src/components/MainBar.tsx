@@ -70,13 +70,13 @@ export default function TopBar(props: TopBarProps) {
               </li>
               {items.map(([id, text, icon]) =>
                 id === selected ? (
-                  <li className="text-gray-800 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium cursor-pointer">
+                  <li className="text-gray-900 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium cursor-pointer">
                     <Link
                       className="inline-block align-middle items-center flex"
                       href={`/${id === "home" ? "" : id}`}
                     >
                       {icon}
-                      <span className="inline-block pl-2">{text}</span>
+                      <span className="inline-block pl-2 font-bold">{text}</span>
                     </Link>
                   </li>
                 ) : (
@@ -95,7 +95,8 @@ export default function TopBar(props: TopBarProps) {
             <ul className="mt-4">
               <li className="text-gray-800 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium cursor-pointer">
                 <div className="flex">
-                  <span className="mt-0.5">{icons.get_app}</span><span className="pl-2">Download App</span>
+                  <span className="mt-0.5">{icons.get_app}</span>
+                  <span className="pl-2">Download App</span>
                 </div>
                 <p className="text-xxs">
                   For Windows, Mac, Linux,

@@ -1,12 +1,5 @@
-import { addBookmark } from "../actions";
-import {
-  ForgoRef,
-  rerender,
-  ForgoAfterRenderArgs,
-  ForgoRenderArgs,
-} from "forgo";
-import Checkbox from "../../components/Checkbox";
-import { JSX } from "forgo/jsx-runtime";
+import { ForgoRef, rerender, ForgoRenderArgs } from "forgo";
+import { iconsDefault as icons } from "../../icons";
 
 export type AddBookmarkProps = {
   collapsed: boolean;
@@ -29,16 +22,22 @@ export default function AddBookmark(props: AddBookmarkProps) {
       }
 
       return collapsed ? (
-        <div className="border-b p-2 mb-8">
+        <div
+          onclick={clickPlaceholder}
+          className="pt-3 pr-2 pb-3 pl-2 mb-8 rounded-md border border-gray-400 max-w-3xl flex"
+        >
+          <span className="pt-1">{icons.bookmarks}</span>
           <input
+            type="text"
+            className="focus:outline-none ml-4 resize-none"
+            key="note_contents_placeholder"
             ref={placeholderBookmarkUrlElement}
-            placeholder="Type a url..."
-            className="focus:outline-none"
             onfocus={() => clickPlaceholder()}
             onclick={() => clickPlaceholder()}
             oncontextmenu={() => clickPlaceholder()}
             onkeypress={() => clickPlaceholder()}
-          ></input>
+            placeholder="Add a bookmark..."
+          />
         </div>
       ) : (
         <div>
