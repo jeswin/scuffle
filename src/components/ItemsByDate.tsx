@@ -35,28 +35,37 @@ export default function ItemsByDate(props: ItemsByDateProps) {
 
       return (
         <div>
-          <h2 className="mb-4 text-sm font-serif font-bold underline">
-            Get these done...
-          </h2>
-          <div className="pb-2 rounded-md">
-            {Array.from(groupedTodos.entries()).map(([timeString, items]) => (
-              <div className="mb-8 last:mb-6">
-                <div className="flex mb-4 items-center">
-                  {icons.access_time}
-                  <h3 className="pl-2 text-sm font-bold">{timeString}</h3>
-                </div>
-                <ul>
-                  {items.map((todo: Todo) => (
-                    <TodoListItem
-                      key={todo.id}
-                      todo={todo}
-                      onCompleteTodo={onCompleteTodo}
-                    />
-                  ))}
-                </ul>
+          {groupedTodos.size > 0 ? (
+            <>
+              <h2 className="mb-4 text-sm font-serif font-bold underline">
+                Get these done...
+              </h2>
+              <div className="pb-2 rounded-md">
+                {Array.from(groupedTodos.entries()).map(
+                  ([timeString, items]) => (
+                    <div className="mb-8 last:mb-6">
+                      <div className="flex mb-4 items-center">
+                        {icons.access_time}
+                        <h3 className="pl-2 text-sm font-bold">{timeString}</h3>
+                      </div>
+                      <ul>
+                        {items.map((todo: Todo) => (
+                          <TodoListItem
+                            key={todo.id}
+                            todo={todo}
+                            onCompleteTodo={onCompleteTodo}
+                          />
+                        ))}
+                      </ul>
+                    </div>
+                  )
+                )}
               </div>
-            ))}
-          </div>
+            </>
+          ) : (
+            <></>
+          )}
+
           <h2 className="mb-4 text-sm font-serif font-bold underline">
             Bookmarks, Notes and Files
           </h2>
