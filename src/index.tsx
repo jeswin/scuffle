@@ -1,5 +1,5 @@
 import { mount } from "forgo";
-import App from "./App";
+import App from "./app";
 
 function startApp() {
   mount(<App />, "#root");
