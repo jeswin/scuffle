@@ -41,7 +41,7 @@ export default function App() {
           <div className="text-gray-800">
             {/* <TopBanner text="You are not syncing with personal storage yet." /> */}
             <div className="max-w-7xl m-auto flex">
-              <div className="border-r border-gray-200 w-48 pl-4 min-w-56 min-h-full mr-12">
+              <div className="border-r border-gray-200 min-w-48 min-h-full mr-12 pl-4 xl:pl-12 xl:min-w-60">
                 <MainBar />
               </div>
               <div className="flex-grow max-w-7xl pt-4 mr-4">
