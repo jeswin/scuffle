@@ -41,7 +41,9 @@ export default function App() {
           <div className="text-gray-800">
             {/* <TopBanner text="You are not syncing with personal storage yet." /> */}
             <div className="max-w-7xl m-auto flex">
-              <MainBar />
+              <div className="border-r border-gray-200 w-48 pl-4 min-w-56 min-h-full mr-12">
+                <MainBar />
+              </div>
               <div className="flex-grow max-w-7xl pt-4 mr-4">
                 <SearchBar />
                 {matchExactUrl("/", () => <Home />) ||

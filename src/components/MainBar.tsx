@@ -40,7 +40,7 @@ export default function TopBar(props: TopBarProps) {
         : "";
 
       return (
-        <nav className="border-r border-gray-200 w-48 pl-4 min-h-full mr-12">
+        <nav>
           <div className="flex flex-col fixed text-sm">
             <ul className="mt-4">
               <li className="mb-4">
