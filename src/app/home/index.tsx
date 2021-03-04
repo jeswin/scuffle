@@ -1,5 +1,5 @@
 import ItemsByDate from "../components/ItemsByDate";
-import state from "../../state";
+import state from "../state";
 import { completeTodo, loadHomePageData } from "../actions";
 import { ForgoRenderArgs } from "forgo";
 import { bindToStates } from "forgo-state";

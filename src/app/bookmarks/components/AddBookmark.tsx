@@ -1,5 +1,6 @@
 import { ForgoRef, rerender, ForgoRenderArgs } from "forgo";
 import { iconsDefault as icons } from "../../../icons";
+import PlaceholderTextBox from "../../components/PlaceholderTextBox";
 
 export type AddBookmarkProps = {
   collapsed: boolean;
@@ -22,23 +23,12 @@ export default function AddBookmark(props: AddBookmarkProps) {
       }
 
       return collapsed ? (
-        <div
-          onclick={clickPlaceholder}
-          className="pt-3 pr-2 pb-3 pl-2 mb-8 rounded-md border border-gray-400 max-w-3xl flex"
-        >
-          <span className="pt-1">{icons.bookmarks}</span>
-          <input
-            type="text"
-            className="focus:outline-none ml-4 resize-none"
-            key="note_contents_placeholder"
-            ref={placeholderBookmarkUrlElement}
-            onfocus={() => clickPlaceholder()}
-            onclick={() => clickPlaceholder()}
-            oncontextmenu={() => clickPlaceholder()}
-            onkeypress={() => clickPlaceholder()}
-            placeholder="Add a bookmark..."
-          />
-        </div>
+        <PlaceholderTextBox
+          onClick={clickPlaceholder}
+          ref={placeholderBookmarkUrlElement}
+          placeholder="Add a bookmark..."
+          icon={icons.bookmarks}
+        />
       ) : (
         <div>
           <div className="md:grid md:grid-cols-3 md:gap-6">

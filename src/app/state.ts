@@ -1,11 +1,11 @@
 import { defineState } from "forgo-state";
-import { Bookmark, Note, TagInfo, Todo } from "./types";
+import { Bookmark, Note, TagInfo, Todo } from "../types";
 
 export interface IState {
+  name?: string;
   bookmarks: Bookmark[];
   notes: Note[];
   todos: Todo[];
-  name?: string;
   device?: string;
   recentTags: TagInfo[];
   snack?: {

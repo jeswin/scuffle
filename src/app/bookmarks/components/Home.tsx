@@ -2,7 +2,7 @@ import BookmarksList from "./BookmarksList";
 import { Link } from "forgo-router";
 import AddBookmark from "./AddBookmark";
 
-export default function TodosHome() {
+export default function BookmarksHome() {
   return {
     render() {
       return (

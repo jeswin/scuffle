@@ -2,6 +2,7 @@ import { ForgoRef, CSSProperties, rerender, ForgoAfterRenderArgs } from "forgo";
 import { ForgoRenderArgs } from "forgo";
 import { addNote } from "../actions";
 import { iconsDefault as icons } from "../../../icons";
+import PlaceholderTextBox from "../../components/PlaceholderTextBox";
 
 export type EditNoteProps = {
   style?: CSSProperties;
@@ -21,15 +22,9 @@ export default function AddNote(props: EditNoteProps) {
 
   return {
     render(props: EditNoteProps, args: ForgoRenderArgs) {
-      function onPlaceholderClick() {
-        mode = "edit";
-        rerender(args.element);
-      }
-
       function showNoteEditor() {
         mode = "edit";
-        noteText = (placeholderNoteTextRef.value as HTMLInputElement)
-          .value;
+        noteText = (placeholderNoteTextRef.value as HTMLInputElement).value;
         rerender(args.element);
       }
 
@@ -147,23 +142,12 @@ export default function AddNote(props: EditNoteProps) {
               </div>
             </div>
           ) : (
-            <div
-              onclick={onPlaceholderClick}
-              className="pt-3 pr-2 pb-3 pl-2 mb-8 rounded-md border border-gray-400 max-w-3xl flex"
-            >
-              <span className="pt-1">{icons.notes}</span>
-              <input
-                type="text"
-                className="focus:outline-none ml-4 resize-none"
-                key="note_contents_placeholder"
-                ref={placeholderNoteTextRef}
-                onfocus={() => showNoteEditor()}
-                onclick={() => showNoteEditor()}
-                oncontextmenu={() => showNoteEditor()}
-                onkeypress={() => showNoteEditor()}
-                placeholder="Add a note..."
-              />
-            </div>
+            <PlaceholderTextBox
+              icon={icons.notes}
+              ref={placeholderNoteTextRef}
+              onClick={showNoteEditor}
+              placeholder="Add a note..."
+            />
           )}
         </div>
       );

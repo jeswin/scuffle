@@ -1,4 +1,4 @@
-import state from "../../state";
+import state from "../state";
 import * as bookmarksService from "../../services/bookmarks";
 import * as notesService from "../../services/notes";
 import * as todosService from "../../services/todos";
