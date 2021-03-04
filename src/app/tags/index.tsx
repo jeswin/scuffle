@@ -1,12 +1,14 @@
 import { matchExactUrl } from "forgo-router";
-import Tag from "./components/Tag";
+import { loadTaggedItems } from "./actions";
+import TaggedItems from "./components/TaggedItems";
 
 export default function TagsIndex() {
   return {
     render() {
-      return matchExactUrl("/tags/:id", (match) => (
-        <Tag tags={[match.params.id]} />
-      ));
+      return matchExactUrl("/tags/:id", (match) => {
+        loadTaggedItems([match.params.id]);
+        return <TaggedItems />;
+      });
     },
   };
 }

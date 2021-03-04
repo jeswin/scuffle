@@ -4,6 +4,10 @@ import * as todosService from "../../../services/todos";
 import { Todo } from "../../../types";
 
 export async function loadTaggedItems(tags: string[]): Promise<void> {
+  state.tags = tags;
+  state.bookmarks = [];
+  state.notes = [];
+  state.todos = [];
   const items = await tagsService.getItemsByTags(tags);
   state.bookmarks = items.bookmarks;
   state.notes = items.notes;

@@ -87,6 +87,18 @@ export function makeIcons(options: {
         <path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z" />
       </svg>
     ),
+    edit: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height={height}
+        viewBox={viewBox}
+        width={width}
+        fill="currentColor"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+      </svg>
+    ),
     stars: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -147,6 +159,26 @@ export function makeIcons(options: {
               <path d="M12,8c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S10.9,8,12,8z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13.1,10,12,10z M12,16c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13.1,16,12,16z" />
             </g>
           </g>
+        </g>
+      </svg>
+    ),
+    push_pin: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        enable-background="new 0 0 24 24"
+        height={height}
+        viewBox={viewBox}
+        width={width}
+        fill="currentColor"
+      >
+        <g>
+          <rect fill="none" height="24" width="24" />
+        </g>
+        <g>
+          <path
+            d="M16,9V4l1,0c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H7C6.45,2,6,2.45,6,3v0 c0,0.55,0.45,1,1,1l1,0v5c0,1.66-1.34,3-3,3h0v2h5.97v7l1,1l1-1v-7H19v-2h0C17.34,12,16,10.66,16,9z"
+            fill-rule="evenodd"
+          />
         </g>
       </svg>
     ),

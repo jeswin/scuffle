@@ -5,6 +5,7 @@ import groupEntitiesByDate from "../../utils/groupEntitiesByDate";
 import { iconsDefault as icons } from "../../icons";
 import BookmarksListItem from "../bookmarks/components/BookmarksListItem";
 import NotesListItem from "../notes/components/NotesListItem";
+import SectionHeading from "./SectionHeading";
 
 export type ItemsByDateProps = {
   completeTodo: (todo: Todo) => void;
@@ -37,17 +38,14 @@ export default function ItemsByDate(props: ItemsByDateProps) {
         <div>
           {groupedTodos.size > 0 ? (
             <>
-              <h2 className="mb-4 text-sm font-serif font-bold underline">
-                Get these done...
-              </h2>
+              <SectionHeading type="h2">Get these done...</SectionHeading>
               <div className="pb-2 rounded-md">
                 {Array.from(groupedTodos.entries()).map(
                   ([timeString, items]) => (
                     <div className="mb-8 last:mb-6">
-                      <div className="flex mb-4 items-center">
-                        {icons.access_time}
-                        <h3 className="pl-2 text-sm font-bold">{timeString}</h3>
-                      </div>
+                      <SectionHeading type="h3" icon={icons.access_time}>
+                        {timeString}
+                      </SectionHeading>
                       <ul>
                         {items.map((todo: Todo) => (
                           <TodoListItem
@@ -66,15 +64,12 @@ export default function ItemsByDate(props: ItemsByDateProps) {
             <></>
           )}
 
-          <h2 className="mb-4 text-sm font-serif font-bold underline">
-            Bookmarks, Notes and Files
-          </h2>
+          <SectionHeading type="h2">Bookmarks, Notes and Files</SectionHeading>
           {Array.from(groupedItems.entries()).map(([timeString, items]) => (
             <div className="mb-8">
-              <div className="flex mb-4 items-center">
-                {icons.access_time}
-                <h3 className="pl-2 text-sm font-bold">{timeString}</h3>
-              </div>
+              <SectionHeading type="h3" icon={icons.access_time}>
+                {timeString}
+              </SectionHeading>
               <ul>
                 {(items.filter((x) => x.type === "bookmark") as Bookmark[]).map(
                   (bookmark: Bookmark) => (

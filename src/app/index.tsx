@@ -10,8 +10,6 @@ import Tags from "./tags";
 import Settings from "./settings";
 import PageNotFound from "../PageNotFound";
 import { loadProfile } from "./actions";
-import { bindToStates } from "forgo-state";
-import state from "./state";
 
 window.addEventListener("popstate", () => {
   updateRoute();
