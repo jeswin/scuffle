@@ -12,7 +12,7 @@ export default function BigTextBox(initialProps: BigTextBoxProps) {
       return (
         <div
           onclick={props.onClick}
-          className="pt-3 pr-2 pb-3 pl-2 mb-8 rounded-md border border-gray-400 max-w-3xl flex"
+          className="p-3 mb-8 rounded-md border border-gray-400 max-w-3xl flex"
         >
           <span className="pt-1">{props.icon}</span>
           <input

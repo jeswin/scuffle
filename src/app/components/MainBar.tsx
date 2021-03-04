@@ -1,8 +1,10 @@
 import { ForgoRenderArgs, rerender } from "forgo";
 import { match, Link } from "forgo-router";
+import { bindToStates } from "forgo-state";
 import { iconsDefault as icons } from "../../icons";
+import state from "../state";
 
-export type TopBarProps = {};
+export type MainBarProps = {};
 
 const items = [
   ["home", "Home", icons.home],
@@ -14,12 +16,11 @@ const items = [
   ["settings", "Settings", icons.settings],
 ];
 
-export default function TopBar(props: TopBarProps) {
-  let mobileLinksOpen = false;
+export default function MainBar(props: MainBarProps) {
   let showSettingsPopup = false;
 
-  return {
-    render(props: TopBarProps, args: ForgoRenderArgs) {
+  const component = {
+    render(props: MainBarProps, args: ForgoRenderArgs) {
       function updateView(fn: () => void) {
         fn();
         rerender(args.element);
@@ -41,7 +42,7 @@ export default function TopBar(props: TopBarProps) {
 
       return (
         <nav>
-          <div className="flex flex-col fixed text-sm">
+          <div className="flex flex-col text-sm">
             <ul className="mt-4">
               <li className="mb-4">
                 <div className="flex">
@@ -64,7 +65,7 @@ export default function TopBar(props: TopBarProps) {
                   </button>
                   <div className="ml-2">
                     <p className="text-sm font-bold">Scuffle</p>
-                    <p className="text-xs -ml-0.5">Jeswin Kumar</p>
+                    <p className="text-xs -ml-0.5">{state.profile.name}</p>
                   </div>
                 </div>
               </li>
@@ -76,7 +77,9 @@ export default function TopBar(props: TopBarProps) {
                       href={`/${id === "home" ? "" : id}`}
                     >
                       {icon}
-                      <span className="inline-block pl-2 font-bold">{text}</span>
+                      <span className="inline-block pl-2 font-bold">
+                        {text}
+                      </span>
                     </Link>
                   </li>
                 ) : (
@@ -139,4 +142,6 @@ export default function TopBar(props: TopBarProps) {
       );
     },
   };
+
+  return bindToStates([state], component);
 }

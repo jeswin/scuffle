@@ -1,8 +1,8 @@
 import { defineState } from "forgo-state";
-import { Bookmark, Note, TagInfo, Todo } from "../types";
+import { Bookmark, Note, Profile, TagInfo, Todo } from "../types";
 
 export interface IState {
-  name?: string;
+  profile: Profile;
   bookmarks: Bookmark[];
   notes: Note[];
   todos: Todo[];
@@ -15,6 +15,7 @@ export interface IState {
 }
 
 const state: IState = defineState({
+  profile: { name: "" },
   bookmarks: [],
   notes: [],
   todos: [],

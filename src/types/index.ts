@@ -9,6 +9,10 @@ export type JwtData = {
   provider: string;
 };
 
+export type Profile = {
+  name: string;
+};
+
 export type ScuffleEntityBase = {
   type: string;
   createdAt: number;
