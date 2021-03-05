@@ -3,6 +3,7 @@ import { ForgoRenderArgs } from "forgo";
 import { addNote } from "../actions";
 import { iconsDefault as icons } from "../../../icons";
 import PlaceholderTextBox from "../../components/PlaceholderTextBox";
+import Button from "../../components/Button";
 
 export type EditNoteProps = {
   style?: CSSProperties;
@@ -57,52 +58,36 @@ export default function AddNote(props: EditNoteProps) {
       return (
         <div>
           {mode === "edit" ? (
-            <div className="p-4 mb-8 rounded-md border border-gray-400">
-              <input
-                className="focus:outline-none w-full font-bold text-lg mb-2"
-                key="note_title"
-                ref={noteTitleRef}
-                placeholder="Title"
-              />
-              <br />
-              <textarea
-                className="focus:outline-none w-full"
-                key="note_contents"
-                ref={noteTextRef}
-                rows={6}
-                placeholder="Add a note..."
-              >
-                {noteText}
-              </textarea>
-              <div className="flex">
+            <div className="bg-white mb-8 shadow rounded-lg">
+              <div className="px-8 pt-4 pb-4">
+                <input
+                  className="focus:outline-none w-full font-bold text-lg mb-2"
+                  key="note_title"
+                  ref={noteTitleRef}
+                  placeholder="Title"
+                />
+                <br />
+                <textarea
+                  className="focus:outline-none w-full"
+                  key="note_contents"
+                  ref={noteTextRef}
+                  rows={6}
+                  placeholder="Add a note..."
+                >
+                  {noteText}
+                </textarea>
+              </div>
+              <div className="px-4 py-3 bg-gray-50 text-left border border-t border-gray-200 flex">
                 <div className="flex-grow">
-                  <button
-                    className="inline-flex justify-center mr-2 py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-green-600 hover:bg-green-700 focus:outline-none"
-                    onclick={saveNote}
-                  >
+                  <Button onClick={saveNote} type="primary">
                     Save Note
-                  </button>
+                  </Button>
                 </div>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    enable-background="new 0 0 24 24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    class="mt-3"
-                    onclick={expandEditor}
-                  >
-                    <g>
-                      <rect fill="none" height="24" width="24" />
-                    </g>
-                    <g>
-                      <g>
-                        <path d="M20,12L20,12c-0.55,0-1,0.45-1,1v6H5V5h6c0.55,0,1-0.45,1-1l0,0c0-0.55-0.45-1-1-1H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2 h14c1.1,0,2-0.9,2-2v-6C21,12.45,20.55,12,20,12z" />
-                        <path d="M20.5,3h-5.29c-0.45,0-0.67,0.54-0.35,0.85l1.94,1.94L9,13.59C8.61,13.98,8.61,14.61,9,15h0c0.39,0.39,1.02,0.39,1.41,0 l7.79-7.79l1.94,1.94C20.46,9.46,21,9.24,21,8.79V3.5C21,3.22,20.78,3,20.5,3z" />
-                      </g>
-                    </g>
-                  </svg>
+                <div
+                  className="p-2 -mr-2 cursor-pointer"
+                  onclick={expandEditor}
+                >
+                  {icons.open_in_new}
                 </div>
               </div>
             </div>
@@ -129,12 +114,9 @@ export default function AddNote(props: EditNoteProps) {
                   </textarea>
                   <div className="flex mt-4">
                     <div className="flex-grow">
-                      <button
-                        className="inline-flex justify-center mr-2 py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-green-600 hover:bg-green-700 focus:outline-none"
-                        onclick={saveNote}
-                      >
+                      <Button onClick={saveNote} type="primary">
                         Save Note
-                      </button>
+                      </Button>
                     </div>
                     <div></div>
                   </div>

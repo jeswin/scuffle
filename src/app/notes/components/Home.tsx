@@ -1,4 +1,4 @@
-import EditNote from "./EditNote";
+import EditNote from "./AddNote";
 import NotesList from "./NotesList";
 
 export default function NotesHome() {

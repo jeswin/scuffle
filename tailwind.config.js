@@ -26,7 +26,6 @@ module.exports = {
       serif: ["Merriweather", "serif"],
     },
     fontSize: {
-      xxs: ".666rem",
       xs: ".75rem",
       sm: ".875rem",
       tiny: ".875rem",

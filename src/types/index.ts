@@ -9,9 +9,21 @@ export type JwtData = {
   provider: string;
 };
 
-export type Profile = {
-  name: string;
-};
+export type Profile =
+  | {
+      type: "none";
+      name: string;
+    }
+  | {
+      type: "free";
+      name: string;
+      username: string;
+    }
+  | {
+      type: "pro";
+      name: string;
+      username: string;
+    };
 
 export type ScuffleEntityBase = {
   type: string;

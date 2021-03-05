@@ -28,7 +28,7 @@ export default function App() {
       return (
         <Router>
             {/* <TopBanner text="You are not syncing with personal storage yet." /> */}
-            <div className="max-w-7xl m-auto flex min-h-screen text-gray-800">
+            <div className="max-w-7xl m-auto flex min-h-screen text-gray-800 text-sm">
               <div className="border-r border-gray-200 fixed min-w-48 min-h-full pl-4 xl:pl-12 xl:min-w-60">
                 <MainBar />
               </div>

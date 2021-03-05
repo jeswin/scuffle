@@ -95,13 +95,34 @@ export default function MainBar(props: MainBarProps) {
                 )
               )}
             </ul>
+            
+            {state.profile.type === "none" ? (
+              <div>
+                <div className="text-gray-900 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium text-sm cursor-pointer">
+                  <Link
+                    className="inline-block align-middle flex text-red-600"
+                    href="/settings/account"
+                  >
+                    <div className="mt-1">{icons.warning}</div>
+                    <span className="inline-block pl-2">
+                      Not backed up.
+                      <br />{" "}
+                      <span className="underline font-bold">Fix now</span>.
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              <></>
+            )}
+
             <ul className="mt-4">
               <li className="text-gray-800 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium cursor-pointer">
                 <div className="flex">
                   <span className="mt-0.5">{icons.get_app}</span>
                   <span className="pl-2">Download App</span>
                 </div>
-                <p className="text-xxs">
+                <p className="text-xs">
                   For Windows, Mac, Linux,
                   <br />
                   Android and iOS.

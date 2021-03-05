@@ -1,6 +1,7 @@
 import { ForgoRef, rerender, ForgoRenderArgs } from "forgo";
 import { iconsDefault as icons } from "../../../icons";
 import PlaceholderTextBox from "../../components/PlaceholderTextBox";
+import Button from "../../components/Button";
 
 export type AddBookmarkProps = {
   collapsed: boolean;
@@ -30,50 +31,36 @@ export default function AddBookmark(props: AddBookmarkProps) {
           icon={icons.bookmarks}
         />
       ) : (
-        <div>
-          <div className="md:grid md:grid-cols-3 md:gap-6">
-            <div className="mt-5 md:mt-0 md:col-span-2">
-              <form action="#" method="POST">
-                <div className="shadow sm:rounded-lg sm:overflow-hidden">
-                  <div className="bg-white pl-3 pr-3">
-                    <div className="px-4 py-3 bg-white space-y-3 sm:p-6">
-                      <div className="border-b p-2">
-                        <input
-                          ref={bookmarkUrlElement}
-                          placeholder="Type a url..."
-                          className="focus:outline-none"
-                        ></input>
-                      </div>
-                      <div className="border-b p-2">
-                        <input
-                          placeholder="Optional description..."
-                          className="focus:outline-none"
-                        ></input>
-                      </div>
-                      <div className="flex space-x-4 border-b p-2">
-                        <div style={{ width: "50px" }}>Tags</div>
-                        <div>
-                          <input
-                            type="text"
-                            className="focus:outline-none"
-                            placeholder="starting typing tags..."
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">
-                    <button className="inline-flex justify-center mr-2 py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-green-600 hover:bg-green-700 focus:outline-none">
-                      Add Bookmark
-                    </button>
-                    <button className="inline-flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-black bg-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none">
-                      Cancel
-                    </button>
-                  </div>
-                </div>
-              </form>
+        <div className="bg-white max-w-lg mb-8 shadow rounded-lg">
+          <div className="px-8 pt-4 pb-8 flex-row space-y-3">
+            <div className="border-b p-2">
+              <input
+                ref={bookmarkUrlElement}
+                placeholder="Type a url..."
+                className="focus:outline-none"
+              ></input>
             </div>
+            <div className="border-b p-2">
+              <input
+                placeholder="Optional description..."
+                className="focus:outline-none"
+              ></input>
+            </div>
+            <div className="flex border-b p-2">
+              <div className="pr-4">Tags</div>
+              <div>
+                <input
+                  type="text"
+                  className="focus:outline-none"
+                  placeholder="starting typing tags..."
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="px-4 py-3 bg-gray-50 text-left border border-t border-gray-200">
+            <Button type="primary">Add Bookmark</Button>
+            <Button>Cancel</Button>
           </div>
         </div>
       );

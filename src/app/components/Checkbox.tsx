@@ -1,4 +1,5 @@
-import { ForgoRenderArgs, rerender } from "forgo";
+import { ForgoRenderArgs } from "forgo";
+import { getClassName } from "../../utils/uiUtils";
 
 export type CheckboxProps = {
   text?: string;
@@ -17,7 +18,7 @@ export default function Checkbox(props: CheckboxProps) {
       }
 
       return (
-        <div className={`inline-block ${props.className ?? ""}`}>
+        <div className={getClassName("inline-block", props.className)}>
           <label className="flex justify-start items-start">
             <div
               className="bg-white border-2 rounded-lg border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"

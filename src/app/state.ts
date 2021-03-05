@@ -15,7 +15,7 @@ export interface IState {
 }
 
 const state: IState = defineState({
-  profile: { name: "" },
+  profile: { type: "none", name: "" },
   bookmarks: [],
   notes: [],
   todos: [],
