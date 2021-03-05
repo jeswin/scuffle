@@ -3,6 +3,7 @@ import Button from "../../components/Button";
 import SectionHeading from "../../components/SectionHeading";
 import SelectableArticle from "../../components/SelectableArticle";
 import rootState from "../../state";
+import * as unicodeChars from "../../../utils/unicode";
 
 export default function AccountHome() {
   return {
@@ -40,7 +41,11 @@ export default function AccountHome() {
                         <span className="font-bold text-md">Free</span>
                       </p>
                     ),
-                    right: <Button type="highlight">Select Plan</Button>,
+                    right: (
+                      <Button type="highlight">
+                        Select Plan {unicodeChars.arrowRight}
+                      </Button>
+                    ),
                   }}
                   selected={true}
                 />
@@ -67,7 +72,11 @@ export default function AccountHome() {
                         <span className="text-gray-600">per month</span>
                       </p>
                     ),
-                    right: <Button type="highlight">Select Plan</Button>,
+                    right: (
+                      <Button type="highlight">
+                        Select Plan {unicodeChars.arrowRight}
+                      </Button>
+                    ),
                   }}
                 />
               </li>

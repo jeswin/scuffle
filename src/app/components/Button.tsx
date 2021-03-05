@@ -27,7 +27,7 @@ export default function Button(initialProps: ButtonProps) {
       return (
         <button
           className={getClassName(
-            `inline-flex justify-center mr-2 py-1 px-4 border text-sm font-medium rounded-full focus:outline-none ${colorString}`,
+            `inline-flex justify-center mr-2 py-1 px-4 border text-sm font-medium rounded-sm focus:outline-none ${colorString}`,
             props.className
           )}
           onclick={clickHandler}
