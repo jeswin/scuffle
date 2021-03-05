@@ -61,10 +61,8 @@ export default function AddTodo(props: AddTodoProps) {
       return (
         <>
           {collapsed ? (
-            <div className="pb-4 -ml-1">
-              <Button type="primary" onClick={onOpenTodoBox}>
-                + Add Todo
-              </Button>
+            <div className="mt-4 pb-8">
+              <Button type="primary" onClick={onOpenTodoBox}>+ Add Todo</Button>
             </div>
           ) : (
             <div className="max-w-2xl bg-white mb-8 shadow rounded-lg">
@@ -123,7 +121,7 @@ export default function AddTodo(props: AddTodoProps) {
               </div>
               <div className="px-4 py-3 bg-gray-50 text-left border border-t border-gray-200">
                 <Button type="primary">Add this Todo</Button>
-                <Button>Cancel</Button>
+                <Button onClick={collapseControl}>Cancel</Button>
               </div>
             </div>
           )}
