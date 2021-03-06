@@ -1,8 +1,11 @@
-import { ForgoComponent, ForgoNode } from "forgo";
+import { ForgoComponent, ForgoNode, ForgoRenderArgs, rerender } from "forgo";
+import { getClassName } from "../../utils/uiUtils";
 import Checkbox from "./Checkbox";
 
 export type SelectableArticleProps = {
   title: string;
+  highlightOnHover?: boolean;
+  highlightOnSelect?: boolean;
   list: {
     items: string[];
     cols: number;
@@ -20,7 +23,7 @@ export default function SelectableArticle(
   initialProps: SelectableArticleProps
 ) {
   return {
-    render(props: SelectableArticleProps) {
+    render(props: SelectableArticleProps, args: ForgoRenderArgs) {
       function onClick() {
         if (props.onClick) {
           props.onClick();
@@ -29,22 +32,31 @@ export default function SelectableArticle(
 
       return (
         <div
-          className="px-1 pt-1 pb-2 mb-4 rounded-md border-2 cursor-pointer"
+          className={getClassName(
+            "px-1 pt-1 pb-2 mb-4 rounded-md border-2 cursor-pointer",
+            props.highlightOnHover ? "hover:border-gray-400" : undefined,
+            props.highlightOnSelect && props.selected
+              ? "bg-green-50 border-green-600"
+              : undefined
+          )}
           onclick={onClick}
         >
-          <div className="border-b pb-4 pl-4">
-            <div>
-              <h3 className="font-bold my-2">{props.title}</h3>
-              <ul className={`grid grid-cols-${props.list.cols} gap-1`}>
-                {props.list.items.map((x) => (
-                  <li className="flex items-center">
-                    <span className="text-green-600 pr-2">
+          <div className="border-b mt-2 ml-2 pb-4">
+            <div className="flex">
+              <div className="mr-2 mt-1">
+                <Checkbox checked={props.selected} />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold mt-1 mb-2">{props.title}</h3>
+                <ul className={`-ml-2 grid grid-cols-${props.list.cols} gap-1`}>
+                  {props.list.items.map((x) => (
+                    <li className="flex items-center">
                       {props.list.bullet}
-                    </span>
-                    <span>{x}</span>
-                  </li>
-                ))}
-              </ul>
+                      <span>{x}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
           <div className="pl-4 pt-2 pr-4 flex items-center">

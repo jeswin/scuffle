@@ -1,14 +1,14 @@
 import { ForgoComponent, ForgoRef, ForgoRenderArgs } from "forgo";
 
-export type BigTextBoxProps = {
+export type PlaceholderTextBoxProps = {
   onClick: () => void;
   icon: ForgoComponent<any>;
   ref: ForgoRef<HTMLInputElement>;
   placeholder: string;
 };
-export default function BigTextBox(initialProps: BigTextBoxProps) {
+export default function PlaceholderTextBox(initialProps: PlaceholderTextBoxProps) {
   return {
-    render(props: BigTextBoxProps, args: ForgoRenderArgs) {
+    render(props: PlaceholderTextBoxProps, args: ForgoRenderArgs) {
       return (
         <div
           onclick={props.onClick}

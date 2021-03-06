@@ -1,13 +1,36 @@
+import { ForgoRenderArgs, rerender } from "forgo";
 import { iconsDefault } from "../../../icons";
+import * as unicode from "../../../utils/unicode";
 import Button from "../../components/Button";
 import SectionHeading from "../../components/SectionHeading";
 import SelectableArticle from "../../components/SelectableArticle";
 import rootState from "../../state";
-import * as unicodeChars from "../../../utils/unicode";
+import TextField from "../../components/TextField";
 
-export default function AccountHome() {
+export type AccountHomeProps = {};
+
+export default function AccountHome(initialProps: AccountHomeProps) {
+  let basicPlanSelected = false;
+  let proPlanSelected = false;
+
   return {
-    render() {
+    render(props: AccountHomeProps, args: ForgoRenderArgs) {
+      function onClickBasicPlan() {
+        basicPlanSelected = !basicPlanSelected;
+        if (basicPlanSelected) {
+          proPlanSelected = false;
+        }
+        rerender(args.element);
+      }
+
+      function onClickProPlan() {
+        proPlanSelected = !proPlanSelected;
+        if (proPlanSelected) {
+          basicPlanSelected = false;
+        }
+        rerender(args.element);
+      }
+
       return (
         <div className="max-w-lg">
           <SectionHeading type="h2">Create an Account</SectionHeading>
@@ -20,67 +43,140 @@ export default function AccountHome() {
           ) : (
             <></>
           )}
-          <SectionHeading type="h3">Choose a Plan</SectionHeading>
-          <div className="mt-4">
-            <ul>
-              <li>
-                <SelectableArticle
-                  title="Basic"
-                  list={{
-                    items: [
-                      "100MB of storage",
-                      "Limited access to Git UI",
-                      "Community support",
-                    ],
-                    cols: 1,
-                    bullet: iconsDefault.check,
-                  }}
-                  footer={{
-                    left: (
-                      <p>
-                        <span className="font-bold text-md">Free</span>
-                      </p>
-                    ),
-                    right: (
-                      <Button type="highlight">
-                        Select Plan {unicodeChars.arrowRight}
-                      </Button>
-                    ),
-                  }}
-                  selected={true}
-                />
-              </li>
-              <li>
-                <SelectableArticle
-                  title="Scuffle Pro"
-                  list={{
-                    cols: 2,
-                    bullet: iconsDefault.check,
-                    items: [
-                      "10GB of storage",
-                      "Full access to Git UI",
-                      "API Access",
-                      "Email Support",
-                      "Better bandwidth",
-                      "Discord Invite",
-                    ],
-                  }}
-                  footer={{
-                    left: (
-                      <p>
-                        <span className="font-bold text-md">$3.99</span>{" "}
-                        <span className="text-gray-600">per month</span>
-                      </p>
-                    ),
-                    right: (
-                      <Button type="highlight">
-                        Select Plan {unicodeChars.arrowRight}
-                      </Button>
-                    ),
-                  }}
-                />
-              </li>
-            </ul>
+          <div className="mb-4 text-sm">
+            <SectionHeading type="h3">1. Username and Password</SectionHeading>
+            <p className="pb-2">
+              <span
+                style={{
+                  width: "80px",
+                  marginRight: "1em",
+                  display: "inline-block",
+                  textAlign: "right",
+                }}
+              >
+                Username
+              </span>
+              <TextField
+                type="text"
+                placeholder="Choose a username"
+                dark={true}
+              />
+            </p>
+            <p className="pb-2">
+              <span
+                style={{
+                  width: "80px",
+                  marginRight: "1em",
+                  display: "inline-block",
+                  textAlign: "right",
+                }}
+              >
+                Email
+              </span>
+              <TextField type="text" placeholder="Email address" dark={true} />
+            </p>
+            <p className="pb-2">
+              <span
+                style={{
+                  width: "80px",
+                  marginRight: "1em",
+                  display: "inline-block",
+                  textAlign: "right",
+                }}
+              >
+                Password
+              </span>
+              <TextField type="password" placeholder="Password" dark={true} />
+            </p>
+            <p className="pb-2">
+              <span
+                style={{
+                  width: "80px",
+                  marginRight: "1em",
+                  display: "inline-block",
+                  textAlign: "right",
+                }}
+              >
+                Repeat
+              </span>
+              <TextField
+                type="password"
+                placeholder="Repeat Password"
+                dark={true}
+              />
+            </p>
+          </div>
+          <div>
+            <SectionHeading type="h3">2. Choose a Plan</SectionHeading>
+            <div className="mt-4">
+              <ul>
+                <li>
+                  <SelectableArticle
+                    title="Basic*"
+                    list={{
+                      items: [
+                        "100MB of storage",
+                        "Limited access to Git UI",
+                        "Community support",
+                      ],
+                      cols: 1,
+                      bullet: (
+                        <span className="text-green-600 pr-2">
+                          {iconsDefault.check}
+                        </span>
+                      ),
+                    }}
+                    highlightOnHover={true}
+                    highlightOnSelect={true}
+                    selected={basicPlanSelected}
+                    footer={{
+                      left: (
+                        <p>
+                          <span className="font-bold text-md">Free</span>
+                        </p>
+                      ),
+                    }}
+                    onClick={onClickBasicPlan}
+                  />
+                </li>
+                <li>
+                  <SelectableArticle
+                    title="Scuffle Pro"
+                    list={{
+                      cols: 2,
+                      bullet: (
+                        <span className="text-green-600 pr-2">
+                          {iconsDefault.check}
+                        </span>
+                      ),
+                      items: [
+                        "10GB of storage",
+                        "Full access to Git UI",
+                        "API Access",
+                        "Email Support",
+                        "Better bandwidth",
+                        "Discord Invite",
+                      ],
+                    }}
+                    highlightOnHover={true}
+                    highlightOnSelect={true}
+                    selected={proPlanSelected}
+                    footer={{
+                      left: (
+                        <p>
+                          <span className="font-bold text-md">$3.99</span>{" "}
+                          <span className="text-gray-600">per month</span>
+                        </p>
+                      ),
+                    }}
+                    onClick={onClickProPlan}
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="pt-4 mb-8">
+            <Button type="highlight">Sign Up {unicode.arrowRight}</Button>
           </div>
           <div className="pl-2 text-xs max-w-sm flex">
             <p className="pr-1">*</p>
