@@ -45,37 +45,40 @@ export default function AccountHome(initialProps: AccountHomeProps) {
           )}
           <div className="mb-4 text-sm">
             <SectionHeading type="h3">1. Username and Password</SectionHeading>
-            <TextField
-              type="text"
-              label="Username"
-              placeholder="Choose a username"
-              dark={true}
-              labelWidth="80px"
-            />
-            <br />
-            <TextField
-              label="Email"
-              type="text"
-              placeholder="Email address"
-              dark={true}
-              labelWidth="80px"
-            />
-            <br />
-            <TextField
-              label="Password"
-              type="password"
-              placeholder="Password"
-              dark={true}
-              labelWidth="80px"
-            />
-            <br />
-            <TextField
-              label="Repeat It"
-              type="password"
-              placeholder="Password"
-              dark={true}
-              labelWidth="80px"
-            />
+            <div className="flex-row space-y-4">
+              <TextField
+                type="text"
+                label="Username"
+                placeholder="Choose a username"
+                dark={true}
+                labelWidth="80px"
+                labelAlign="right"
+              />
+              <TextField
+                label="Email"
+                type="text"
+                placeholder="Email address"
+                dark={true}
+                labelWidth="80px"
+                labelAlign="right"
+              />
+              <TextField
+                label="Password"
+                type="password"
+                placeholder="Password"
+                dark={true}
+                labelWidth="80px"
+                labelAlign="right"
+              />
+              <TextField
+                label="Repeat It"
+                type="password"
+                placeholder="Password"
+                dark={true}
+                labelWidth="80px"
+                labelAlign="right"
+              />
+            </div>
           </div>
           <div>
             <SectionHeading type="h3">2. Choose a Plan</SectionHeading>

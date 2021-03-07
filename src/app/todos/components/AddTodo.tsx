@@ -8,6 +8,7 @@ import {
 import Checkbox from "../../components/Checkbox";
 import { JSX } from "forgo/jsx-runtime";
 import Button from "../../components/Button";
+import TextField from "../../components/TextField";
 
 export type AddTodoProps = {
   collapsed: boolean;
@@ -62,11 +63,13 @@ export default function AddTodo(props: AddTodoProps) {
         <>
           {collapsed ? (
             <div className="mt-4 pb-8">
-              <Button type="primary" onClick={onOpenTodoBox}>+ Add Todo</Button>
+              <Button type="primary" onClick={onOpenTodoBox}>
+                + Add Todo
+              </Button>
             </div>
           ) : (
             <div className="max-w-2xl bg-white mb-8 shadow rounded-lg">
-              <div className="px-8 pt-4 pb-8 flex-row space-y-3">
+              <div className="px-8 pt-4 pb-4 flex-row space-y-4">
                 <div className="border-b p-2">
                   <Checkbox className="mr-2" />
                   <textarea
@@ -76,27 +79,22 @@ export default function AddTodo(props: AddTodoProps) {
                     rows={1}
                   ></textarea>
                 </div>
-                <div className="flex border-b p-2">
-                  <div style={{ width: "64px" }}>Tags</div>
-                  <div>
-                    <input
-                      type="text"
-                      className="focus:outline-none"
-                      placeholder="starting typing tags..."
-                    />
-                  </div>
-                </div>
-                <div className="flex border-b p-2">
-                  <div style={{ width: "64px" }}>Due?</div>
-                  <div>
-                    <input
-                      type="text"
-                      className="focus:outline-none"
-                      placeholder="add a date maybe"
-                    />
-                  </div>
-                </div>
-                <div className="flex p-2">
+                <TextField
+                  labelWidth="64px"
+                  label="Tags"
+                  underlineLabel
+                  type="text"
+                  placeholder="starting typing tags..."
+                />
+                <TextField
+                  labelWidth="64px"
+                  label="Due?"
+                  underlineLabel
+                  type="text"
+                  placeholder="add a date maybe"
+                />
+                
+                <div className="flex">
                   <div style={{ width: "64px" }}>Points</div>
                   <div>
                     <input

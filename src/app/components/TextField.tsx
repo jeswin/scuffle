@@ -9,6 +9,7 @@ export type TextFieldProps = {
   labelWidth?: string;
   textFieldClassName?: string;
   underlineLabel?: boolean;
+  labelAlign?: "left" | "right";
 };
 
 export default function TextField(initialProps: TextFieldProps) {
@@ -30,7 +31,7 @@ export default function TextField(initialProps: TextFieldProps) {
               style={{
                 display: "inline-block",
                 marginRight: "1em",
-                textAlign: "right",
+                ...(props.labelAlign ? { textAlign: props.labelAlign } : {}),
                 ...(props.labelWidth ? { width: props.labelWidth } : {}),
               }}
             >
