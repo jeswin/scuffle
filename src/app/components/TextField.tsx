@@ -6,24 +6,52 @@ export type TextFieldProps = {
   type: string;
   placeholder?: string;
   dark?: boolean;
+  labelWidth?: string;
+  textFieldClassName?: string;
+  underlineLabel?: boolean;
 };
 
 export default function TextField(initialProps: TextFieldProps) {
   return {
     render(props: TextFieldProps, args: ForgoRenderArgs) {
       return (
-        <span
+        <p
           className={getClassName(
-            "inline-block p-2 border-b",
-            props.dark ? "border-gray-500" : "border-gray-300"
+            "inline-block pb-1 flex",
+            props.underlineLabel ? "border-b" : undefined,
+            props.underlineLabel && props.dark
+              ? "border-gray-500"
+              : "border-gray-300",
+            props.textFieldClassName
           )}
         >
+          {props.label ? (
+            <span
+              style={{
+                display: "inline-block",
+                marginRight: "1em",
+                textAlign: "right",
+                ...(props.labelWidth ? { width: props.labelWidth } : {}),
+              }}
+            >
+              {props.label}
+            </span>
+          ) : (
+            <></>
+          )}
           <input
             type={props.type}
-            className="focus:outline-none"
+            className={getClassName(
+              "focus:outline-none pb-1",
+              props.textFieldClassName,
+              !props.underlineLabel ? "border-b" : undefined,
+              !props.underlineLabel && props.dark
+                ? "border-gray-500"
+                : "border-gray-300"
+            )}
             placeholder={props.placeholder}
           />
-        </span>
+        </p>
       );
     },
   };

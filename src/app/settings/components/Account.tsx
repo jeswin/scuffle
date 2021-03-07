@@ -45,66 +45,37 @@ export default function AccountHome(initialProps: AccountHomeProps) {
           )}
           <div className="mb-4 text-sm">
             <SectionHeading type="h3">1. Username and Password</SectionHeading>
-            <p className="pb-2">
-              <span
-                style={{
-                  width: "80px",
-                  marginRight: "1em",
-                  display: "inline-block",
-                  textAlign: "right",
-                }}
-              >
-                Username
-              </span>
-              <TextField
-                type="text"
-                placeholder="Choose a username"
-                dark={true}
-              />
-            </p>
-            <p className="pb-2">
-              <span
-                style={{
-                  width: "80px",
-                  marginRight: "1em",
-                  display: "inline-block",
-                  textAlign: "right",
-                }}
-              >
-                Email
-              </span>
-              <TextField type="text" placeholder="Email address" dark={true} />
-            </p>
-            <p className="pb-2">
-              <span
-                style={{
-                  width: "80px",
-                  marginRight: "1em",
-                  display: "inline-block",
-                  textAlign: "right",
-                }}
-              >
-                Password
-              </span>
-              <TextField type="password" placeholder="Password" dark={true} />
-            </p>
-            <p className="pb-2">
-              <span
-                style={{
-                  width: "80px",
-                  marginRight: "1em",
-                  display: "inline-block",
-                  textAlign: "right",
-                }}
-              >
-                Repeat
-              </span>
-              <TextField
-                type="password"
-                placeholder="Repeat Password"
-                dark={true}
-              />
-            </p>
+            <TextField
+              type="text"
+              label="Username"
+              placeholder="Choose a username"
+              dark={true}
+              labelWidth="80px"
+            />
+            <br />
+            <TextField
+              label="Email"
+              type="text"
+              placeholder="Email address"
+              dark={true}
+              labelWidth="80px"
+            />
+            <br />
+            <TextField
+              label="Password"
+              type="password"
+              placeholder="Password"
+              dark={true}
+              labelWidth="80px"
+            />
+            <br />
+            <TextField
+              label="Repeat It"
+              type="password"
+              placeholder="Password"
+              dark={true}
+              labelWidth="80px"
+            />
           </div>
           <div>
             <SectionHeading type="h3">2. Choose a Plan</SectionHeading>

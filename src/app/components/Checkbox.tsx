@@ -8,7 +8,7 @@ export type CheckboxProps = {
   onChange?: (checked: boolean) => void;
 };
 
-export default function Checkbox(props: CheckboxProps) {
+export default function Checkbox(initialProps: CheckboxProps) {
   return {
     render(props: CheckboxProps, args: ForgoRenderArgs) {
       function onClick() {
