@@ -3,6 +3,7 @@ import { iconsDefault as icons } from "../../../icons";
 import PlaceholderTextBox from "../../components/PlaceholderTextBox";
 import Button from "../../components/Button";
 import TextField from "../../components/TextField";
+import Section from "../../components/Section";
 
 export type AddBookmarkProps = {
   collapsed: boolean;
@@ -32,7 +33,7 @@ export default function AddBookmark(props: AddBookmarkProps) {
           icon={icons.bookmarks}
         />
       ) : (
-        <div className="bg-white max-w-lg mb-8 shadow rounded-lg">
+        <Section className="bg-white max-w-lg shadow rounded-lg">
           <div className="px-8 pt-6 mb-6 flex-row space-y-4">
             <TextField
               type="text"
@@ -56,7 +57,7 @@ export default function AddBookmark(props: AddBookmarkProps) {
             <Button type="primary">Add Bookmark</Button>
             <Button>Cancel</Button>
           </div>
-        </div>
+        </Section>
       );
     },
   };

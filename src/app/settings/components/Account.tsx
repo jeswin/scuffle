@@ -2,6 +2,7 @@ import { ForgoRenderArgs, rerender } from "forgo";
 import { iconsDefault } from "../../../icons";
 import * as unicode from "../../../utils/unicode";
 import Button from "../../components/Button";
+import Section from "../../components/Section";
 import SectionHeading from "../../components/SectionHeading";
 import SelectableArticle from "../../components/SelectableArticle";
 import rootState from "../../state";
@@ -33,7 +34,7 @@ export default function AccountHome(initialProps: AccountHomeProps) {
 
       return (
         <div className="max-w-lg">
-          <div className="mb-8">
+          <Section>
             <SectionHeading type="h2">Create an Account</SectionHeading>
             {rootState.profile.type === "none" ? (
               <p className="mb-4">
@@ -44,8 +45,8 @@ export default function AccountHome(initialProps: AccountHomeProps) {
             ) : (
               <></>
             )}
-          </div>
-          <div className="mb-8 text-sm">
+          </Section>
+          <Section className="text-sm">
             <SectionHeading type="h3">1. Username and Password</SectionHeading>
             <div className="flex-row space-y-4">
               <TextField
@@ -81,8 +82,8 @@ export default function AccountHome(initialProps: AccountHomeProps) {
                 labelAlign="right"
               />
             </div>
-          </div>
-          <div className="mb-8">
+          </Section>
+          <Section>
             <SectionHeading type="h3">2. Choose a Plan</SectionHeading>
             <div>
               <ul>
@@ -150,10 +151,10 @@ export default function AccountHome(initialProps: AccountHomeProps) {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className="mb-8">
+          </Section>
+          <Section>
             <Button type="highlight">Sign Up {unicode.arrowRight}</Button>
-          </div>
+          </Section>
           <div className="pl-2 text-xs max-w-sm flex">
             <p className="pr-1">*</p>
             <p>

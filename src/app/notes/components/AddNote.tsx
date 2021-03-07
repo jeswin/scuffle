@@ -4,6 +4,7 @@ import { addNote } from "../actions";
 import { iconsDefault as icons } from "../../../icons";
 import PlaceholderTextBox from "../../components/PlaceholderTextBox";
 import Button from "../../components/Button";
+import Section from "../../components/Section";
 
 export type EditNoteProps = {
   style?: CSSProperties;
@@ -58,7 +59,7 @@ export default function AddNote(props: EditNoteProps) {
       return (
         <div>
           {mode === "edit" ? (
-            <div className="bg-white mb-8 shadow rounded-lg">
+            <Section className="bg-white shadow rounded-lg">
               <div className="px-8 pt-4 pb-4">
                 <input
                   className="focus:outline-none w-full font-bold text-lg mb-2"
@@ -90,7 +91,7 @@ export default function AddNote(props: EditNoteProps) {
                   {icons.open_in_new}
                 </div>
               </div>
-            </div>
+            </Section>
           ) : mode === "expanded" ? (
             <div>
               <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-40 overflow-hidden bg-gray-700 opacity-75 flex flex-col items-center justify-center"></div>

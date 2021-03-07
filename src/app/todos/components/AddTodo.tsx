@@ -9,6 +9,7 @@ import Checkbox from "../../components/Checkbox";
 import { JSX } from "forgo/jsx-runtime";
 import Button from "../../components/Button";
 import TextField from "../../components/TextField";
+import Section from "../../components/Section";
 
 export type AddTodoProps = {
   collapsed: boolean;
@@ -62,13 +63,13 @@ export default function AddTodo(props: AddTodoProps) {
       return (
         <>
           {collapsed ? (
-            <div className="mb-4">
+            <Section>
               <Button type="primary" onClick={onOpenTodoBox}>
                 + Add Todo
               </Button>
-            </div>
+            </Section>
           ) : (
-            <div className="max-w-2xl bg-white mb-8 shadow rounded-lg">
+            <Section className="max-w-2xl bg-white shadow rounded-lg">
               <div className="px-8 pt-4 pb-4 flex-row space-y-4">
                 <div className="border-b p-2">
                   <Checkbox className="mr-2" />
@@ -93,7 +94,7 @@ export default function AddTodo(props: AddTodoProps) {
                   type="text"
                   placeholder="add a date maybe"
                 />
-                
+
                 <div className="flex">
                   <div style={{ width: "64px" }}>Points</div>
                   <div>
@@ -121,7 +122,7 @@ export default function AddTodo(props: AddTodoProps) {
                 <Button type="primary">Add this Todo</Button>
                 <Button onClick={collapseControl}>Cancel</Button>
               </div>
-            </div>
+            </Section>
           )}
         </>
       );

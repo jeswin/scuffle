@@ -5,6 +5,7 @@ import groupEntitiesByDate from "../../utils/groupEntitiesByDate";
 import { iconsDefault as icons } from "../../icons";
 import BookmarksListItem from "../bookmarks/components/BookmarksListItem";
 import NotesListItem from "../notes/components/NotesListItem";
+import Section from "./Section";
 import SectionHeading from "./SectionHeading";
 
 export type ItemsByDateProps = {
@@ -44,7 +45,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
               <SectionHeading type="h2">Get these done...</SectionHeading>
               <div className="pb-2 rounded-md">
                 {groupedTodos.map(([timeString, items]) => (
-                  <div className="mb-8 last:mb-6">
+                  <Section className="last:mb-6">
                     <SectionHeading type="h3" icon={icons.access_time}>
                       {timeString}
                     </SectionHeading>
@@ -57,7 +58,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
                         />
                       ))}
                     </ul>
-                  </div>
+                  </Section>
                 ))}
               </div>
             </>
@@ -70,7 +71,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
                 Bookmarks, Notes and Files
               </SectionHeading>
               {groupedItems.map(([timeString, items]) => (
-                <div className="mb-8">
+                <Section>
                   <SectionHeading type="h3" icon={icons.access_time}>
                     {timeString}
                   </SectionHeading>
@@ -94,7 +95,7 @@ export default function ItemsByDate(props: ItemsByDateProps) {
                       )
                     )}
                   </ul>
-                </div>
+                </Section>
               ))}
             </>
           ) : (
