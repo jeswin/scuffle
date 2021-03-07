@@ -5,6 +5,7 @@ import { iconsDefault as icons } from "../../../icons";
 import PlaceholderTextBox from "../../components/PlaceholderTextBox";
 import Button from "../../components/Button";
 import Section from "../../components/Section";
+import TextField from "../../components/TextField";
 
 export type EditNoteProps = {
   style?: CSSProperties;
@@ -119,7 +120,6 @@ export default function AddNote(props: EditNoteProps) {
                         Save Note
                       </Button>
                     </div>
-                    <div></div>
                   </div>
                 </div>
               </div>

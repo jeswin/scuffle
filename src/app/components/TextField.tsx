@@ -8,6 +8,7 @@ export type TextFieldProps = {
   dark?: boolean;
   labelWidth?: string;
   textFieldClassName?: string;
+  underline?: boolean;
   underlineLabel?: boolean;
   labelAlign?: "left" | "right";
 };
@@ -15,12 +16,13 @@ export type TextFieldProps = {
 export default function TextField(initialProps: TextFieldProps) {
   return {
     render(props: TextFieldProps, args: ForgoRenderArgs) {
+      const underline = props.underline ?? true;
       return (
         <p
           className={getClassName(
             "inline-block pb-1 flex",
-            props.underlineLabel ? "border-b" : undefined,
-            props.underlineLabel && props.dark
+            underline && props.underlineLabel ? "border-b" : undefined,
+            underline && props.underlineLabel && props.dark
               ? "border-gray-500"
               : "border-gray-300",
             props.textFieldClassName
@@ -45,8 +47,8 @@ export default function TextField(initialProps: TextFieldProps) {
             className={getClassName(
               "focus:outline-none pb-1",
               props.textFieldClassName,
-              !props.underlineLabel ? "border-b" : undefined,
-              !props.underlineLabel && props.dark
+              underline &&  !props.underlineLabel ? "border-b" : undefined,
+              underline && !props.underlineLabel && props.dark
                 ? "border-gray-500"
                 : "border-gray-300"
             )}
