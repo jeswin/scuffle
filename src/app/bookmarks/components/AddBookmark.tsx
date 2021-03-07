@@ -33,7 +33,7 @@ export default function AddBookmark(props: AddBookmarkProps) {
         />
       ) : (
         <div className="bg-white max-w-lg mb-8 shadow rounded-lg">
-          <div className="px-8 pt-8 mb-4 flex-row space-y-4">
+          <div className="px-8 pt-6 mb-6 flex-row space-y-4">
             <TextField
               type="text"
               placeholder="Type a url"

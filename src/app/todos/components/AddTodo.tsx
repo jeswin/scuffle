@@ -62,7 +62,7 @@ export default function AddTodo(props: AddTodoProps) {
       return (
         <>
           {collapsed ? (
-            <div className="mt-4 pb-8">
+            <div className="mb-4">
               <Button type="primary" onClick={onOpenTodoBox}>
                 + Add Todo
               </Button>

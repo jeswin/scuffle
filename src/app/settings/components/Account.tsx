@@ -33,17 +33,19 @@ export default function AccountHome(initialProps: AccountHomeProps) {
 
       return (
         <div className="max-w-lg">
-          <SectionHeading type="h2">Create an Account</SectionHeading>
-          {rootState.profile.type === "none" ? (
-            <p className="mb-4">
-              By creating an account on Scuffle, your data will be continuously
-              backed up. We strongly recommend that you do this, since data in
-              the browser could be lost.
-            </p>
-          ) : (
-            <></>
-          )}
-          <div className="mb-4 text-sm">
+          <div className="mb-8">
+            <SectionHeading type="h2">Create an Account</SectionHeading>
+            {rootState.profile.type === "none" ? (
+              <p className="mb-4">
+                By creating an account on Scuffle, your data will be
+                continuously backed up. We strongly recommend that you do this,
+                since data in the browser could be lost.
+              </p>
+            ) : (
+              <></>
+            )}
+          </div>
+          <div className="mb-8 text-sm">
             <SectionHeading type="h3">1. Username and Password</SectionHeading>
             <div className="flex-row space-y-4">
               <TextField
@@ -80,9 +82,9 @@ export default function AccountHome(initialProps: AccountHomeProps) {
               />
             </div>
           </div>
-          <div>
+          <div className="mb-8">
             <SectionHeading type="h3">2. Choose a Plan</SectionHeading>
-            <div className="mt-4">
+            <div>
               <ul>
                 <li>
                   <SelectableArticle
@@ -149,7 +151,7 @@ export default function AccountHome(initialProps: AccountHomeProps) {
               </ul>
             </div>
           </div>
-          <div className="pt-4 mb-8">
+          <div className="mb-8">
             <Button type="highlight">Sign Up {unicode.arrowRight}</Button>
           </div>
           <div className="pl-2 text-xs max-w-sm flex">
