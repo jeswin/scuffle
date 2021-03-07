@@ -5,6 +5,7 @@ import state from "../state";
 import { bindToStates } from "forgo-state";
 import groupEntitiesByDate from "../../../utils/groupEntitiesByDate";
 import { iconsDefault as icons } from "../../../icons";
+import Section from "../../components/Section";
 
 export default function TodoList() {
   actions.loadTodos();
@@ -19,7 +20,7 @@ export default function TodoList() {
       return (
         <div>
           {Array.from(todos.entries()).map(([timeString, items]) => (
-            <div className="mb-8">
+            <Section>
               <div className="flex pb-4 items-center">
                 {icons.access_time}
                 <h2 className="pl-2 font-bold text-sm">{timeString}</h2>
@@ -33,7 +34,7 @@ export default function TodoList() {
                   />
                 ))}
               </ul>
-            </div>
+            </Section>
           ))}
         </div>
       );
