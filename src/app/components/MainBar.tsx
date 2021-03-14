@@ -12,6 +12,8 @@ const items = [
   ["todos", "Todos", icons.add_task],
   ["bookmarks", "Bookmarks", icons.bookmarks],
   ["gallery", "Gallery", icons.photo_library],
+  ["files", "Files", icons.folder],
+  ["tables", "Tables", icons.table_view],
   ["discover", "Discover", icons.stars],
   ["settings", "Settings", icons.settings],
 ];
@@ -95,7 +97,7 @@ export default function MainBar(props: MainBarProps) {
                 )
               )}
             </ul>
-            
+
             {state.profile.type === "none" ? (
               <div>
                 <div className="text-gray-900 -ml-4 pl-12 pr-4 py-2 rounded-md font-medium text-sm cursor-pointer">
