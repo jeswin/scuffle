@@ -12,8 +12,6 @@ const items = [
   ["todos", "Todos", icons.add_task],
   ["bookmarks", "Bookmarks", icons.bookmarks],
   ["gallery", "Gallery", icons.photo_library],
-  ["files", "Files", icons.folder],
-  ["tables", "Tables", icons.table_view],
   ["discover", "Discover", icons.stars],
   ["settings", "Settings", icons.settings],
 ];

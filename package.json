@@ -9,21 +9,22 @@
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.9",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
     "babel-loader": "^8.2.2",
-    "html-webpack-plugin": "^5.2.0",
+    "html-webpack-plugin": "^5.3.1",
     "tailwindcss": "^2.0.3",
     "tailwindcss-cli": "^0.1.2",
-    "ts-loader": "^8.0.17",
+    "ts-loader": "^8.0.18",
     "typescript": "^4.2.3",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "build-css": "tailwindcss-cli build ./src/styles.css -o ./dist/styles.css",
-    "build-css-prod": "NODE_ENV=production tailwindcss-cli build ./src/styles.css -o ./dist/styles.css",
-    "start": "npx webpack serve"
+    "build-css": "npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css",
+    "build-css-prod": "NODE_ENV=production npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css",
+    "start": "npx webpack serve",
+    "build": "NODE_ENV=production npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css && npx webpack build"
   },
   "license": "AGPL-3.0"
 }

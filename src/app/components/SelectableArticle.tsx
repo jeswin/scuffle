@@ -48,7 +48,11 @@ export default function SelectableArticle(
               </div>
               <div>
                 <h3 className="text-lg font-bold mt-1 mb-2">{props.title}</h3>
-                <ul className={`-ml-2 grid grid-cols-${props.list.cols} gap-1`}>
+                <ul
+                  className={`-ml-2 grid ${
+                    props.list.cols === 2 ? "grid-cols-2" : "grid-cols-1"
+                  } gap-1`}
+                >
                   {props.list.items.map((x) => (
                     <li className="flex items-center">
                       {props.list.bullet}
