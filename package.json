@@ -2,9 +2,9 @@
   "name": "scuffle-next",
   "private": true,
   "dependencies": {
-    "@types/jsonwebtoken": "^8.5.0",
+    "@types/jsonwebtoken": "^8.5.1",
     "forgo": "^1.0.2",
-    "forgo-router": "^1.0.2",
+    "forgo-router": "^1.0.3",
     "forgo-state": "^1.0.2",
     "jsonwebtoken": "^8.5.1"
   },
