@@ -3,9 +3,9 @@
   "private": true,
   "dependencies": {
     "@types/jsonwebtoken": "^8.5.1",
-    "forgo": "^1.0.2",
-    "forgo-router": "^1.0.3",
-    "forgo-state": "^1.0.2",
+    "forgo": "^1.1.0",
+    "forgo-router": "^1.0.4",
+    "forgo-state": "^1.0.3",
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {

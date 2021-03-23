@@ -23,7 +23,7 @@ export default function AddTodo(props: AddTodoProps) {
   let taskTextElement: ForgoRef<HTMLTextAreaElement> = {};
 
   return {
-    render(props: AddTodoProps, args: ForgoRenderArgs) {
+    render(props: AddTodoProps, { update }: ForgoRenderArgs) {
       function onAddTodoClick() {
         const taskTextParts = taskText.split("\n").filter((x) => x);
         if (taskTextParts.length) {
@@ -36,28 +36,28 @@ export default function AddTodo(props: AddTodoProps) {
           addTodo(title, description);
         }
         taskText = "";
-        rerender(args.element);
+        update();
       }
 
       function onPointsChange(e: JSX.TargetedEvent<HTMLInputElement>) {
         points = parseInt(e.currentTarget.value);
-        rerender(args.element);
+        update();
       }
 
       function onOpenTodoBox() {
         collapsed = false;
-        rerender(args.element);
+        update();
       }
 
       function collapseControl() {
         taskText = "";
         collapsed = true;
-        rerender(args.element);
+        update();
       }
 
       function updateView(fn: () => void) {
         fn();
-        rerender(args.element);
+        update();
       }
 
       return (
@@ -128,11 +128,11 @@ export default function AddTodo(props: AddTodoProps) {
       );
     },
 
-    afterRender(props: AddTodoProps, args: ForgoAfterRenderArgs) {
+    afterRender(props: AddTodoProps, { update }: ForgoAfterRenderArgs) {
       if (!focusedOnce && !collapsed && taskTextElement.value) {
         focusedOnce = true;
         taskTextElement.value.focus();
-        rerender(args.element);
+        update();
       }
     },
   };

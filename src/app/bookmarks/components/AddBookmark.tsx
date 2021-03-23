@@ -18,10 +18,10 @@ export default function AddBookmark(props: AddBookmarkProps) {
   let bookmarkTitleElement: ForgoRef<HTMLInputElement> = {};
 
   return {
-    render(props: AddBookmarkProps, args: ForgoRenderArgs) {
+    render(props: AddBookmarkProps, { update }: ForgoRenderArgs) {
       function clickPlaceholder() {
         collapsed = false;
-        rerender(args.element);
+        update();
         (bookmarkUrlElement.value as HTMLInputElement).focus();
       }
 

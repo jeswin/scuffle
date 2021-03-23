@@ -11,7 +11,7 @@ export type TagViewProps = {};
 
 export default function TagView(initialProps: TagViewProps) {
   const component = {
-    render(props: TagViewProps, args: ForgoRenderArgs) {
+    render(props: TagViewProps, { update }: ForgoRenderArgs) {
       return (
         <div>
           <div className="flex mb-4">

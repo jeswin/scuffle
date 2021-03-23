@@ -6,7 +6,7 @@ export type LabeledFormProps = {
 
 export default function LabeledForm(initialProps: LabeledFormProps) {
   return {
-    render(props: LabeledFormProps, args: ForgoRenderArgs) {
+    render(props: LabeledFormProps, { update }: ForgoRenderArgs) {
       
     }
   }

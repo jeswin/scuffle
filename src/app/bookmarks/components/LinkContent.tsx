@@ -11,7 +11,7 @@ export type LinkContentProps = {
 
 export default function LinkContent(initialProps: LinkContentProps) {
   return {
-    render(props: LinkContentProps, args: ForgoRenderArgs) {
+    render(props: LinkContentProps, { update }: ForgoRenderArgs) {
       return (
         <div className="flex mb-4">
           <div className="min-w-6 pt-1">

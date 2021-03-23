@@ -8,7 +8,7 @@ export type PlaceholderTextBoxProps = {
 };
 export default function PlaceholderTextBox(initialProps: PlaceholderTextBoxProps) {
   return {
-    render(props: PlaceholderTextBoxProps, args: ForgoRenderArgs) {
+    render(props: PlaceholderTextBoxProps, { update }: ForgoRenderArgs) {
       return (
         <div
           onclick={props.onClick}

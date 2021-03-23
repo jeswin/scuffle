@@ -15,7 +15,7 @@ export type TextFieldProps = {
 
 export default function TextField(initialProps: TextFieldProps) {
   return {
-    render(props: TextFieldProps, args: ForgoRenderArgs) {
+    render(props: TextFieldProps, { update }: ForgoRenderArgs) {
       const underline = props.underline ?? true;
       return (
         <p

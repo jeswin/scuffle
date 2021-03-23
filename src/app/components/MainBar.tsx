@@ -20,10 +20,10 @@ export default function MainBar(props: MainBarProps) {
   let showSettingsPopup = false;
 
   const component = {
-    render(props: MainBarProps, args: ForgoRenderArgs) {
+    render(props: MainBarProps, { update }: ForgoRenderArgs) {
       function updateView(fn: () => void) {
         fn();
-        rerender(args.element);
+        update();
       }
 
       const selected = match("/")

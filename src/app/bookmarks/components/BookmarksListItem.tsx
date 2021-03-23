@@ -15,7 +15,7 @@ function getHostname(urlString: string) {
 
 export default function BookmarksListItem(props: BookmarksListItemProps) {
   return {
-    render(props: BookmarksListItemProps, args: ForgoRenderArgs) {
+    render(props: BookmarksListItemProps, { update }: ForgoRenderArgs) {
       const contentType =
         (props.bookmark.content && props.bookmark.content.type) || "link";
 

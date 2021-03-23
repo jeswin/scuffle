@@ -24,11 +24,11 @@ export default function AddNote(props: EditNoteProps) {
   let noteText = "";
 
   return {
-    render(props: EditNoteProps, args: ForgoRenderArgs) {
+    render(props: EditNoteProps, { update }: ForgoRenderArgs) {
       function showNoteEditor() {
         mode = "edit";
         noteText = (placeholderNoteTextRef.value as HTMLInputElement).value;
-        rerender(args.element);
+        update();
       }
 
       function saveNote(e: MouseEvent) {
@@ -45,7 +45,7 @@ export default function AddNote(props: EditNoteProps) {
 
         addNote(noteTitle, noteText);
         mode = "collapsed";
-        rerender(args.element);
+        update();
         e.stopPropagation();
       }
 
@@ -53,7 +53,7 @@ export default function AddNote(props: EditNoteProps) {
         noteTitle = (noteTitleRef.value as HTMLInputElement).value;
         noteText = (noteTextRef.value as HTMLTextAreaElement).value;
         mode = "expanded";
-        rerender(args.element);
+        update();
         e.stopPropagation();
       }
 

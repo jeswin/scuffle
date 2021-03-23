@@ -19,27 +19,27 @@ export default function TodoListItem({
   let completed = false;
 
   return {
-    render(props: TodoListItemProps, args: ForgoRenderArgs) {
+    render(props: TodoListItemProps, { update }: ForgoRenderArgs) {
       function cancelTimeout() {
         if (timerState.timeout) {
           secondsLeft = undefined;
           window.clearTimeout(timerState.timeout);
           timerState.timeout = undefined;
-          rerender(args.element);
+          update();
         }
       }
 
       function onCheckboxClick() {
         isChecked = !isChecked;
         cancelTimeout();
-        rerender(args.element);
+        update();
       }
 
       function onCancelClick(e: MouseEvent) {
         isChecked = false;
         cancelTimeout();
         e.preventDefault();
-        rerender(args.element);
+        update();
       }
 
       return (
@@ -79,7 +79,7 @@ export default function TodoListItem({
         </li>
       );
     },
-    afterRender(props: TodoListItemProps, args: ForgoAfterRenderArgs) {
+    afterRender(props: TodoListItemProps, { update }: ForgoAfterRenderArgs) {
       if (secondsLeft !== undefined) {
         if (secondsLeft === 0) {
           if (!completed) {
@@ -90,13 +90,13 @@ export default function TodoListItem({
           timerState.timeout = window.setTimeout(() => {
             secondsLeft =
               secondsLeft !== undefined ? secondsLeft - 1 : undefined;
-            rerender(args.element);
+            update();
           }, 1000);
         }
       } else {
         if (isChecked) {
           secondsLeft = 5;
-          rerender(args.element);
+          update();
         }
       }
     },

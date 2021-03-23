@@ -17,7 +17,7 @@ function getVideoId(urlString: string) {
 
 export default function VideoContent(initialProps: VideoContentProps) {
   return {
-    render(props: VideoContentProps, args: ForgoRenderArgs) {
+    render(props: VideoContentProps, { update }: ForgoRenderArgs) {
       return (
         <div className="flex mb-4">
           <div className="min-w-6 pt-1">

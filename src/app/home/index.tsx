@@ -8,7 +8,7 @@ export default function HomeIndex() {
   loadHomePageData();
 
   const component = {
-    render(props: unknown, args: ForgoRenderArgs) {
+    render(props: unknown, { update }: ForgoRenderArgs) {
       return (
         <div>
           <ItemsByDate completeTodo={completeTodo} items={state} />

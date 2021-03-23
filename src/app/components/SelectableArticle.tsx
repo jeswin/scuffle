@@ -23,7 +23,7 @@ export default function SelectableArticle(
   initialProps: SelectableArticleProps
 ) {
   return {
-    render(props: SelectableArticleProps, args: ForgoRenderArgs) {
+    render(props: SelectableArticleProps, { update }: ForgoRenderArgs) {
       function onClick() {
         if (props.onClick) {
           props.onClick();

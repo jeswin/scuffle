@@ -15,13 +15,13 @@ export default function AccountHome(initialProps: AccountHomeProps) {
   let proPlanSelected = false;
 
   return {
-    render(props: AccountHomeProps, args: ForgoRenderArgs) {
+    render(props: AccountHomeProps, { update }: ForgoRenderArgs) {
       function onClickBasicPlan() {
         basicPlanSelected = !basicPlanSelected;
         if (basicPlanSelected) {
           proPlanSelected = false;
         }
-        rerender(args.element);
+        update();
       }
 
       function onClickProPlan() {
@@ -29,7 +29,7 @@ export default function AccountHome(initialProps: AccountHomeProps) {
         if (proPlanSelected) {
           basicPlanSelected = false;
         }
-        rerender(args.element);
+        update();
       }
 
       return (

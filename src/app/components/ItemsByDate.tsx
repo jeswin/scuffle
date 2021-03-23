@@ -19,10 +19,10 @@ export type ItemsByDateProps = {
 
 export default function ItemsByDate(props: ItemsByDateProps) {
   return {
-    render(props: ItemsByDateProps, args: ForgoRenderArgs) {
+    render(props: ItemsByDateProps, { update }: ForgoRenderArgs) {
       function onCompleteTodo(todo: Todo) {
         props.completeTodo(todo);
-        rerender(args.element);
+        update();
       }
 
       const groupedTodos = Array.from(

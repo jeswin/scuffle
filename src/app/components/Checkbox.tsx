@@ -10,7 +10,7 @@ export type CheckboxProps = {
 
 export default function Checkbox(initialProps: CheckboxProps) {
   return {
-    render(props: CheckboxProps, args: ForgoRenderArgs) {
+    render(props: CheckboxProps, { update }: ForgoRenderArgs) {
       function onClick() {
         if (props.onChange) {
           props.onChange(!props.checked);

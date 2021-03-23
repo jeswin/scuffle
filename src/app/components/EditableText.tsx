@@ -8,7 +8,7 @@ export default function EditableText(initialProps: EditableTextProps) {
   let isEditing = false;
 
   return {
-    render(props: EditableTextProps, args: ForgoRenderArgs) {
+    render(props: EditableTextProps, { update }: ForgoRenderArgs) {
       return !isEditing ? (
         <span>{props.text}</span>
       ) : (

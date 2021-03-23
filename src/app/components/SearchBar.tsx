@@ -7,7 +7,7 @@ export type SearchBarProps = {};
 
 export default function SearchBar(props: SearchBarProps) {
   return {
-    render(props: SearchBarProps, args: ForgoRenderArgs) {
+    render(props: SearchBarProps, { update }: ForgoRenderArgs) {
       return (
         <div className="border-b pb-2 mb-6 flex text-sm">
           <span className="text-gray-500">{icons.search}</span>
