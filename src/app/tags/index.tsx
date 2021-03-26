@@ -1,3 +1,4 @@
+import * as forgo from "forgo";
 import { matchExactUrl } from "forgo-router";
 import { loadTaggedItems } from "./actions";
 import TaggedItems from "./components/TaggedItems";

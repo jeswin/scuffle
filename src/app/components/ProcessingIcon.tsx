@@ -1,3 +1,5 @@
+import * as forgo from "forgo";
+
 export default function ProcessingIcon() {
   return {
     render() {

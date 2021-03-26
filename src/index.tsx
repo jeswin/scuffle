@@ -1,13 +1,15 @@
 import { mount } from "forgo";
+import * as forgo from "forgo";
 import App from "./app";
 
-function startApp() {
-  mount(<App />, "#root");
+function ready(fn: () => void) {
+  if (document.readyState !== "loading") {
+    fn();
+  } else {
+    document.addEventListener("DOMContentLoaded", fn);
+  }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-if ((window as any).cordova) {
-  document.addEventListener("deviceready", startApp, false);
-} else {
-  startApp();
-}
+ready(() => {
+  mount(<App />, document.getElementById("root"));
+});

@@ -1,4 +1,5 @@
 import { ForgoComponent, ForgoNode, ForgoRenderArgs, rerender } from "forgo";
+import * as forgo from "forgo";
 import { getClassName } from "../../utils/uiUtils";
 import Checkbox from "./Checkbox";
 

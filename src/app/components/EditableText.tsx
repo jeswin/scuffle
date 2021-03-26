@@ -1,4 +1,5 @@
 import { ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
 
 export type EditableTextProps = {
   text: string;

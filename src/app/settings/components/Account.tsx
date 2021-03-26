@@ -1,4 +1,5 @@
 import { ForgoRenderArgs, rerender } from "forgo";
+import * as forgo from "forgo";
 import { iconsDefault } from "../../../icons";
 import * as unicode from "../../../utils/unicode";
 import Button from "../../components/Button";

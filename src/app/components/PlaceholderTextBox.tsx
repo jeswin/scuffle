@@ -1,4 +1,5 @@
 import { ForgoComponent, ForgoRef, ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
 
 export type PlaceholderTextBoxProps = {
   onClick: () => void;

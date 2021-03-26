@@ -1,3 +1,5 @@
+import * as forgo from "forgo";
+
 export type TopBannerProps = {
   smallText?: string;
   text: string;

@@ -1,3 +1,4 @@
+import * as forgo from "forgo";
 import EditNote from "./AddNote";
 import NotesList from "./NotesList";
 

@@ -1,11 +1,10 @@
-import { ForgoRef, CSSProperties, rerender, ForgoAfterRenderArgs } from "forgo";
-import { ForgoRenderArgs } from "forgo";
+import { ForgoRef, CSSProperties, ForgoRenderArgs, ForgoAfterRenderArgs } from "forgo";
+import * as forgo from "forgo";
 import { addNote } from "../actions";
 import { iconsDefault as icons } from "../../../icons";
 import PlaceholderTextBox from "../../components/PlaceholderTextBox";
 import Button from "../../components/Button";
 import Section from "../../components/Section";
-import TextField from "../../components/TextField";
 
 export type EditNoteProps = {
   style?: CSSProperties;

@@ -1,3 +1,4 @@
+import * as forgo from "forgo";
 import { Note } from "../../../types";
 import { iconsDefault as icons } from "../../../icons";
 import Tag from "../../components/Tag";

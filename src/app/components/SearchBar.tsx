@@ -1,4 +1,5 @@
 import { ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
 import { makeIcons } from "../../icons";
 
 const icons = makeIcons({ viewBox: "0 0 24 24" });

@@ -2,6 +2,7 @@ import ItemsByDate from "../components/ItemsByDate";
 import state from "../state";
 import { completeTodo, loadHomePageData } from "../actions";
 import { ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
 import { bindToStates } from "forgo-state";
 
 export default function HomeIndex() {

@@ -1,6 +1,7 @@
 import { Bookmark, Note, ScuffleEntity, Todo } from "../../types";
 import TodoListItem from "../todos/components/TodoListItem";
 import { ForgoRenderArgs, rerender } from "forgo";
+import * as forgo from "forgo";
 import groupEntitiesByDate from "../../utils/groupEntitiesByDate";
 import { iconsDefault as icons } from "../../icons";
 import BookmarksListItem from "../bookmarks/components/BookmarksListItem";

@@ -1,4 +1,5 @@
 import { ForgoAfterRenderArgs, ForgoRenderArgs, rerender } from "forgo";
+import * as forgo from "forgo";
 import { Todo } from "../../../types";
 import Checkbox from "../../components/Checkbox";
 import ProcessingIcon from "../../components/ProcessingIcon";

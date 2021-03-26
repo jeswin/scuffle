@@ -6,6 +6,7 @@ import { bindToStates } from "forgo-state";
 import groupEntitiesByDate from "../../../utils/groupEntitiesByDate";
 import { iconsDefault as icons } from "../../../icons";
 import Section from "../../components/Section";
+import * as forgo from "forgo";
 
 export default function TodoList() {
   actions.loadTodos();

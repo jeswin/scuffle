@@ -1,4 +1,5 @@
 import { ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
 import { Bookmark, VideoContent } from "../../../types";
 import Tag from "../../components/Tag";
 import { getHostname } from "../../../utils/urlUtils";

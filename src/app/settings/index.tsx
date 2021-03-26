@@ -1,3 +1,4 @@
+import * as forgo from "forgo";
 import { matchExactUrl } from "forgo-router";
 import SettingsHome from "./components/Home";
 import Account from "./components/Account";

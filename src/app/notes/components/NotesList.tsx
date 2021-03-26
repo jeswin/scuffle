@@ -1,3 +1,4 @@
+import * as forgo from "forgo";
 import { bindToStateProps } from "forgo-state";
 import { loadNotes } from "../actions";
 import NotesListItem from "./NotesListItem";

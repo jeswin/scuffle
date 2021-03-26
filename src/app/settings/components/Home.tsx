@@ -1,6 +1,7 @@
 import SectionHeading from "../../components/SectionHeading";
 import EditableText from "../../components/EditableText";
 import { iconsDefault as icons } from "../../../icons";
+import * as forgo from "forgo";
 
 export default function SettingsHome() {
   return {

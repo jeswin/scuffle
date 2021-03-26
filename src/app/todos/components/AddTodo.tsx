@@ -5,6 +5,7 @@ import {
   ForgoAfterRenderArgs,
   ForgoRenderArgs,
 } from "forgo";
+import * as forgo from "forgo";
 import Checkbox from "../../components/Checkbox";
 import { JSX } from "forgo/jsx-runtime";
 import Button from "../../components/Button";

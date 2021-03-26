@@ -1,4 +1,5 @@
 import { ForgoComponent, ForgoNode } from "forgo";
+import * as forgo from "forgo";
 
 export type SectionHeadingProps = {
   type: "h1" | "h2" | "h3";

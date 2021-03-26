@@ -1,3 +1,4 @@
+import * as forgo from "forgo";
 import BookmarksList from "./BookmarksList";
 import { Link } from "forgo-router";
 import AddBookmark from "./AddBookmark";

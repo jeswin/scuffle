@@ -1,3 +1,4 @@
+import * as forgo from "forgo";
 import { Link } from "forgo-router";
 import { Tag } from "../../types";
 import { colorForString } from "../../utils/colors";

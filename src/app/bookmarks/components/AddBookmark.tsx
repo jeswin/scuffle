@@ -1,4 +1,5 @@
 import { ForgoRef, rerender, ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
 import { iconsDefault as icons } from "../../../icons";
 import PlaceholderTextBox from "../../components/PlaceholderTextBox";
 import Button from "../../components/Button";

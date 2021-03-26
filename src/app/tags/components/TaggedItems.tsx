@@ -6,6 +6,7 @@ import { bindToStates } from "forgo-state";
 import LinkButton from "../../components/LinkButton";
 import { colorForString } from "../../../utils/colors";
 import { ForgoComponent, ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
 
 export type TagViewProps = {};
 

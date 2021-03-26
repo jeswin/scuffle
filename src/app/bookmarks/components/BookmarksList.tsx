@@ -1,3 +1,4 @@
+import * as forgo from "forgo";
 import * as actions from "../actions";
 import BookmarksListItem from "./BookmarksListItem";
 import { Todo } from "../../../types";

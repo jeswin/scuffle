@@ -1,5 +1,6 @@
 import { Bookmark } from "../../../types";
 import { ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
 import LinkContent from "./LinkContent";
 import VideoContent from "./VideoContent";
 

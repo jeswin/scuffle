@@ -1,3 +1,5 @@
+import * as forgo from "forgo";
+
 export function makeIcons(options: {
   height?: string;
   width?: string;

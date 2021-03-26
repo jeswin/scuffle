@@ -8,7 +8,13 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        loader: "esbuild-loader",
+        options: {
+          loader: "tsx", // Or 'ts' if you don't need tsx
+          target: "es2015",
+          jsxFactory: "forgo.createElement",
+          jsxFragment: "forgo.Fragment",
+        },
         exclude: /node_modules/,
       },
     ],
@@ -19,7 +25,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/"
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({

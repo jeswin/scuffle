@@ -1,4 +1,5 @@
 import { ForgoNode } from "forgo";
+import * as forgo from "forgo";
 import { getClassName } from "../../utils/uiUtils";
 
 export type SectionProps = {

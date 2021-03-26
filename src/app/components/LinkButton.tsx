@@ -1,4 +1,5 @@
 import { getClassName } from "../../utils/uiUtils";
+import * as forgo from "forgo";
 
 export type LinkButtonProps = {
   style?: "button" | "link";

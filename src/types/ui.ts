@@ -1,4 +1,5 @@
 import { CSSProperties } from "forgo";
+import * as forgo from "forgo";
 
 export interface StylesDictionary {
   [Key: string]: CSSProperties;

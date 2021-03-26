@@ -1,3 +1,4 @@
+import * as forgo from "forgo";
 import { Router, matchUrl, updateRoute, matchExactUrl } from "forgo-router";
 
 import MainBar from "./components/MainBar";
