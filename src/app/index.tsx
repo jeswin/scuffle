@@ -12,10 +12,6 @@ import Settings from "./settings";
 import PageNotFound from "../PageNotFound";
 import { loadProfile } from "./actions";
 
-window.addEventListener("load", () => {
-  document.getElementById("startup-loader")?.remove();
-});
-
 export default function App() {
   loadProfile();
 
