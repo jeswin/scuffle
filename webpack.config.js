@@ -33,7 +33,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: [
+    static: [
       path.resolve(__dirname, "./public"),
       path.resolve(__dirname, "./dist"),
     ],

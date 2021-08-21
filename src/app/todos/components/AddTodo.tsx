@@ -7,7 +7,6 @@ import {
 } from "forgo";
 import * as forgo from "forgo";
 import Checkbox from "../../components/Checkbox";
-import { JSX } from "forgo/jsx-runtime";
 import Button from "../../components/Button";
 import TextField from "../../components/TextField";
 import Section from "../../components/Section";
@@ -40,7 +39,7 @@ export default function AddTodo(props: AddTodoProps) {
         update();
       }
 
-      function onPointsChange(e: JSX.TargetedEvent<HTMLInputElement>) {
+      function onPointsChange(e: forgo.JSX.TargetedEvent<HTMLInputElement>) {
         points = parseInt(e.currentTarget.value);
         update();
       }

@@ -4,7 +4,7 @@ import * as forgo from "forgo";
 export type SectionHeadingProps = {
   type: "h1" | "h2" | "h3";
   icon?: ForgoComponent<any>;
-  children: ForgoNode | ForgoNode[];
+  children?: ForgoNode | ForgoNode[];
 };
 
 export default function SectionHeading(initialProps: SectionHeadingProps) {
