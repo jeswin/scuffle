@@ -2,7 +2,7 @@
   "name": "scuffle-next",
   "private": true,
   "dependencies": {
-    "forgo": "^2.0.5",
+    "forgo": "^2.1.2",
     "forgo-router": "^1.0.38",
     "forgo-state": "^1.0.30",
     "jsonwebtoken": "^8.5.1"
@@ -19,8 +19,8 @@
   "scripts": {
     "build-css": "npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css",
     "build-css-prod": "NODE_ENV=production npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css",
-    "start": "npx webpack serve",
-    "build": "NODE_ENV=production npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css && tsc --noEmit && npx webpack build"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider npx webpack serve --mode development",
+    "build": "NODE_ENV=production npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css && tsc --noEmit && npx webpack build --mode production"
   },
   "license": "AGPL-3.0"
 }
