@@ -1,6 +1,6 @@
 import { ForgoNode } from "forgo";
 import * as forgo from "forgo";
-import { getClassName } from "../../utils/uiUtils";
+import { getClassName } from "../../utils/uiUtils.js";
 
 export type ButtonProps = {
   onClick?: (e: MouseEvent) => void;

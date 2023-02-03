@@ -1,7 +1,7 @@
-import * as notesService from "../../../services/notes";
-import randomId from "../../../lib/randomId";
+import * as notesService from "../../../services/notes/index.js";
+import randomId from "../../../lib/randomId.js";
 import state from "../state";
-import { Note } from "../../../types";
+import { Note } from "../../../types/index.js";
 
 export async function loadNotes(): Promise<void> {
   const notes = await notesService.getAllNotes();

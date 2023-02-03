@@ -1,13 +1,13 @@
-import { Bookmark, Note, ScuffleEntity, Todo } from "../../types";
-import TodoListItem from "../todos/components/TodoListItem";
-import { ForgoRenderArgs, rerender } from "forgo";
+import { ForgoRenderArgs } from "forgo";
 import * as forgo from "forgo";
-import groupEntitiesByDate from "../../utils/groupEntitiesByDate";
-import { iconsDefault as icons } from "../../icons";
-import BookmarksListItem from "../bookmarks/components/BookmarksListItem";
-import NotesListItem from "../notes/components/NotesListItem";
-import Section from "./Section";
-import SectionHeading from "./SectionHeading";
+import { Bookmark, Note, ScuffleEntity, Todo } from "../../types/index.js";
+import TodoListItem from "../todos/components/TodoListItem.js";
+import groupEntitiesByDate from "../../utils/groupEntitiesByDate.js";
+import { iconsDefault as icons } from "../../icons/index.js";
+import BookmarksListItem from "../bookmarks/components/BookmarksListItem.js";
+import NotesListItem from "../notes/components/NotesListItem.js";
+import Section from "./Section.js";
+import SectionHeading from "./SectionHeading.js";
 
 export type ItemsByDateProps = {
   completeTodo: (todo: Todo) => void;
@@ -77,9 +77,9 @@ export default function ItemsByDate(props: ItemsByDateProps) {
                     {timeString}
                   </SectionHeading>
                   <ul>
-                    {(items.filter(
-                      (x) => x.type === "bookmark"
-                    ) as Bookmark[]).map((bookmark: Bookmark) => (
+                    {(
+                      items.filter((x) => x.type === "bookmark") as Bookmark[]
+                    ).map((bookmark: Bookmark) => (
                       <BookmarksListItem
                         key={bookmark.id}
                         bookmark={bookmark}

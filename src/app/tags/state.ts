@@ -1,5 +1,5 @@
 import { defineState } from "forgo-state";
-import { Bookmark, Note, Todo } from "../../types";
+import { Bookmark, Note, Todo } from "../../types/index.js";
 
 export interface IState {
   tags: string[];

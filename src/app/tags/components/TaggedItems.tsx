@@ -1,12 +1,11 @@
-import { Link } from "forgo-router";
-import ItemsByDate from "../../components/ItemsByDate";
-import { completeTodo, loadTaggedItems } from "../actions";
-import state from "../state";
-import { bindToStates } from "forgo-state";
-import LinkButton from "../../components/LinkButton";
-import { colorForString } from "../../../utils/colors";
-import { ForgoComponent, ForgoRenderArgs } from "forgo";
+import { ForgoRenderArgs } from "forgo";
 import * as forgo from "forgo";
+import { bindToStates } from "forgo-state";
+import ItemsByDate from "../../components/ItemsByDate.js";
+import { completeTodo } from "../actions/index.js";
+import state from "../state.js";
+import LinkButton from "../../components/LinkButton.js";
+import { colorForString } from "../../../utils/colors.js";
 
 export type TagViewProps = {};
 

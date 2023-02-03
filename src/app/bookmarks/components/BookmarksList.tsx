@@ -1,11 +1,10 @@
 import * as forgo from "forgo";
-import * as actions from "../actions";
-import BookmarksListItem from "./BookmarksListItem";
-import { Todo } from "../../../types";
-import state from "../state";
+import * as actions from "../actions/index.js";
+import BookmarksListItem from "./BookmarksListItem.js";
+import state from "../state.js";
 import { bindToStates } from "forgo-state";
-import groupEntitiesByDate from "../../../utils/groupEntitiesByDate";
-import { iconsDefault as icons } from "../../../icons";
+import groupEntitiesByDate from "../../../utils/groupEntitiesByDate.js";
+import { iconsDefault as icons } from "../../../icons/index.js";
 
 export default function BookmarksList() {
   actions.loadBookmarks();

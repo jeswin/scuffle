@@ -1,10 +1,10 @@
 import { ForgoRef, rerender, ForgoRenderArgs } from "forgo";
 import * as forgo from "forgo";
-import { iconsDefault as icons } from "../../../icons";
-import PlaceholderTextBox from "../../components/PlaceholderTextBox";
-import Button from "../../components/Button";
-import TextField from "../../components/TextField";
-import Section from "../../components/Section";
+import { iconsDefault as icons } from "../../../icons/index.js";
+import PlaceholderTextBox from "../../components/PlaceholderTextBox.js";
+import Button from "../../components/Button.js";
+import TextField from "../../components/TextField.js";
+import Section from "../../components/Section.js";
 
 export type AddBookmarkProps = {
   collapsed: boolean;

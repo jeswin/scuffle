@@ -1,8 +1,8 @@
-import { Bookmark } from "../../../types";
+import { Bookmark } from "../../../types/index.js";
 import { ForgoRenderArgs } from "forgo";
 import * as forgo from "forgo";
-import LinkContent from "./LinkContent";
-import VideoContent from "./VideoContent";
+import LinkContent from "./LinkContent.js";
+import VideoContent from "./VideoContent.js";
 
 export type BookmarksListItemProps = {
   bookmark: Bookmark;

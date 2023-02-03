@@ -2,8 +2,8 @@ import { ForgoRenderArgs, rerender } from "forgo";
 import * as forgo from "forgo";
 import { match, Link } from "forgo-router";
 import { bindToStates } from "forgo-state";
-import { iconsDefault as icons } from "../../icons";
-import state from "../state";
+import { iconsDefault as icons } from "../../icons/index.js";
+import state from "../state.js";
 
 export type MainBarProps = {};
 

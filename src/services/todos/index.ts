@@ -1,5 +1,5 @@
-import { Todo } from "../../types";
-import * as data from "./dummyTodos";
+import { Todo } from "../../types/index.js";
+import * as data from "./dummyTodos.js";
 
 // Temporarily store this in mem.
 // This stuff is gonna go into filesystem/git

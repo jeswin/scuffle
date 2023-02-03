@@ -1,7 +1,7 @@
-import state from "../state";
-import * as tagsService from "../../../services/tags";
-import * as todosService from "../../../services/todos";
-import { Todo } from "../../../types";
+import state from "../state.js";
+import * as tagsService from "../../../services/tags/index.js";
+import * as todosService from "../../../services/todos/index.js";
+import { Todo } from "../../../types/index.js";
 
 export async function loadTaggedItems(tags: string[]): Promise<void> {
   state.tags = tags;

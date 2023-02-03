@@ -1,8 +1,8 @@
-import { Bookmark, Note, TagInfo, Todo } from "../../types";
-import * as todosService from "../todos";
-import * as bookmarksService from "../bookmarks";
-import * as notesService from "../notes";
-import { tags } from "./dummyTags";
+import { Bookmark, Note, TagInfo, Todo } from "../../types/index.js";
+import * as todosService from "../todos/index.js";
+import * as bookmarksService from "../bookmarks/index.js";
+import * as notesService from "../notes/index.js";
+import { tags } from "./dummyTags.js";
 
 export async function getAllTags(): Promise<TagInfo[]> {
   return [...tags];

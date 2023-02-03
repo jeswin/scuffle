@@ -1,7 +1,7 @@
 import * as forgo from "forgo";
 import { matchExactUrl } from "forgo-router";
-import SettingsHome from "./components/Home";
-import Account from "./components/Account";
+import SettingsHome from "./components/Home.js";
+import Account from "./components/Account.js";
 
 export default function SettingsIndex() {
   return {

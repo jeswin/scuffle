@@ -1,6 +1,6 @@
 import { ForgoRenderArgs } from "forgo";
 import * as forgo from "forgo";
-import { getClassName } from "../../utils/uiUtils";
+import { getClassName } from "../../utils/uiUtils.js";
 
 export type CheckboxProps = {
   text?: string;

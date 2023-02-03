@@ -1,4 +1,4 @@
-import { getClassName } from "../../utils/uiUtils";
+import { getClassName } from "../../utils/uiUtils.js";
 import * as forgo from "forgo";
 
 export type LinkButtonProps = {

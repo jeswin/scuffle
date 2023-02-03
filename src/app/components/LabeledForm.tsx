@@ -1,4 +1,3 @@
-import * as forgo from "forgo";
 import { ForgoRenderArgs } from "forgo"
 
 export type LabeledFormProps = {

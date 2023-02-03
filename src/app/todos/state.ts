@@ -1,5 +1,5 @@
 import { defineState } from "forgo-state";
-import { Todo } from "../../types";
+import { Todo } from "../../types/index.js";
 
 export interface IState {
   todos: Todo[];

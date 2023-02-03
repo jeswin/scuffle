@@ -1,7 +1,6 @@
 import * as forgo from "forgo";
-import BookmarksList from "./BookmarksList";
-import { Link } from "forgo-router";
-import AddBookmark from "./AddBookmark";
+import BookmarksList from "./BookmarksList.js";
+import AddBookmark from "./AddBookmark.js";
 
 export default function BookmarksHome() {
   return {

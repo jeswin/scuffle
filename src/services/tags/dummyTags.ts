@@ -1,4 +1,4 @@
-import { TagInfo } from "../../types";
+import { TagInfo } from "../../types/index.js";
 
 export const tags: TagInfo[] = [
   {

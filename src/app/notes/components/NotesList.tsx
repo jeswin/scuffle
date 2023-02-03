@@ -1,10 +1,10 @@
 import * as forgo from "forgo";
 import { bindToStateProps } from "forgo-state";
-import { loadNotes } from "../actions";
-import NotesListItem from "./NotesListItem";
-import state from "../state";
-import groupEntitiesByDate from "../../../utils/groupEntitiesByDate";
-import { iconsDefault as icons } from "../../../icons";
+import { loadNotes } from "../actions/index.js";
+import NotesListItem from "./NotesListItem.js";
+import state from "../state.js";
+import groupEntitiesByDate from "../../../utils/groupEntitiesByDate.js";
+import { iconsDefault as icons } from "../../../icons/index.js";
 
 export default function NotesList() {
   loadNotes();

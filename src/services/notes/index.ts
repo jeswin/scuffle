@@ -1,5 +1,5 @@
-import { Note } from "../../types";
-import * as data from "./dummyNotes";
+import { Note } from "../../types/index.js";
+import * as data from "./dummyNotes.js";
 
 let notes = data.notes;
 

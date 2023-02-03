@@ -1,9 +1,9 @@
-import ItemsByDate from "../components/ItemsByDate";
-import state from "../state";
-import { completeTodo, loadHomePageData } from "../actions";
 import { ForgoRenderArgs } from "forgo";
 import * as forgo from "forgo";
 import { bindToStates } from "forgo-state";
+import ItemsByDate from "../components/ItemsByDate.js";
+import state from "../state.js";
+import { completeTodo, loadHomePageData } from "../actions/index.js";
 
 export default function HomeIndex() {
   loadHomePageData();

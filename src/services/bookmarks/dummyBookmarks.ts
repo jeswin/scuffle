@@ -1,4 +1,4 @@
-import { Bookmark } from "../../types";
+import { Bookmark } from "../../types/index.js";
 
 export const bookmarks: Bookmark[] = [
   {

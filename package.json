@@ -1,8 +1,9 @@
 {
   "name": "scuffle",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "forgo": "^3.1.1",
+    "forgo": "file:../../forgojs/forgo",
     "forgo-router": "^1.2.0",
     "forgo-state": "^1.2.0",
     "jsonwebtoken": "^8.5.1"

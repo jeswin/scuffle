@@ -1,16 +1,16 @@
 import * as forgo from "forgo";
-import { Router, matchUrl, updateRoute, matchExactUrl } from "forgo-router";
+import { Router, matchUrl, matchExactUrl } from "forgo-router";
 
-import MainBar from "./components/MainBar";
-import SearchBar from "./components/SearchBar";
-import Home from "./home";
-import Notes from "./notes";
-import Bookmarks from "./bookmarks";
-import Todos from "./todos";
-import Tags from "./tags";
-import Settings from "./settings";
-import PageNotFound from "../PageNotFound";
-import { loadProfile } from "./actions";
+import MainBar from "./components/MainBar.js";
+import SearchBar from "./components/SearchBar.js";
+import Home from "./home/index.js";
+import Notes from "./notes/index.js";
+import Bookmarks from "./bookmarks/index.js";
+import Todos from "./todos/index.js";
+import Tags from "./tags/index.js";
+import Settings from "./settings/index.js";
+import PageNotFound from "../PageNotFound.js";
+import { loadProfile } from "./actions/index.js";
 
 export default function App() {
   loadProfile();

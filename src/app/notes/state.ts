@@ -1,5 +1,5 @@
 import { defineState } from "forgo-state";
-import { Note } from "../../types";
+import { Note } from "../../types/index.js";
 
 export interface IState {
   notes: Note[];

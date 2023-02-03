@@ -1,12 +1,12 @@
-import * as actions from "../actions";
-import TodoListItem from "./TodoListItem";
-import { Todo } from "../../../types";
-import state from "../state";
-import { bindToStates } from "forgo-state";
-import groupEntitiesByDate from "../../../utils/groupEntitiesByDate";
-import { iconsDefault as icons } from "../../../icons";
-import Section from "../../components/Section";
 import * as forgo from "forgo";
+import { bindToStates } from "forgo-state";
+import * as actions from "../actions/index.js";
+import TodoListItem from "./TodoListItem.js";
+import { Todo } from "../../../types/index.js";
+import state from "../state.js";
+import groupEntitiesByDate from "../../../utils/groupEntitiesByDate.js";
+import { iconsDefault as icons } from "../../../icons/index.js";
+import Section from "../../components/Section.js";
 
 export default function TodoList() {
   actions.loadTodos();

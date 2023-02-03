@@ -1,5 +1,5 @@
-import { Bookmark, Bookmark as bookmarksService } from "../../types";
-import * as data from "./dummyBookmarks";
+import { Bookmark, Bookmark as bookmarksService } from "../../types/index.js";
+import * as data from "./dummyBookmarks.js";
 
 let bookmarks = data.bookmarks;
 

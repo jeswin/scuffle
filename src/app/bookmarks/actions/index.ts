@@ -1,6 +1,6 @@
-import state from "../state";
-import * as bookmarksService from "../../../services/bookmarks";
-import randomId from "../../../lib/randomId";
+import state from "../state.js";
+import * as bookmarksService from "../../../services/bookmarks/index.js";
+import randomId from "../../../lib/randomId.js";
 
 export async function loadBookmarks(): Promise<void> {
   const bookmarks = await bookmarksService.getAllBookmarks();

@@ -1,7 +1,7 @@
 import { ForgoComponent, ForgoNode, ForgoRenderArgs, rerender } from "forgo";
 import * as forgo from "forgo";
-import { getClassName } from "../../utils/uiUtils";
-import Checkbox from "./Checkbox";
+import { getClassName } from "../../utils/uiUtils.js";
+import Checkbox from "./Checkbox.js";
 
 export type SelectableArticleProps = {
   title: string;

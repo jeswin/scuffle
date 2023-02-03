@@ -1,7 +1,7 @@
 import * as forgo from "forgo";
-import { Note } from "../../../types";
-import { iconsDefault as icons } from "../../../icons";
-import Tag from "../../components/Tag";
+import { Note } from "../../../types/index.js";
+import { iconsDefault as icons } from "../../../icons/index.js";
+import Tag from "../../components/Tag.js";
 
 export type NotesListItemProps = {
   note: Note;

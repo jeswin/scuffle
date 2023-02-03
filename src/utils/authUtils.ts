@@ -1,7 +1,7 @@
-import { getCookie } from "../lib/cookie";
-import { verify } from "../lib/jwt";
-import { JwtData } from "../types";
 import { navigateTo } from "forgo-router"
+import { getCookie } from "../lib/cookie.js";
+import { verify } from "../lib/jwt.js";
+import { JwtData } from "../types/index.js";
 
 export async function ensureJwt<T>(
   then: (jwt: JwtData) => Promise<T>

@@ -1,9 +1,9 @@
-import { ForgoAfterRenderArgs, ForgoRenderArgs, rerender } from "forgo";
 import * as forgo from "forgo";
-import { Todo } from "../../../types";
-import Checkbox from "../../components/Checkbox";
-import ProcessingIcon from "../../components/ProcessingIcon";
-import Tag from "../../components/Tag";
+import { ForgoAfterRenderArgs, ForgoRenderArgs } from "forgo";
+import { Todo } from "../../../types/index.js";
+import Checkbox from "../../components/Checkbox.js";
+import ProcessingIcon from "../../components/ProcessingIcon.js";
+import Tag from "../../components/Tag.js";
 
 export type TodoListItemProps = {
   todo: Todo;

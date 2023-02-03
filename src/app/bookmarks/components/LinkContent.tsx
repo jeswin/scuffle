@@ -1,9 +1,9 @@
 import { ForgoRenderArgs } from "forgo";
 import * as forgo from "forgo";
-import { Bookmark } from "../../../types";
-import Tag from "../../components/Tag";
-import { getHostname } from "../../../utils/urlUtils";
-import { iconsDefault } from "../../../icons";
+import { Bookmark } from "../../../types/index.js";
+import Tag from "../../components/Tag.js";
+import { getHostname } from "../../../utils/urlUtils.js";
+import { iconsDefault } from "../../../icons/index.js";
 
 export type LinkContentProps = {
   bookmark: Bookmark;

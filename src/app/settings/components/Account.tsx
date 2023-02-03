@@ -1,13 +1,13 @@
 import { ForgoRenderArgs, rerender } from "forgo";
 import * as forgo from "forgo";
-import { iconsDefault } from "../../../icons";
-import * as unicode from "../../../utils/unicode";
-import Button from "../../components/Button";
-import Section from "../../components/Section";
-import SectionHeading from "../../components/SectionHeading";
-import SelectableArticle from "../../components/SelectableArticle";
-import rootState from "../../state";
-import TextField from "../../components/TextField";
+import { iconsDefault } from "../../../icons/index.js";
+import * as unicode from "../../../utils/unicode.js";
+import Button from "../../components/Button.js";
+import Section from "../../components/Section.js";
+import SectionHeading from "../../components/SectionHeading.js";
+import SelectableArticle from "../../components/SelectableArticle.js";
+import rootState from "../../state.js";
+import TextField from "../../components/TextField.js";
 
 export type AccountHomeProps = {};
 

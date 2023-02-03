@@ -1,5 +1,5 @@
 import { defineState } from "forgo-state";
-import { Bookmark, Note, Profile, TagInfo, Todo } from "../types";
+import { Bookmark, Note, Profile, TagInfo, Todo } from "../types/index.js";
 
 export interface IState {
   profile: Profile;

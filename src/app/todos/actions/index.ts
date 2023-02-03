@@ -1,7 +1,7 @@
-import { Todo } from "../../../types";
-import * as todosService from "../../../services/todos";
-import randomId from "../../../lib/randomId";
-import state from "../state";
+import { Todo } from "../../../types/index.js";
+import * as todosService from "../../../services/todos/index.js";
+import randomId from "../../../lib/randomId.js";
+import state from "../state.js";
 
 export async function loadTodos(): Promise<void> {
   const tasks = await todosService.getAllTodos();

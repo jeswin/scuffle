@@ -1,7 +1,7 @@
 import * as forgo from "forgo";
 import { Link } from "forgo-router";
-import { Tag } from "../../types";
-import { colorForString } from "../../utils/colors";
+import { Tag } from "../../types/index.js";
+import { colorForString } from "../../utils/colors.js";
 
 export type TagProps = {
   tag: string;

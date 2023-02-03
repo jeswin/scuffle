@@ -1,15 +1,14 @@
-import { addTodo } from "../actions";
 import {
   ForgoRef,
-  rerender,
   ForgoAfterRenderArgs,
   ForgoRenderArgs,
 } from "forgo";
 import * as forgo from "forgo";
-import Checkbox from "../../components/Checkbox";
-import Button from "../../components/Button";
-import TextField from "../../components/TextField";
-import Section from "../../components/Section";
+import { addTodo } from "../actions/index.js";
+import Checkbox from "../../components/Checkbox.js";
+import Button from "../../components/Button.js";
+import TextField from "../../components/TextField.js";
+import Section from "../../components/Section.js";
 
 export type AddTodoProps = {
   collapsed: boolean;

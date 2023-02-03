@@ -1,7 +1,7 @@
 import * as forgo from "forgo";
 import { matchExactUrl } from "forgo-router";
-import { loadTaggedItems } from "./actions";
-import TaggedItems from "./components/TaggedItems";
+import { loadTaggedItems } from "./actions/index.js";
+import TaggedItems from "./components/TaggedItems.js";
 
 export default function TagsIndex() {
   return {

@@ -1,9 +1,9 @@
 import state from "../state";
-import * as bookmarksService from "../../services/bookmarks";
-import * as notesService from "../../services/notes";
-import * as todosService from "../../services/todos";
-import * as profileService from "../../services/profile";
-import { Todo } from "../../types";
+import * as bookmarksService from "../../services/bookmarks/index.js";
+import * as notesService from "../../services/notes/index.js";
+import * as todosService from "../../services/todos/index.js";
+import * as profileService from "../../services/profile/index.js";
+import { Todo } from "../../types/index.js";
 
 export async function loadProfile(): Promise<void> {
   state.profile = await profileService.loadProfile();

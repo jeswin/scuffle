@@ -1,7 +1,7 @@
-import TodoList from "./TodoList";
-import { Link } from "forgo-router";
-import AddTodo from "./AddTodo";
 import * as forgo from "forgo";
+import { Link } from "forgo-router";
+import TodoList from "./TodoList.js";
+import AddTodo from "./AddTodo.js";
 
 export default function TodosHome() {
   return {

@@ -1,6 +1,6 @@
 import * as forgo from "forgo";
-import EditNote from "./AddNote";
-import NotesList from "./NotesList";
+import EditNote from "./AddNote.js";
+import NotesList from "./NotesList.js";
 
 export default function NotesHome() {
   return {
