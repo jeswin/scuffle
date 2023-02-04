@@ -42,5 +42,5 @@ export default function TodoList() {
     },
   };
 
-  return bindToStates([state], component);
+  return bindToStates([state], component as any);
 }

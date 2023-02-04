@@ -1,4 +1,4 @@
-import { toHashCode } from "../lib/stringToHash";
+import { toHashCode } from "../lib/stringToHash.js";
 
 const colors = [
   "#991B1B",

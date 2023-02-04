@@ -1,4 +1,4 @@
-import { ForgoRenderArgs, rerender } from "forgo";
+import { ForgoRenderArgs } from "forgo";
 import * as forgo from "forgo";
 import { match, Link } from "forgo-router";
 import { bindToStates } from "forgo-state";
@@ -165,5 +165,5 @@ export default function MainBar(props: MainBarProps) {
     },
   };
 
-  return bindToStates([state], component);
+  return bindToStates([state], component as any);
 }

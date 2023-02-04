@@ -3,25 +3,23 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "forgo": "file:../../forgojs/forgo",
-    "forgo-router": "^1.2.0",
-    "forgo-state": "^1.2.0",
-    "jsonwebtoken": "^8.5.1"
+    "forgo": "^4.0.4",
+    "forgo-router": "^2.0.1",
+    "forgo-state": "^2.0.0",
+    "jsonwebtoken": "^9.0.0"
   },
   "devDependencies": {
-    "esbuild-loader": "^2.18.0",
-    "html-webpack-plugin": "^5.5.0",
-    "tailwindcss": "^3.0.24",
+    "@types/node": "^18.11.18",
+    "tailwindcss": "^3.2.4",
     "tailwindcss-cli": "^0.1.2",
-    "typescript": "^4.6.3",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.8.1"
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1"
   },
   "scripts": {
-    "build-css": "npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css",
-    "build-css-prod": "NODE_ENV=production npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css",
-    "start": "NODE_ENV=production npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css && NODE_OPTIONS=--openssl-legacy-provider npx webpack serve --mode development",
-    "build": "NODE_ENV=production npx tailwindcss-cli build ./src/styles.css -o ./dist/styles.css && tsc --noEmit && npx webpack build --mode production"
+    "build-css": "npx tailwindcss-cli build -i ./src/styles.css -o ./dist/styles.css",
+    "build-css-prod": "NODE_ENV=production npx tailwindcss-cli build -i ./src/styles.css -o ./dist/styles.css",
+    "start": "NODE_ENV=production npx tailwindcss-cli build -i ./src/styles.css -o ./public/styles.css && vite",
+    "build": "NODE_ENV=production npx tailwindcss-cli build -i ./src/styles.css -o ./public/styles.css && vite build"
   },
   "license": "AGPL-3.0"
 }

@@ -29,5 +29,5 @@ export default function TagView(initialProps: TagViewProps) {
     },
   };
 
-  return bindToStates([state], component);
+  return bindToStates([state], component as any);
 }

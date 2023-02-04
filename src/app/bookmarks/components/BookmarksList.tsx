@@ -39,5 +39,5 @@ export default function BookmarksList() {
     },
   };
 
-  return bindToStates([state], component);
+  return bindToStates([state], component as any);
 }

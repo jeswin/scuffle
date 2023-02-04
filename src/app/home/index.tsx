@@ -18,5 +18,5 @@ export default function HomeIndex() {
     },
   };
 
-  return bindToStates([state], component);
+  return bindToStates([state], component as any);
 }

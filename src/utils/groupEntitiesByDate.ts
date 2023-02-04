@@ -1,4 +1,4 @@
-import { getTodayStart, msInADay, getMonth } from "../lib/dateFunctions";
+import { getTodayStart, msInADay, getMonth } from "../lib/dateFunctions.js";
 
 export default function groupEntitiesByDate<T>(
   entitiesAndTimeSelectors: [T[], (x: T) => number][],

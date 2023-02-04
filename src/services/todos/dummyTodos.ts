@@ -1,4 +1,4 @@
-import { Todo } from "../../types";
+import { Todo } from "../../types/index.js";
 
 export const todos: Todo[] = [
   {
